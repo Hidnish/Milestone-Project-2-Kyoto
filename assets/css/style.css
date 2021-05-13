@@ -1,3 +1,15 @@
+@font-face {
+    font-family: japanese;
+    src: url(/assets/css/fonts/jap-brush.ttf) /*format("truetype")*/;
+}
+
+
+/* ----- BACKGROUNDS -----*/
+
+.backg-off-seet {
+    background-color: rgba(255,255,242,0.7);
+}
+
 /* ----- NAVBAR ------ */
 
 .navbar-nav {
@@ -6,4 +18,30 @@
 
 .nav-item {
     margin: 0 10px;
+}
+
+.navbar-brand {
+    font-family: japanese; /*Add generic family*/
+    font-size: 35px;
+    margin-left: 1rem;
+}
+
+/*----- HERO IMAGE -----*/
+
+#hero-slideshow {
+    position: relative;
+    height: 100vh;
+}
+
+.image-container { 
+  position: absolute; 
+  overflow: hidden;
+  width: 100vw; 
+  height: 100vh; 
+}
+
+.image-container img { 
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
