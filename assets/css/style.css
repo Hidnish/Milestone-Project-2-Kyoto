@@ -7,15 +7,48 @@ html, body {
     overflow-x: hidden;  
 }
 
-h2 {
-    padding: 5%;
+body {
+    background-color: #f9f9f9;
 }
 
+h2 {
+    padding: 3% 5% 5%;
+}
+
+p {
+    margin-bottom: 0;
+}
 
 /* ----- BACKGROUNDS -----*/
 
 .backg-off-seet {
     background-color: rgba(255,255,242,0.7);
+}
+
+/*.backg-about {
+    background: url(../images/tip.jpeg) center no-repeat; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}*/
+
+/* Code based on: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
+.backg-about {
+background-color: #fafafa;
+background-image: linear-gradient(
+    to bottom, transparent, #fafafa
+  ), url(../images/tip.jpeg);
+background-repeat: no-repeat;
+background-position: center;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+.backg-about-info {
+    background-image: linear-gradient(#fafafa, #0b0e1f);
 }
 
 /* ----- NAVBAR ------ */
@@ -64,11 +97,27 @@ h2 {
     align-items: center;
 }
 
+.about-row-night {
+    box-sizing: border-box;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    color: #fafafa;
+}
+
 .about-heading {
     text-align: center;
-    padding: 7%;
     display: table-cell;
     vertical-align: middle;
+    color: #1c334d;
+}
+
+.about-heading h2 {
+    padding-top: 100px;
+}
+
+.about-heading p {
+    padding: 2% 8% 8%;
 }
 
 .about-info {
@@ -86,13 +135,18 @@ h2 {
     height: 380px;
     width: 380px;
     border-radius: 50%;
-    margin: 5% 0;
+    margin: 7% 0;
     object-fit: contain;
+}
+
+.night-mode {
+    background-color: black;
+    color: #fafafa;
 }
 
 @media (max-width: 992px) {
     .about-img img{
-        height: 350px;
-        width: 350px;
+        height: 300px;
+        width: 300px;
     };
 }
