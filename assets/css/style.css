@@ -1,6 +1,14 @@
 @font-face {
     font-family: japanese;
-    src: url(/assets/css/fonts/jap-brush.ttf) /*format("truetype")*/;
+    src: url(/assets/fonts/jap-brush.ttf);
+}
+
+html, body {
+    overflow-x: hidden;  
+}
+
+h2 {
+    padding: 5%;
 }
 
 
@@ -21,9 +29,10 @@
 }
 
 .navbar-brand {
-    font-family: japanese; /*Add generic family*/
+    font-family: "japanese"; /*Add generic family*/
     font-size: 35px;
     margin-left: 1rem;
+    color: black;
 }
 
 /*----- HERO IMAGE -----*/
@@ -44,4 +53,46 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+/* ----- ABOUT SECTION ----- */
+
+.about-row {
+    box-sizing: border-box;
+    height: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.about-heading {
+    text-align: center;
+    padding: 7%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.about-info {
+    text-align: center;
+    padding: 10%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.about-img {
+    text-align: center;
+}
+
+.about-img img {
+    height: 380px;
+    width: 380px;
+    border-radius: 50%;
+    margin: 5% 0;
+    object-fit: contain;
+}
+
+@media (max-width: 992px) {
+    .about-img img{
+        height: 350px;
+        width: 350px;
+    };
 }
