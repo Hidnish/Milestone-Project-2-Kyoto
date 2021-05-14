@@ -1,7 +1,7 @@
 // Code based on: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
 $("#hero-slideshow > div:gt(0)").hide();
 
-setInterval(function() { 
+setInterval(() => { 
   $('#hero-slideshow > div:first')
   .fadeOut(2000)
   .next()
