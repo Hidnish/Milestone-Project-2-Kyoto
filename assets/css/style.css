@@ -65,7 +65,7 @@ background-size: cover;
     font-family: "japanese"; /*Add generic family*/
     font-size: 35px;
     margin-left: 1rem;
-    color: black;
+    color: #1c334d!important;
 }
 
 /*----- HERO IMAGE -----*/
@@ -95,6 +95,7 @@ background-size: cover;
     height: 50%;
     display: flex;
     align-items: center;
+    color: #1c334d;
 }
 
 .about-row-night {
@@ -109,11 +110,13 @@ background-size: cover;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    color: #1c334d;
+    color: #1c334d; 
 }
 
 .about-heading h2 {
     padding-top: 100px;
+    font-family: "japanese";
+    font-size: 80px;
 }
 
 .about-heading p {
@@ -132,11 +135,10 @@ background-size: cover;
 }
 
 .about-img img {
-    height: 380px;
-    width: 380px;
-    border-radius: 50%;
-    margin: 7% 0;
+    height: 100%;
+    width: 100%;
     object-fit: contain;
+    border-radius: 70px
 }
 
 .night-mode {
@@ -144,9 +146,9 @@ background-size: cover;
     color: #fafafa;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     .about-img img{
-        height: 300px;
-        width: 300px;
+        height: 60%;
+        width: 60%;
     };
 }
