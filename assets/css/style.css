@@ -25,20 +25,11 @@ p {
     background-color: rgba(255,255,242,0.7);
 }
 
-/*.backg-about {
-    background: url(../images/tip.jpeg) center no-repeat; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}*/
-
 /* Code based on: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
 .backg-about {
 background-color: #fafafa;
-background-image: linear-gradient(
-    to bottom, transparent, #fafafa
-  ), url(../images/tip.jpeg);
+background-image: linear-gradient(to bottom, transparent, #fafafa), 
+    url(../images/tip.jpeg);
 background-repeat: no-repeat;
 background-position: center;
 -webkit-background-size: cover;
@@ -138,17 +129,70 @@ background-size: cover;
     height: 100%;
     width: 100%;
     object-fit: contain;
-    border-radius: 70px
 }
+
+.bdr-left {
+    border-bottom-left-radius: 75px;
+    border-top-left-radius: 75px;
+}
+
+.bdr-right {
+    border-bottom-right-radius: 75px;
+    border-top-right-radius: 75px;
+}    
 
 .night-mode {
     background-color: black;
     color: #fafafa;
 }
 
-@media (max-width: 768px) {
+/* ----- LOCATIONS ----- */
+
+.menu {
+    min-height: 60px;
+    text-align: center;
+}
+
+.menu h2 {
+    margin-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'japanese';
+    font-size: 50px;
+    color: #1c334d;
+}
+
+.btn {   
+    margin: 0 50px 50px!important;
+}
+
+.btn-light {
+    color: #1c334d;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.btn-dark {
+    color: #fafafa;
+    background-color: #1c334d;
+    border-color: #1c334d;
+}
+
+.locations-box,
+.mapbox {
+    min-height: 60vh;
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+@media (max-width: 767px) {
     .about-img img{
+        border-radius: 50%;
         height: 60%;
         width: 60%;
     };
+
+    .locations-box,
+    .map-box {
+    min-height: 50vh;
+    }
 }
