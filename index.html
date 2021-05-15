@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" type="text/css">
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
@@ -15,6 +14,7 @@
 </head>
 
 <body>
+
     <div class="container-nav">
         <nav class="navbar navbar-light backg-off-seet fixed-top">
             <a href="index.html" class="navbar-brand brand-style">
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="about-img">
-                        <img src="assets/images/temple.jpeg" alt="">
+                        <img class="bdr-left" src="assets/images/temple.jpeg" alt="">
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                 </div>
                 <div class="col-12 col-md-pull-6 col-md-6">
                     <div class="about-img">
-                        <img src="assets/images/stairs.jpeg" alt="">
+                        <img class="bdr-right" src="assets/images/stairs.jpeg" alt="">
                     </div>
                 </div>
             </div>
@@ -138,11 +138,11 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="about-img">
-                        <img src="assets/images/food.jpeg" alt="">
+                        <img class="bdr-left" src="assets/images/food.jpeg" alt="">
                     </div>
                 </div>
             </div>
-            <div class="row about-row-night">
+            <div class="row about-row-night pb-5">
                 <div class="col-12 col-md-6 order-md-6">
                     <div class="about-info">
                         <h2>Bars & Clubs</h1>
@@ -162,63 +162,42 @@
                 </div>
                 <div class="col-12 col-md-pull-6 col-md-6">
                     <div class="about-img">
-                        <img src="assets/images/bar.jpeg" alt="">
+                        <img class="bdr-right" src="assets/images/bar.jpeg" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        <!--<div class="row about-row">
-            <div class="col-12 col-lg-6 ">
-                <div class="about-img">
-                    <img src="assets/images/temple.jpeg" alt="">
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 about-info-box">
-                <div class="about-info">
-                    <h2>Historical Sites</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in tempor nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero. Nunc sit amet odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula tincidunt. Mauris dolor ex, luctus vel pharetra in, tristique vitae nibh. Pellentesque efficitur neque nec libero pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row about-row">
-            <div class="col-12 col-lg-6 about-info-box">
-                <div class="about-info">
-                    <h2>Restaurants</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in tempor nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero. Nunc sit amet odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula tincidunt. Mauris dolor ex, luctus vel pharetra in, tristique vitae nibh. Pellentesque efficitur neque nec libero pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 ">
-                <div class="about-img">
-                    <img src="assets/images/temple.jpeg" alt="">
-                </div>
-            </div>
-        </div>
-         <div class="row about-row">
-            <div class="col-12 col-lg-6 ">
-                <div class="about-img">
-                    <img src="assets/images/temple.jpeg" alt="">
-                </div>
-            </div>
-            <div class="col-12 col-lg-6 about-info-box">
-                <div class="about-info">
-                    <h2>Bars & Clubs</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in tempor nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero. Nunc sit amet odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula tincidunt. Mauris dolor ex, luctus vel pharetra in, tristique vitae nibh. Pellentesque efficitur neque nec libero pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
-                </div>
-            </div>
-        </div>
-    </section>-->
+    </section>
 
-        <footer class="footer bg-light">
-        </footer>
+    <section id="locations">
+        <div class="locations-section">
+            <div class="menu">
+                <h2>Locations</h2>
+                <button class="btn btn-light">Day</a>
+                <button class="btn btn-dark">Night</a>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="locations-box"></div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <div class="map-box"></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!--Bootstrap-->
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-        <!--jQuery-->
-        <script src="https://code.jquery.com/jquery-3.6.0.js"
-            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-        <script src="assets/js/script.js"></script>
+    <footer class="footer bg-light">
+    </footer>
+
+    <!--Bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
