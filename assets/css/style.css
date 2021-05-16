@@ -39,7 +39,7 @@ background-size: cover;
 }
 
 .backg-about-info {
-    background-image: linear-gradient(#fafafa, #0b0e1f);
+    background-image: linear-gradient(#fafafa, #1c334d);
 }
 
 /* ----- NAVBAR ------ */
@@ -161,7 +161,7 @@ background-size: cover;
     color: #1c334d;
 }
 
-.btn {   
+.menu > .btn {   
     margin: 0 50px 50px!important;
 }
 
@@ -177,9 +177,42 @@ background-size: cover;
     border-color: #1c334d;
 }
 
-.locations-box,
-.mapbox {
-    min-height: 60vh;
+.locations-choice {
+    text-align: center;
+    border-radius: 20px;
+
+}
+
+.locations-choice > .btn {
+    margin: 20px;
+}
+
+.locations-box {
+    text-align: center;
+}
+
+.locations-list {
+    padding-top: 8%;
+    padding-left: 0;
+}
+
+.locations-list li {
+    list-style-type: none;
+    padding: 20px;
+}
+
+.locations-list button {
+    border: none;
+    border-bottom: 1px solid #1c334d;
+}
+
+.map-box {
+    padding: 0 30px 30px;
+}
+
+#map {
+    min-height: 500px;
+    border-radius: 15px;
 }
 
 /* ----- MEDIA QUERIES ----- */
