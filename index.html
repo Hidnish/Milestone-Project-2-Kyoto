@@ -177,22 +177,53 @@
         <div class="locations-section">
             <div class="menu">
                 <h2>Locations</h2>
-                <button class="btn btn-light">Day</a>
-                <button class="btn btn-dark">Night</a>
+                <button class="btn btn-light" onclick="pickSet('pick-day')">Day</a>
+                <button class="btn btn-dark" onclick="pickSet('pick-night')">Night</a>
             </div>
             <div class="row">
                 <div class="col-12 col-md-6">
-                    <div class="locations-choice">
-                        <button class="btn">Historical Sites</button>
-                        <button class="btn">Gardens & Parks</button>
+                    <div id="pick-day" class="activity-choice">
+                        <button class="btn" onclick="pickActivity('pick-historical')">Historical Sites</button>
+                        <button class="btn" onclick="pickActivity('pick-parks')">Gardens & Parks</button>
                     </div>
-                    <div class="locations-box">
+                    <div id="pick-night" class="activity-choice hidden">
+                        <button class="btn" onclick="pickActivity('pick-restaurants')">Restaurants</button>
+                        <button class="btn" onclick="pickActivity('pick-bars')">Bars & Clubs</button>
+                    </div>
+                    <div id="pick-historical" class="locations-box">
                         <ul class="locations-list">
-                            <li><button class="btn">Nijo Castle</button></li>
-                            <li><button class="btn">Fushimi Inari Taisha Shrine</button></li>
-                            <li><button class="btn">Kyoto Imperial Palace</button></li>
-                            <li><button class="btn">Kinkaku-ji Temple</button></li>
-                            <li><button class="btn">To-ji Temple</button></li>
+                            <li><button class="btn" onclick="pickPlace('nijo')">Nijo Castle</button></li>
+                            <li><button class="btn" onclick="pickPlace('fushimi')">Fushimi Inari Taisha Shrine</button></li>
+                            <li><button class="btn" onclick="pickPlace('imperial')">Kyoto Imperial Palace</button></li>
+                            <li><button class="btn" onclick="pickPlace('kinkaku')">Kinkaku-ji Temple</button></li>
+                            <li><button class="btn" onclick="pickPlace('toji')">To-ji Temple</button></li>
+                        </ul>
+                    </div>
+                    <div id="pick-parks" class="locations-box hidden">
+                        <ul class="locations-list">
+                            <li><button class="btn">Haha</button></li>
+                            <li><button class="btn">Huhu</button></li>
+                            <li><button class="btn">park</button></li>
+                            <li><button class="btn">puck</button></li>
+                            <li><button class="btn">pock</button></li>
+                        </ul>
+                    </div>
+                    <div id="pick-restaurants" class="locations-box hidden">
+                        <ul class="locations-list">
+                            <li><button class="btn">h</button></li>
+                            <li><button class="btn">j</button></li>
+                            <li><button class="btn">j</button></li>
+                            <li><button class="btn">b</button></li>
+                            <li><button class="btn">n</button></li>
+                        </ul>
+                    </div>
+                    <div id="pick-bars" class="locations-box hidden">
+                        <ul class="locations-list">
+                            <li><button class="btn">lllll</button></li>
+                            <li><button class="btn">mmmm</button></li>
+                            <li><button class="btn">mmmh</button></li>
+                            <li><button class="btn">oooo</button></li>
+                            
                         </ul>
                     </div>
                 </div>
