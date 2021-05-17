@@ -9,3 +9,27 @@ setInterval(() => {
   .end()
   .appendTo('#hero-slideshow');
 }, 6000);
+
+// Show activities available based on DAY or NIGHT
+
+function pickSet(selection) {
+    let activities = document.getElementsByClassName('activity-choice');
+
+    for (let i = 0; i < activities.length; i++) {
+        activities[i].classList.add('hidden');
+    }
+
+    document.getElementById(selection).classList.remove('hidden');
+};
+
+// Show list of Locations based on the activity selected
+
+function pickActivity(selection) {
+    let list = document.getElementsByClassName('locations-box')
+
+    for (let i = 0; i < list.length; i++) {
+        list[i].classList.add('hidden')
+    }
+
+    document.getElementById(selection).classList.remove('hidden');
+}
