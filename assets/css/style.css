@@ -19,6 +19,10 @@ p {
     margin-bottom: 0;
 }
 
+.hidden {
+    display: none;
+}
+
 /* ----- BACKGROUNDS -----*/
 
 .backg-off-seet {
@@ -177,33 +181,50 @@ background-size: cover;
     border-color: #1c334d;
 }
 
-.locations-choice {
+.activity-choice {
     text-align: center;
     border-radius: 20px;
-
+    background-color: #1c334d;
+    margin: 0 30px;
 }
 
-.locations-choice > .btn {
+.activity-choice > .btn {
     margin: 20px;
+    color: #fafafa;
+    background-color: #1c334d;
+    border: 1px solid #fafafa;
 }
 
 .locations-box {
     text-align: center;
+    margin: 20px 30px 20px;
+    border: 1px solid #1c334d;
+    border-radius: 25px;
+    height: 402px;
+}
+
+.locations-box-inner {
+    text-align: center;
+    margin: 20px 30px 20px;
+    border: 1px solid #1c334d;
+    border-radius: 25px;
+    height: 402px;
 }
 
 .locations-list {
-    padding-top: 8%;
+    padding-top: 3%;
     padding-left: 0;
 }
 
 .locations-list li {
     list-style-type: none;
-    padding: 20px;
+    padding: 18px 16px 16px;
 }
 
 .locations-list button {
     border: none;
     border-bottom: 1px solid #1c334d;
+    color: #1c334d;
 }
 
 .map-box {
@@ -224,8 +245,14 @@ background-size: cover;
         width: 60%;
     };
 
-    .locations-box,
-    .map-box {
-    min-height: 50vh;
+    /* locations */ 
+
+    .locations-list {
+        min-height: 0;
     }
+
+    #map {
+        min-height: 300px!important;
+    }
+
 }

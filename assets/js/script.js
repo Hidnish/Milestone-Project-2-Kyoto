@@ -13,23 +13,41 @@ setInterval(() => {
 // Show activities available based on DAY or NIGHT
 
 function pickSet(selection) {
-    let activities = document.getElementsByClassName('activity-choice');
+    let set = document.getElementsByClassName('activity-choice');
 
-    for (let i = 0; i < activities.length; i++) {
-        activities[i].classList.add('hidden');
-    }
-
-    document.getElementById(selection).classList.remove('hidden');
-};
-
-// Show list of Locations based on the activity selected
-
-function pickActivity(selection) {
-    let list = document.getElementsByClassName('locations-box')
-
-    for (let i = 0; i < list.length; i++) {
-        list[i].classList.add('hidden')
+    for (let i = 0; i < set.length; i++) {
+        set[i].classList.add('hidden');
     }
 
     document.getElementById(selection).classList.remove('hidden');
 }
+
+function pickActivity(selection) {
+    let activities = document.getElementsByClassName('locations-box');
+    let places = document.getElementsByClassName('locations-box-inner');
+
+    for (let i = 0; i < activities.length; i++) {
+        activities[i].classList.add('hidden');
+    }
+    for (let i = 0; i < places.length; i++) {
+        places[i].classList.add('hidden');
+    }
+
+    document.getElementById(selection).classList.remove('hidden');
+}
+
+function pickPlace(selection) {
+    let activities = document.getElementsByClassName('locations-box');
+    let places = document.getElementsByClassName('locarions-box-inner');
+
+    for (let i = 0; i < activities.length; i++) {
+        activities[i].classList.add('hidden');
+    }
+    for (let i = 0; i < places.length; i++) {
+        places[i].classList.add('hidden');
+    }
+
+    document.getElementById(selection).classList.remove('hidden');
+}
+
+
