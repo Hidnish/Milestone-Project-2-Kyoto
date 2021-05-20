@@ -1,6 +1,5 @@
-// Create Layers to make markers appear and disappear on command from the map
-var layerDay = new L.LayerGroup();
-var layerNight = new L.LayerGroup();
+let layerDay = new L.LayerGroup();
+let layerNight = new L.LayerGroup();
 
 let map = L.map('map', {
     center: [35.0116, 135.7681],
@@ -8,65 +7,86 @@ let map = L.map('map', {
     layers: [layerDay, layerNight]
 });
 
-L.tileLayer(`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=ROK2DASDw4SDlqEDm9v4`, {
+// Create Layers to make markers appear and disappear on command from the map
+
+let mapLight = L.tileLayer(`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=ROK2DASDw4SDlqEDm9v4`, {
     attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`,
 }).addTo(map);
 
+let mapDark = L.tileLayer(`https://api.maptiler.com/maps/jp-mierune-dark/{z}/{x}/{y}.png?key=ROK2DASDw4SDlqEDm9v4`, {
+    attribution: `<a href="https://maptiler.jp/" target="_blank">&copy; MIERUNE</a> <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`
+});
 
-// Locations grouped into objects
-const locationsDay = [{
+let locationBox = document.getElementById('switch');
+
+let arrayMarkersDay = [];
+let arrayMarkersNight = [];
+
+// --------------- Locations grouped into objects -----------------
+
+const locationsDay = [
+    {
         name: "Nijo Castle",
         center: [35.014168, 135.747498],
         zoom: 8,
         group: 'historical',
+        id: 'site1',
     },
     {
         name: "Fushimi Inari Taisha",
         center: [34.9671, 135.7727],
         zoom: 8,
         group: 'historical',
+        id: 'site2',
     },
     {
         name: "Kyoto Imperial Palace",
         center: [35.0254, 135.7621],
         zoom: 8,
         group: 'historical',
+        id: 'site3',
     },
     {
         name: "Kinkaku-ji Temple",
         center: [35.0394, 135.7292],
         zoom: 8,
         group: 'historical',
+        id: 'site4',
     },
     {
         name: "To-ji Temple",
         center: [34.9806, 135.7478],
         zoom: 8,
         group: 'historical',
+        id: 'site5',
     },
     {
         name: "Sogenchi Pond Garden",
         center: [35.0156, 135.6734],
         zoom: 8,
         group: 'garden',
+        id: 'park1',
     },
     {
         name: "Haradani Garden",
         center: [35.0441, 135.7141],
         zoom: 8,
         group: 'garden',
+        id: 'park2',
     },
     {
         name: "Ryōan-ji",
         center: [35.0345, 135.7183],
         zoom: 8,
         group: 'garden',
+        id: 'park3',
     },
     {
         name: "Maruyama Park",
         center: [35.0036, 135.7805],
         zoom: 8,
         group: 'garden',
+        id: 'park4',
     },
 ];
 
@@ -75,26 +95,31 @@ const locationsNight = [{
         center: [35.0165, 135.7661],
         zoom: 8,
         group: 'restaurants',
+        id: 'rest1',
     },
     {
         name: "Okonomiyaki Katsu",
         center: [35.0303, 135.7206],
         zoom: 8,
         group: 'restaurants',
+        id: 'rest2',
     },
     {
         name: "Sugarhill Kyoto",
         center: [34.9982, 135.7671],
         zoom: 8,
         group: 'restaurants',
+        id: 'rest3',
     },
     {
         name: "Kyoto Gion Mikaku",
         center: [35.0051, 135.7726],
         zoom: 8,
         group: 'restaurants',
+        id: 'rest4',
     },
 ];
+
 
 // Import Customised markers 
 const greenIcon = L.icon({
@@ -106,8 +131,17 @@ const greenIcon = L.icon({
     shadowSize: [41, 41]
 });
 
+//--------------------------------------------------------------------//
 
-// Show activities available based on DAY or NIGHT
+
+/* Show "day-time" locations on map by default on page load
+Code based on: https://stackoverflow.com/questions/18646881/auto-click-button-element-on-page-load-using-jquery */
+$(document).ready(function () {
+    $("#button-day").trigger('click');
+});
+
+
+// Show activities available based on DAY-time or NIGHT-time
 function pickSet(selection) {
     let set = document.getElementsByClassName('activity-choice');
 
@@ -158,38 +192,89 @@ let buttonDayNite = document.getElementsByClassName('btn-dn');
 for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
         // ADD description
-        // Code taken and modified, from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
+        // Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
         if (button.id === 'button-day') {
             for (let i = 0; i < locationsDay.length; i++) {
                 if (locationsDay[i].group === 'historical') {
-                    marker = new L.marker([locationsDay[i].center[0], locationsDay[i].center[1]])
+                    marker = new L.marker([locationsDay[i].center[0], locationsDay[i].center[1]], {
+                        id: locationsDay[i].id,
+                    });
                 } else {
                     marker = new L.marker([locationsDay[i].center[0], locationsDay[i].center[1]], {
-                        icon: greenIcon
+                        icon: greenIcon,
+                        id: locationsDay[i].id,
                     });
                 }
-                marker.bindPopup(locationsDay[i].name)
-        // End Credit        
-                map.removeLayer(layerNight);
-                layerDay.addLayer(marker);
-                layerDay.addTo(map);
+                marker.bindPopup(locationsDay[i].name);
+                arrayMarkersDay.push(marker);
+                // End Credit   
+                switcher(this);
+
             }
-        // ibid    
+            // ibid    
         } else if (button.id === 'button-night') {
             for (let i = 0; i < locationsNight.length; i++) {
                 if (locationsNight[i].group === 'restaurants') {
-                    marker = new L.marker([locationsNight[i].center[0], locationsNight[i].center[1]])
+                    marker = new L.marker([locationsNight[i].center[0], locationsNight[i].center[1]], {
+                        id: locationsNight[i].id,
+                    });
                 } else {
                     marker = new L.marker([locationsNight[i].center[0], locationsNight[i].center[1]], {
-                        icon: greenIcon
+                        icon: greenIcon,
+                        id: locationsNight[i].id
                     });
                 }
                 marker.bindPopup(locationsNight[i].name);
-        // End Credit        
-                map.removeLayer(layerDay);
-                layerNight.addLayer(marker);
-                layerNight.addTo(map);
+                arrayMarkersNight.push(marker);
+                // End Credit
+                switcher(this);
             }
         };
     });
 };
+
+// Switch map to day/night mode and change the markers(locations) accordingly 
+function switcher(button) {
+    if (button.id === "button-day") {
+        mapDark.remove();
+        mapLight.addTo(map);
+        map.removeLayer(layerNight);
+        layerDay.addLayer(marker);
+        layerDay.addTo(map);
+        locationBox.classList.remove('night-mode');
+    } else {
+        mapLight.remove();
+        mapDark.addTo(map);
+        map.removeLayer(layerDay);
+        layerNight.addLayer(marker);
+        layerNight.addTo(map);
+        locationBox.classList.add('night-mode');
+    };
+};
+
+
+console.log(arrayMarkersDay);
+console.log(arrayMarkersNight);
+// ------
+
+let locationButtons = $('.locations-list li').children();
+let pinMarker = {};
+
+for (let i = 0; i < locationButtons.length; i++) {
+    locationButtons[i].addEventListener('click', function () {
+        map.removeLayer(layerDay);
+        let buttonData = locationButtons[i].dataset.location;
+        console.log(buttonData);
+
+        const findMapLocation = locationsDay.find(
+            (name) => name.id === buttonData);
+
+        map.flyTo(findMapLocation.center);
+        if (findMapLocation.center) {
+            map.removeLayer(pinMarker);
+            pinMarker = L.marker(newMapLocation.center).bindPopup(locationsDay[i].name).addTo(map);
+        } else {
+            map.removeLayer(pinMarker);
+        }
+    })
+}
