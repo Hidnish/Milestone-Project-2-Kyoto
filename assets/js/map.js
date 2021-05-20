@@ -19,15 +19,14 @@ let mapDark = L.tileLayer(`https://api.maptiler.com/maps/jp-mierune-dark/{z}/{x}
 
 let locationBox = document.getElementById('switch');
 
-let arrayMarkersDay = [];
-let arrayMarkersNight = [];
-
 // --------------- Locations grouped into objects -----------------
 
-const locationsDay = [
+const LocationsVar = [
+
+        // Historical sites
     {
         name: "Nijo Castle",
-        center: [35.014168, 135.747498],
+        center: [35.014168, 135.7474],
         zoom: 8,
         group: 'historical',
         id: 'site1',
@@ -60,6 +59,9 @@ const locationsDay = [
         group: 'historical',
         id: 'site5',
     },
+
+    //Gardens & parks
+
     {
         name: "Sogenchi Pond Garden",
         center: [35.0156, 135.6734],
@@ -88,9 +90,10 @@ const locationsDay = [
         group: 'garden',
         id: 'park4',
     },
-];
 
-const locationsNight = [{
+    // Restaurants 
+
+    {
         name: "Saishuan Shiraki",
         center: [35.0165, 135.7661],
         zoom: 8,
@@ -119,6 +122,7 @@ const locationsNight = [{
         id: 'rest4',
     },
 ];
+
 
 
 // Import Customised markers 
@@ -193,48 +197,47 @@ for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
         // ADD description
         // Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
-        if (button.id === 'button-day') {
-            for (let i = 0; i < locationsDay.length; i++) {
-                if (locationsDay[i].group === 'historical') {
-                    marker = new L.marker([locationsDay[i].center[0], locationsDay[i].center[1]], {
-                        id: locationsDay[i].id,
+
+        for (let i = 0; i < LocationsVar.length; i++) {
+            if (button.id === 'button-day') {
+                if (LocationsVar[i].group === 'historical') {
+                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
+                        id: LocationsVar[i].id,
                     });
-                } else {
-                    marker = new L.marker([locationsDay[i].center[0], locationsDay[i].center[1]], {
+                } else if (LocationsVar[i].group === 'garden') {
+                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
                         icon: greenIcon,
-                        id: locationsDay[i].id,
+                        id: LocationsVar[i].id,
                     });
                 }
-                marker.bindPopup(locationsDay[i].name);
-                arrayMarkersDay.push(marker);
+                marker.bindPopup(LocationsVar[i].name);
                 // End Credit   
                 switcher(this);
-
-            }
-            // ibid    
-        } else if (button.id === 'button-night') {
-            for (let i = 0; i < locationsNight.length; i++) {
-                if (locationsNight[i].group === 'restaurants') {
-                    marker = new L.marker([locationsNight[i].center[0], locationsNight[i].center[1]], {
-                        id: locationsNight[i].id,
+                // ibid    
+            } else if (button.id === 'button-night') {
+                if (LocationsVar[i].group === 'restaurants') {
+                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
+                        id: LocationsVar[i].id,
                     });
-                } else {
-                    marker = new L.marker([locationsNight[i].center[0], locationsNight[i].center[1]], {
+                } else if (LocationsVar[i].group === 'bars') {
+                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
                         icon: greenIcon,
-                        id: locationsNight[i].id
+                        id: LocationsVar[i].id,
                     });
                 }
-                marker.bindPopup(locationsNight[i].name);
-                arrayMarkersNight.push(marker);
+                marker.bindPopup(LocationsVar[i].name);
                 // End Credit
                 switcher(this);
-            }
+            };
         };
     });
 };
 
 // Switch map to day/night mode and change the markers(locations) accordingly 
 function switcher(button) {
+
+    map.removeLayer(singleMarker);
+
     if (button.id === "button-day") {
         mapDark.remove();
         mapLight.addTo(map);
@@ -252,29 +255,26 @@ function switcher(button) {
     };
 };
 
-
-console.log(arrayMarkersDay);
-console.log(arrayMarkersNight);
 // ------
 
 let locationButtons = $('.locations-list li').children();
-let pinMarker = {};
-
+let singleMarker = {};
+// Inspired by ....
 for (let i = 0; i < locationButtons.length; i++) {
     locationButtons[i].addEventListener('click', function () {
         map.removeLayer(layerDay);
+        map.removeLayer(layerNight);
         let buttonData = locationButtons[i].dataset.location;
-        console.log(buttonData);
 
-        const findMapLocation = locationsDay.find(
+        const findMapLocation = LocationsVar.find(
             (name) => name.id === buttonData);
 
         map.flyTo(findMapLocation.center);
         if (findMapLocation.center) {
-            map.removeLayer(pinMarker);
-            pinMarker = L.marker(newMapLocation.center).bindPopup(locationsDay[i].name).addTo(map);
+            map.removeLayer(singleMarker);
+            singleMarker = L.marker(findMapLocation.center).bindPopup(LocationsVar[i].name).addTo(map).openPopup();
         } else {
-            map.removeLayer(pinMarker);
-        }
-    })
-}
+            map.removeLayer(singleMarker);
+        };
+    });
+};

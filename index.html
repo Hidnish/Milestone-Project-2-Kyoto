@@ -34,7 +34,7 @@
                         <a href="#about-section" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Locations</a>
+                        <a href="#locations" class="nav-link">Locations</a>
                     </li>
                     <li class="nav-item">
                         <a href="" class="nav-link">Contact</a>
@@ -175,7 +175,7 @@
     </section>
 
     <section id="locations">
-        <div class="locations-section">
+        <div id ="switch" class="locations-section">
             <div class="menu">
                 <h2>Locations</h2>
                 <button id="button-day" class="btn btn-light btn-dn" onclick="pickSet('pick-day')">Day</a> 
@@ -185,48 +185,48 @@
                 <div class="col-12 col-md-6">
                         <!--Day activities-->                    
                         <div id="pick-day" class="activity-choice">
-                            <button class="btn" onclick="pickActivity('pick-historical')">Historical Sites</button>
-                            <button class="btn" onclick="pickActivity('pick-parks')">Gardens & Parks</button>
+                            <button class="btn btn-activity" onclick="pickActivity('pick-historical')">Historical Sites</button>
+                            <button class="btn btn-activity" onclick="pickActivity('pick-parks')">Gardens & Parks</button>
                         </div>
                         <!--Night activities-->
                         <div id="pick-night" class="activity-choice hidden">
-                            <button class="btn" onclick="pickActivity('pick-restaurants')">Restaurants</button>
-                            <button class="btn" onclick="pickActivity('pick-bars')">Bars & Clubs</button>
+                            <button class="btn btn-activity" onclick="pickActivity('pick-restaurants')">Restaurants</button>
+                            <button class="btn btn-activity" onclick="pickActivity('pick-bars')">Bars & Clubs</button>
                         </div>
 
                         <!--Historical sites list-->
                         <div id ="pick-historical"  class="locations-box">
                             <ul class="locations-list">
-                                <li><button class="btn" onclick="pickPlace('nijo')">Nijo Castle</button></li>
-                                <li><button class="btn" onclick="pickPlace('fushimi')">Fushimi Inari Taisha Shrine</button></li>
-                                <li><button class="btn" onclick="pickPlace('imperial')">Kyoto Imperial Palace</button>
+                                <li><button class="btn" onclick="pickPlace('site1')" data-location="site1">Nijo Castle</button></li>
+                                <li><button class="btn" onclick="pickPlace('site2')" data-location="site2">Fushimi Inari Taisha Shrine</button></li>
+                                <li><button class="btn" onclick="pickPlace('site3')" data-location="site3">Kyoto Imperial Palace</button>
                                 </li>
-                                <li><button class="btn" onclick="pickPlace('kinkaku')">Kinkaku-ji Temple</button></li>
-                                <li><button class="btn" onclick="pickPlace('toji')">To-ji Temple</button></li>
+                                <li><button class="btn" onclick="pickPlace('site4')" data-location="site4">Kinkaku-ji Temple</button></li>
+                                <li><button class="btn" onclick="pickPlace('site5')" data-location="site5">To-ji Temple</button></li>
                             </ul>
                         </div>
                         <!--Historical sites-->
-                        <div id="nijo" class="locations-box-inner hidden">
+                        <div id="site1" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Nijo Castle</h2>
                             </div>
                         </div>
-                        <div id="fushimi" class="locations-box-inner hidden">
+                        <div id="site2" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Fushimi Inari Taisha</h2>
                             </div>
                         </div>
-                        <div id="imperial" class="locations-box-inner hidden">
+                        <div id="site3" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Kyoto Imperial Palace</h2>
                             </div>
                         </div>
-                        <div id="kinkaku" class="locations-box-inner hidden">
+                        <div id="site4" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Kinkaku-ji Temple</h2>
                             </div>
                         </div>
-                        <div id="toji" class="locations-box-inner hidden">
+                        <div id="site5" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>To-ji Temple</h2>
                             </div>
@@ -234,42 +234,41 @@
                         <!--Parks list-->
                         <div id="pick-parks" class="locations-box hidden">
                             <ul class="locations-list">
-                                <li><button class="btn" onclick="pickPlace('soge')">Sogenchi Pond Garden</button></li>
-                                <li><button class="btn" onclick="pickPlace('hara')">Haradani Garden</button></li>
-                                <li><button class="btn" onclick="pickPlace('ryoan')">Ryōan-ji</button></li>
-                                <li><button class="btn" onclick="pickPlace('maru')">Maruyama Park</button></li>
+                                <li><button class="btn" onclick="pickPlace('park1')" data-location="park1">Sogenchi Pond Garden</button></li>
+                                <li><button class="btn" onclick="pickPlace('park2')" data-location="park2">Haradani Garden</button></li>
+                                <li><button class="btn" onclick="pickPlace('park3')" data-location="park3">Ryōan-ji</button></li>
+                                <li><button class="btn" onclick="pickPlace('park4')" data-location="park4">Maruyama Park</button></li>
                             </ul>
                         </div>
                         <!--Parks-->
-                        <div id="soge" class="locations-box-inner hidden">
+                        <div id="park1" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Sogenchi Pond Garden</h2>
                             </div>
                         </div>
-                        <div id="hara" class="locations-box-inner hidden">
+                        <div id="park2" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Haradani Garden</h2>
                             </div>
                         </div>
-                        <div id="ryoan" class="locations-box-inner hidden">
+                        <div id="park3" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Ryōan-ji</h2>
                             </div>
                         </div>
-                        <div id="maru" class="locations-box-inner hidden">
+                        <div id="park4" class="locations-box-inner hidden">
                             <div class="place">
                                 <h2>Maruyama Park</h2>
                             </div>
                         </div>
 
-
                         <!--Restaurants list-->
                         <div id="pick-restaurants" class="locations-box hidden">
                             <ul class="locations-list">
-                                <li><button class="btn" onclick="pickPlace('rest1')">Saishuan Shiraki</button></li>
-                                <li><button class="btn" onclick="pickPlace('rest2')">Okonomiyaki Katsu</button></li>
-                                <li><button class="btn" onclick="pickPlace('rest3')">Sugarhill Kyoto</button></li>
-                                <li><button class="btn" onclick="pickPlace('rest4')">Kyoto Gion Mikaku</button></li>
+                                <li><button class="btn" onclick="pickPlace('rest1')" data-location="rest1">Saishuan Shiraki</button></li>
+                                <li><button class="btn" onclick="pickPlace('rest2')" data-location="rest2">Okonomiyaki Katsu</button></li>
+                                <li><button class="btn" onclick="pickPlace('rest3')" data-location="rest3">Sugarhill Kyoto</button></li>
+                                <li><button class="btn" onclick="pickPlace('rest4')" data-location="rest4">Kyoto Gion Mikaku</button></li>
                             </ul>
                         </div>
                         <!--Restaurants-->
@@ -297,10 +296,10 @@
                         <!--Bars list-->
                         <div id="pick-bars" class="locations-box hidden">
                             <ul class="locations-list">
-                                <li><button class="btn" onclick="pickPlace('')">lllll</button></li>
-                                <li><button class="btn" onclick="pickPlace('')">mmmm</button></li>
-                                <li><button class="btn" onclick="pickPlace('')">mmmh</button></li>
-                                <li><button class="btn" onclick="pickPlace('')">oooo</button></li>
+                                <li><button class="btn" onclick="pickPlace('')" data-location="">lllll</button></li>
+                                <li><button class="btn" onclick="pickPlace('')" data-location="">mmmm</button></li>
+                                <li><button class="btn" onclick="pickPlace('')" data-location="">mmmh</button></li>
+                                <li><button class="btn" onclick="pickPlace('')" data-location="">oooo</button></li>
                             </ul>
                         </div>
                         <!--Bars-->
