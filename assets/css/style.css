@@ -3,8 +3,9 @@
     src: url(/assets/fonts/jap-brush.ttf);
 }
 
-html, body {
-    overflow-x: hidden;  
+html,
+body {
+    overflow-x: hidden;
 }
 
 body {
@@ -23,23 +24,32 @@ p {
     display: none;
 }
 
+.active {
+    box-sizing: border-box!important;
+    border: 3px solid!important;
+}
+
 /* ----- BACKGROUNDS -----*/
 
 .backg-off-seet {
-    background-color: rgba(255,255,242,0.7);
+    background-color: rgba(255, 255, 242, 0.7);
+}
+
+.backg-seet {
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Code based on: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
 .backg-about {
-background-color: #fafafa;
-background-image: linear-gradient(to bottom, transparent, #fafafa), 
-    url(../images/tip.jpeg);
-background-repeat: no-repeat;
-background-position: center;
--webkit-background-size: cover;
--moz-background-size: cover;
--o-background-size: cover;
-background-size: cover;
+    background-color: #fafafa;
+    background-image: linear-gradient(to bottom, transparent, #fafafa),
+        url(../images/tip.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 .backg-about-info {
@@ -57,10 +67,11 @@ background-size: cover;
 }
 
 .navbar-brand {
-    font-family: "japanese"; /*Add generic family*/
+    font-family: "japanese";
+    /*Add generic family*/
     font-size: 35px;
     margin-left: 1rem;
-    color: #1c334d!important;
+    color: #1c334d !important;
 }
 
 /*----- HERO IMAGE -----*/
@@ -70,17 +81,17 @@ background-size: cover;
     height: 100vh;
 }
 
-.image-container { 
-  position: absolute; 
-  overflow: hidden;
-  width: 100vw; 
-  height: 100vh; 
+.image-container {
+    position: absolute;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
-.image-container img { 
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
+.image-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 
 /* ----- ABOUT SECTION ----- */
@@ -105,7 +116,7 @@ background-size: cover;
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    color: #1c334d; 
+    color: #1c334d;
 }
 
 .about-heading h2 {
@@ -143,13 +154,7 @@ background-size: cover;
 .bdr-right {
     border-bottom-right-radius: 75px;
     border-top-right-radius: 75px;
-}    
-
-.night-mode {
-    background-color: black;
-    color: #fafafa;
 }
-
 /* ----- LOCATIONS ----- */
 
 .menu {
@@ -158,15 +163,14 @@ background-size: cover;
 }
 
 .menu h2 {
-    margin-top: 10px;
     padding-bottom: 10px;
     font-family: 'japanese';
     font-size: 50px;
     color: #1c334d;
 }
 
-.menu > .btn {   
-    margin: 0 50px 50px!important;
+.menu>.btn {
+    margin: 0 50px 50px !important;
 }
 
 .btn-light {
@@ -195,12 +199,25 @@ background-size: cover;
     border: 1px solid #fafafa;
 }
 
+.activity-choice > .btn:hover {
+    background-color: #fafafa;
+    color: #1c334d;
+}
+
+.locations-section {
+    padding-top: 35px;
+}
+
 .locations-box {
     text-align: center;
     margin: 20px 30px 20px;
     border: 1px solid #1c334d;
     border-radius: 25px;
-    height: 402px;
+    /*height: 402px;*/
+}
+
+.locations-list li button {
+    background-color: rgba(255, 255, 255, 0.3) !important;
 }
 
 .locations-box-inner {
@@ -208,7 +225,7 @@ background-size: cover;
     margin: 20px 30px 20px;
     border: 1px solid #1c334d;
     border-radius: 25px;
-    height: 402px;
+    /*height: 402px;*/
 }
 
 .locations-list {
@@ -218,7 +235,7 @@ background-size: cover;
 
 .locations-list li {
     list-style-type: none;
-    padding: 18px 16px 16px;
+    padding: 12px 16px 12px;
 }
 
 .locations-list button {
@@ -236,23 +253,29 @@ background-size: cover;
     border-radius: 15px;
 }
 
+.night-mode {
+    background-color: #768291;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (max-width: 767px) {
-    .about-img img{
+    .about-img img {
         border-radius: 50%;
         height: 60%;
         width: 60%;
-    };
+    }
 
-    /* locations */ 
+    ;
+
+    /* locations */
 
     .locations-list {
         min-height: 0;
     }
 
     #map {
-        min-height: 300px!important;
+        min-height: 300px !important;
     }
 
 }
