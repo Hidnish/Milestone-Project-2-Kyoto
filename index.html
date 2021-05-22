@@ -14,6 +14,12 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <!--Email.js-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_HFAbZtQk3xr0kgOSlVrJi");
+        })();
+    </script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
@@ -361,28 +367,25 @@
                     <h2>Contact Us</h2>
                 </div>
                 <div class="fill-form">
-                    <form onsubmit="return sendMail(this);">
+                    <form id="fillForm" onsubmit="return sendMail(this);">
                         <div class="row">
                             <div class="col-6">
                                 <label for="firstname" class="mb-0">First Name:</label>
-                                <input type="text" name="name" id="firstname" class="form-control" placeholder="Name"
-                                    required />
+                                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First name" required />
                             </div>
                             <div class="col-6">
                                 <label for="lastname" class="mb-0">Last Name:</label>
-                                <input type="text" name="name" id="lastname" class="form-control" placeholder="Name"
-                                    required />
+                                <input type="text" name="firstname" id="lastname" class="form-control" placeholder="Last name" required />
                             </div>
                         </div>
                         <label for="emailaddress" class="mb-0">Email Address:</label>
-                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
-                            required />
+                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
                         <label for="message" class="mb-0">Any particular request? Let us know below:</label>
-                        <textarea rows="5" name="message" id="message" class="form-control" placeholder="Your message"
+                        <textarea rows="5" name="request" id="request" class="form-control" placeholder="Your message"
                             required></textarea>
-                        <div class="form-row text-center">
+                        <div class="text-center">
                             <div class="col">
-                                <button type="submit" class="btn btn-submit">Send Project Request</button>
+                                <button id="btnSubmit" type="submit" class="btn btn-submit">Send Request</button>
                             </div>
                         </div>
                     </form>
@@ -404,6 +407,7 @@
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/map.js"></script>
+    <script src="assets/js/email.js"></script>
 </body>
 
 </html>
