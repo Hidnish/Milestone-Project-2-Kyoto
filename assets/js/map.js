@@ -252,11 +252,11 @@ for (let button of buttonDayNite) {
             if (button.id === 'button-day') {
                 if (LocationsVar[i].group === 'historical') {
                     marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        icon: greyIcon,
+                        /*icon: greyIcon,*/
                     });
                 } else if (LocationsVar[i].group === 'garden') {
                     marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        icon: greenIcon,
+                        /*icon: goldIcon,*/
                     });
                 }
                 marker.bindPopup(LocationsVar[i].name);
@@ -266,11 +266,11 @@ for (let button of buttonDayNite) {
             } else if (button.id === 'button-night') {
                 if (LocationsVar[i].group === 'restaurants') {
                     marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        icon: redIcon,
+                        /*icon: greyIcon,*/
                     });
                 } else if (LocationsVar[i].group === 'bars') {
                     marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        icon: goldIcon,
+                        //icon: goldIcon,
                     });
                 }
                 marker.bindPopup(LocationsVar[i].name);
