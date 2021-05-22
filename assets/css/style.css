@@ -1,8 +1,18 @@
-@font-face {
+/*@font-face {
     font-family: japanese;
-    src: url(/assets/fonts/jap-brush.ttf);
-}
+    src: url(/assets/fonts/jap-brush.ttf) format('truetype');
+}*/
 
+@import url(//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg);
+
+@font-face {font-family: "Japanese"; src: url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot"); src: 
+    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot?#iefix") format("embedded-opentype"), 
+    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff2") format("woff2"), 
+    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff") format("woff"), 
+    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.ttf") format("truetype"), 
+    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.svg#JapaneseBrushMasterW00-Rg") format("svg"); }
+
+    
 html,
 body {
     overflow-x: hidden;
