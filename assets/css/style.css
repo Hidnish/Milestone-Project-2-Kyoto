@@ -318,6 +318,55 @@ p {
     color: #fafafa;
 }
 
+/* ----- FOOTER ----- */
+
+.footer {
+    border-top: 1px solid #768291 ;
+    background-color: #1c334d;
+}
+
+.copyright {
+    padding: 40px 0 10px;
+    height: 50px;
+    text-align: left;
+    color: #fafafa;
+    font-size: 12px;
+}
+
+.footer-items {
+    padding: 40px 0 20px;
+    height: 50px;
+    text-align: right;
+}
+
+.footer-logo {
+    padding: 23px 0 37px;
+    height: 50px;
+    text-align: center;
+    color: #fafafa;
+}
+
+.footer-logo h2 {
+    padding: 0;
+    font-family: japanese;
+    color: #fafafa;
+}
+
+.footer-items i {
+    padding: 0 3vw;
+    font-size: 20px;
+    line-height: 7px;
+    color: #fafafa;
+}
+
+.list-inline-item:not(:last-child) {  /* To override right-margin set by default in social media logos: they were causing one of the logos to switch row in mobile screen mode */
+    margin-right: 0; 
+}
+
+.footer-items i:hover {
+    color: #768291;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (max-width: 767px) {
@@ -346,5 +395,13 @@ p {
     .form-box {
         padding: 0 5%;
     }
+
+    /* footer */
+/*
+    .copyright,
+    .footer-items {
+        text-align: center;
+        padding: 10px 0 0;
+    }*/
 
 }
