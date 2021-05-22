@@ -25,8 +25,8 @@ p {
 }
 
 .active {
-    box-sizing: border-box!important;
-    border: 3px solid!important;
+    box-sizing: border-box !important;
+    border: 3px solid !important;
 }
 
 /* ----- BACKGROUNDS -----*/
@@ -42,14 +42,29 @@ p {
 /* Code based on: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
 .backg-about {
     background-color: #fafafa;
-    background-image: linear-gradient(to bottom, transparent, #fafafa),
-        url(../images/tip.jpeg);
+    background: linear-gradient(to bottom, transparent, #fafafa), url(../images/tip.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+.backg-contact {
+    background: linear-gradient(to top, transparent, #fafafa), url(../images/contact.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
+}
+
+.backg-contact-night {
+    background: linear-gradient(to top, transparent, #768291), url(../images/contact.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover
 }
 
 .backg-about-info {
@@ -155,6 +170,7 @@ p {
     border-bottom-right-radius: 75px;
     border-top-right-radius: 75px;
 }
+
 /* ----- LOCATIONS ----- */
 
 .menu {
@@ -192,20 +208,20 @@ p {
     margin: 0 30px;
 }
 
-.activity-choice > .btn {
+.activity-choice>.btn {
     margin: 20px;
     color: #fafafa;
     background-color: #1c334d;
     border: 1px solid #fafafa;
 }
 
-.activity-choice > .btn:hover {
+.activity-choice>.btn:hover {
     background-color: #fafafa;
     color: #1c334d;
 }
 
 .locations-section {
-    padding-top: 35px;
+    padding: 35px 0;
 }
 
 .locations-box {
@@ -257,6 +273,51 @@ p {
     background-color: #768291;
 }
 
+/* ----- CONTACT ----- */
+
+.contact-box {
+    position: relative;
+    height: 100vh;
+}
+
+.form-box {
+    position: absolute;
+    top: 15%;
+    left:0;
+    right: 0;
+    padding: 0 15%;
+    
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 20px;
+}
+
+.contact-heading {
+    text-align: center;
+    vertical-align: middle;
+    color: #1c334d;
+}
+
+.contact-heading h2 {
+    padding-top: 40px;
+    font-family: "japanese";
+    font-size: 50px;
+}
+
+.fill-form {
+    margin-bottom: 50px;
+}
+
+.form-control {
+    border: none!important;
+    border-bottom: 1px solid #1c334d!important;
+    margin: 1% 0 3%!important;
+}
+
+.btn-submit {
+    background-color: rgba(28, 51, 77, 0.95);
+    color: #fafafa;
+}
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (max-width: 767px) {
@@ -269,13 +330,23 @@ p {
     ;
 
     /* locations */
-
     .locations-list {
         min-height: 0;
     }
 
     #map {
         min-height: 300px !important;
+    }
+
+    /* contact */
+
+    .container {
+        width: auto;
+        margin: 0 5%;
+    }
+
+    .form-box {
+        padding: 0 5%;
     }
 
 }
