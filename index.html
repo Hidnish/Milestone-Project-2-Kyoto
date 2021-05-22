@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <!--Email.js-->
-    
+
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
@@ -40,7 +40,7 @@
                         <a href="#locations" class="nav-link">Locations</a>
                     </li>
                     <li class="nav-item">
-                        <a href="" class="nav-link">Contact</a>
+                        <a href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -64,18 +64,16 @@
     <section id="about">
         <a id="about-section"></a>
         <div class="about-heading backg-about">
-            <div class="dark-layer">
-                <heading>
-                    <h2>Welcome to Kyoto Day'n'Night</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in tempor nisi
-                        commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero. Nunc sit amet
-                        odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula tincidunt. Mauris dolor
-                        ex, luctus vel pharetra in, tristique vitae nibh. Pellentesque efficitur neque nec libero
-                        pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id
-                        neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et
-                        porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
-                </heading>
-            </div>
+            <heading>
+                <h2>Welcome to Kyoto Day'n'Night</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in tempor nisi
+                    commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero. Nunc sit amet
+                    odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula tincidunt. Mauris dolor
+                    ex, luctus vel pharetra in, tristique vitae nibh. Pellentesque efficitur neque nec libero
+                    pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id
+                    neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et
+                    porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
+            </heading>
         </div>
         <div class="backg-about-info">
             <div class="row about-row">
@@ -178,156 +176,174 @@
     </section>
 
     <section id="locations">
-        <div id ="switch" class="locations-section">
+        <div id="switch" class="locations-section">
             <div class="menu">
                 <h2>Locations</h2>
-                <button id="button-day" class="btn btn-light btn-dn" onclick="pickSet('pick-day')">Day</a> 
-                <button id="button-night" class="btn btn-dark btn-dn" onclick="pickSet('pick-night')">Night</a>
+                <button id="button-day" class="btn btn-light btn-dn" onclick="pickSet('pick-day')">Day</a>
+                    <button id="button-night" class="btn btn-dark btn-dn" onclick="pickSet('pick-night')">Night</a>
             </div>
             <div class="row">
                 <div class="col-12 col-md-6">
-                        <!--Day activities-->                    
-                        <div id="pick-day" class="activity-choice">
-                            <button class="btn btn-activity" onclick="pickActivity('pick-historical')">Historical Sites</button>
-                            <button class="btn btn-activity" onclick="pickActivity('pick-parks')">Gardens & Parks</button>
-                        </div>
-                        <!--Night activities-->
-                        <div id="pick-night" class="activity-choice hidden">
-                            <button class="btn btn-activity" onclick="pickActivity('pick-restaurants')">Restaurants</button>
-                            <button class="btn btn-activity" onclick="pickActivity('pick-bars')">Bars & Clubs</button>
-                        </div>
+                    <!--Day activities-->
+                    <div id="pick-day" class="activity-choice">
+                        <button class="btn btn-activity" onclick="pickActivity('pick-historical')">Historical
+                            Sites</button>
+                        <button class="btn btn-activity" onclick="pickActivity('pick-parks')">Gardens & Parks</button>
+                    </div>
+                    <!--Night activities-->
+                    <div id="pick-night" class="activity-choice hidden">
+                        <button class="btn btn-activity" onclick="pickActivity('pick-restaurants')">Restaurants</button>
+                        <button class="btn btn-activity" onclick="pickActivity('pick-bars')">Bars & Clubs</button>
+                    </div>
 
-                        <!--Historical sites list-->
-                        <div id ="pick-historical"  class="locations-box">
-                            <ul class="locations-list">
-                                <li><button class="btn btn-day" onclick="pickPlace('site1')" data-location="site1">Nijo Castle</button></li>
-                                <li><button class="btn btn-day" onclick="pickPlace('site2')" data-location="site2">Fushimi Inari Taisha Shrine</button></li>
-                                <li><button class="btn btn-day" onclick="pickPlace('site3')" data-location="site3">Kyoto Imperial Palace</button>
-                                </li>
-                                <li><button class="btn btn-day" onclick="pickPlace('site4')" data-location="site4">Kinkaku-ji Temple</button></li>
-                                <li><button class="btn btn-day" onclick="pickPlace('site5')" data-location="site5">To-ji Temple</button></li>
-                            </ul>
-                        </div>
-                        <!--Historical sites-->
-                        <div id="site1" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Nijo Castle</h2>
-                            </div>
-                        </div>
-                        <div id="site2" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Fushimi Inari Taisha</h2>
-                            </div>
-                        </div>
-                        <div id="site3" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Kyoto Imperial Palace</h2>
-                            </div>
-                        </div>
-                        <div id="site4" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Kinkaku-ji Temple</h2>
-                            </div>
-                        </div>
-                        <div id="site5" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>To-ji Temple</h2>
-                            </div>
-                        </div>
-
-                        <!--Parks list-->
-                        <div id="pick-parks" class="locations-box hidden">
-                            <ul class="locations-list">
-                                <li><button class="btn btn-day" onclick="pickPlace('park1')" data-location="park1">Sogenchi Pond Garden</button></li>
-                                <li><button class="btn btn-day" onclick="pickPlace('park2')" data-location="park2">Haradani Garden</button></li>
-                                <li><button class="btn btn-day" onclick="pickPlace('park3')" data-location="park3">Ryōan-ji</button></li>
-                                <li><button class="btn btn-day" onclick="pickPlace('park4')" data-location="park4">Maruyama Park</button></li>
-                            </ul>
-                        </div>
-                        <!--Parks-->
-                        <div id="park1" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Sogenchi Pond Garden</h2>
-                            </div>
-                        </div>
-                        <div id="park2" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Haradani Garden</h2>
-                            </div>
-                        </div>
-                        <div id="park3" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Ryōan-ji</h2>
-                            </div>
-                        </div>
-                        <div id="park4" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Maruyama Park</h2>
-                            </div>
-                        </div>
-
-                        <!--Restaurants list-->
-                        <div id="pick-restaurants" class="locations-box hidden">
-                            <ul class="locations-list">
-                                <li><button class="btn btn-night" onclick="pickPlace('rest1')" data-location="rest1">Saishuan Shiraki</button></li>
-                                <li><button class="btn btn-night" onclick="pickPlace('rest2')" data-location="rest2">Okonomiyaki Katsu</button></li>
-                                <li><button class="btn btn-night" onclick="pickPlace('rest3')" data-location="rest3">Sugarhill Kyoto</button></li>
-                                <li><button class="btn btn-night" onclick="pickPlace('rest4')" data-location="rest4">Kyoto Gion Mikaku</button></li>
-                            </ul>
-                        </div>
-                        <!--Restaurants-->
-                        <div id="rest1" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Saishuan Shiraki</h2>
-                            </div>
-                        </div>
-                        <div id="rest2" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Okonomiyaki Katsu</h2>
-                            </div>
-                        </div>
-                        <div id="rest3" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Sugarhill Kyoto</h2>
-                            </div>
-                        </div>
-                        <div id="rest4" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Kyoto Gion Mikaku</h2>
-                            </div>
-                        </div>
-
-                        <!--Bars list-->
-                        <div id="pick-bars" class="locations-box hidden">
-                            <ul class="locations-list">
-                                <li><button class="btn btn-night" onclick="pickPlace('bar1')" data-location="bar1">l'Escamoteur</button></li>
-                                <li><button class="btn btn-night" onclick="pickPlace('bar2')" data-location="bar2">Ki Bar</button></li>
-                                <li><button class="btn btn-night" onclick="pickPlace('bar3')" data-location="bar3">Kyoto Star Bar</button></li>
-                                <li><button class="btn btn-night" onclick="pickPlace('bar4')" data-location="bar4">Butterfly</button></li>
-                            </ul>
-                        </div>
-                        <!--Bars-->
-                        <div id="bar1" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>l'Escamoteur</h2>
-                            </div>
-                        </div>
-                        <div id="bar2" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Ki Bar</h2>
-                            </div>
-                        </div>
-                        <div id="bar3" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Kyoto Star Bar</h2>
-                            </div>
-                        </div>
-                        <div id="bar4" class="locations-box-inner hidden">
-                            <div class="place">
-                                <h2>Butterfly</h2>
-                            </div>
+                    <!--Historical sites list-->
+                    <div id="pick-historical" class="locations-box">
+                        <ul class="locations-list">
+                            <li><button class="btn btn-day" onclick="pickPlace('site1')" data-location="site1">Nijo
+                                    Castle</button></li>
+                            <li><button class="btn btn-day" onclick="pickPlace('site2')" data-location="site2">Fushimi
+                                    Inari Taisha Shrine</button></li>
+                            <li><button class="btn btn-day" onclick="pickPlace('site3')" data-location="site3">Kyoto
+                                    Imperial Palace</button>
+                            </li>
+                            <li><button class="btn btn-day" onclick="pickPlace('site4')"
+                                    data-location="site4">Kinkaku-ji Temple</button></li>
+                            <li><button class="btn btn-day" onclick="pickPlace('site5')" data-location="site5">To-ji
+                                    Temple</button></li>
+                        </ul>
+                    </div>
+                    <!--Historical sites-->
+                    <div id="site1" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Nijo Castle</h2>
                         </div>
                     </div>
+                    <div id="site2" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Fushimi Inari Taisha</h2>
+                        </div>
+                    </div>
+                    <div id="site3" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Kyoto Imperial Palace</h2>
+                        </div>
+                    </div>
+                    <div id="site4" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Kinkaku-ji Temple</h2>
+                        </div>
+                    </div>
+                    <div id="site5" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>To-ji Temple</h2>
+                        </div>
+                    </div>
+
+                    <!--Parks list-->
+                    <div id="pick-parks" class="locations-box hidden">
+                        <ul class="locations-list">
+                            <li><button class="btn btn-day" onclick="pickPlace('park1')" data-location="park1">Sogenchi
+                                    Pond Garden</button></li>
+                            <li><button class="btn btn-day" onclick="pickPlace('park2')" data-location="park2">Haradani
+                                    Garden</button></li>
+                            <li><button class="btn btn-day" onclick="pickPlace('park3')"
+                                    data-location="park3">Ryōan-ji</button></li>
+                            <li><button class="btn btn-day" onclick="pickPlace('park4')" data-location="park4">Maruyama
+                                    Park</button></li>
+                        </ul>
+                    </div>
+                    <!--Parks-->
+                    <div id="park1" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Sogenchi Pond Garden</h2>
+                        </div>
+                    </div>
+                    <div id="park2" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Haradani Garden</h2>
+                        </div>
+                    </div>
+                    <div id="park3" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Ryōan-ji</h2>
+                        </div>
+                    </div>
+                    <div id="park4" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Maruyama Park</h2>
+                        </div>
+                    </div>
+
+                    <!--Restaurants list-->
+                    <div id="pick-restaurants" class="locations-box hidden">
+                        <ul class="locations-list">
+                            <li><button class="btn btn-night" onclick="pickPlace('rest1')"
+                                    data-location="rest1">Saishuan Shiraki</button></li>
+                            <li><button class="btn btn-night" onclick="pickPlace('rest2')"
+                                    data-location="rest2">Okonomiyaki Katsu</button></li>
+                            <li><button class="btn btn-night" onclick="pickPlace('rest3')"
+                                    data-location="rest3">Sugarhill Kyoto</button></li>
+                            <li><button class="btn btn-night" onclick="pickPlace('rest4')" data-location="rest4">Kyoto
+                                    Gion Mikaku</button></li>
+                        </ul>
+                    </div>
+                    <!--Restaurants-->
+                    <div id="rest1" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Saishuan Shiraki</h2>
+                        </div>
+                    </div>
+                    <div id="rest2" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Okonomiyaki Katsu</h2>
+                        </div>
+                    </div>
+                    <div id="rest3" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Sugarhill Kyoto</h2>
+                        </div>
+                    </div>
+                    <div id="rest4" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Kyoto Gion Mikaku</h2>
+                        </div>
+                    </div>
+
+                    <!--Bars list-->
+                    <div id="pick-bars" class="locations-box hidden">
+                        <ul class="locations-list">
+                            <li><button class="btn btn-night" onclick="pickPlace('bar1')"
+                                    data-location="bar1">l'Escamoteur</button></li>
+                            <li><button class="btn btn-night" onclick="pickPlace('bar2')" data-location="bar2">Ki
+                                    Bar</button></li>
+                            <li><button class="btn btn-night" onclick="pickPlace('bar3')" data-location="bar3">Kyoto
+                                    Star Bar</button></li>
+                            <li><button class="btn btn-night" onclick="pickPlace('bar4')"
+                                    data-location="bar4">Butterfly</button></li>
+                        </ul>
+                    </div>
+                    <!--Bars-->
+                    <div id="bar1" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>l'Escamoteur</h2>
+                        </div>
+                    </div>
+                    <div id="bar2" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Ki Bar</h2>
+                        </div>
+                    </div>
+                    <div id="bar3" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Kyoto Star Bar</h2>
+                        </div>
+                    </div>
+                    <div id="bar4" class="locations-box-inner hidden">
+                        <div class="place">
+                            <h2>Butterfly</h2>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="col-12 col-md-6">
                     <div class="map-box map-col">
@@ -340,8 +356,38 @@
 
     <section id="contact">
         <div id="switch2" class="contact-box backg-contact">
-            <div class="row"></div>
-            <div class="row"></div>
+            <div class="container form-box">
+                <div class="contact-heading">
+                    <h2>Contact Us</h2>
+                </div>
+                <div class="fill-form">
+                    <form onsubmit="return sendMail(this);">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="firstname" class="mb-0">First Name:</label>
+                                <input type="text" name="name" id="firstname" class="form-control" placeholder="Name"
+                                    required />
+                            </div>
+                            <div class="col-6">
+                                <label for="lastname" class="mb-0">Last Name:</label>
+                                <input type="text" name="name" id="lastname" class="form-control" placeholder="Name"
+                                    required />
+                            </div>
+                        </div>
+                        <label for="emailaddress" class="mb-0">Email Address:</label>
+                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
+                            required />
+                        <label for="message" class="mb-0">Any particular request? Let us know below:</label>
+                        <textarea rows="5" name="message" id="message" class="form-control" placeholder="Your message"
+                            required></textarea>
+                        <div class="form-row text-center">
+                            <div class="col">
+                                <button type="submit" class="btn btn-submit">Send Project Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </section>
 
