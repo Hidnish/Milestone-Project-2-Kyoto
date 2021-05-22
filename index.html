@@ -8,6 +8,10 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         type="text/css">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" type="text/css">
+
     <!-- Leaflet.js-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 
@@ -366,6 +370,7 @@
                 <div class="contact-heading">
                     <h2>Contact Us</h2>
                 </div>
+                <!--Contact Form-->
                 <div class="fill-form">
                     <form id="fillForm" onsubmit="return sendMail(this);">
                         <div class="row">
@@ -394,7 +399,41 @@
         </div>
     </section>
 
-    <footer class="footer bg-light">
+    <footer class="footer container-fluid">
+        <div class="row">
+            <!--<div class="d-xs-none d-sm-none d-md-none col-lg-4 d-lg-block">
+                <div class="footer-logo">
+                <a href="#hero-gallery"><h2>Kyoto Day'n'Nite</h2></a>
+                </div>
+            </div>-->
+            <div class="col-6">
+                <div class="copyright">
+                <p>Copyright © 2021 Hideo Nishimura.</p>
+                </div>
+            </div>
+            <div class="col-6">
+                <ul class="footer-items">
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.facebook.com/">
+                            <i class="fab fa-facebook" aria-hidden="true"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.instagram.com/">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a target="_blank" href="https://www.tripadvisor.com/">
+                            <i class="fab fa-tripadvisor" aria-hidden="true"></i>
+                            <span class="sr-only">Trip Advisor</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </footer>
 
     <!--Bootstrap-->
