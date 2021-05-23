@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" type="text/css">
 
     <!--Font-->
-    <link href="//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg" rel="stylesheet" 
-    type="text/css"/>
+    <link href="//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg"
+        rel="stylesheet" type="text/css" />
 
     <!-- Leaflet.js-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
@@ -61,19 +61,37 @@
         </nav>
     </div>
 
-    <section id="hero-gallery">
+    <!--<section id="hero-gallery">
         <div id="hero-slideshow">
             <div class="image-container">
-                <img src="/assets/images/kyoto-hero-1.jpg">
+                <img src="/assets/images/kyoto-hero-2.jpg">
             </div>
             <div class="image-container">
-                <img src="/assets/images/kyoto-hero-2.jpg">
+                <img src="/assets/images/kyoto-hero-1.jpg">
             </div>
             <div class="image-container">
                 <img src="assets/images/kyoto-hero-3.jpg">
             </div>
         </div>
+    </section>-->
+
+    <section id="home-gallery">
+        <div class="container-pics">
+            <div class="arrow l" onclick="prev()">
+                <img src="/assets/images/l.png" alt="l">
+            </div>
+            <div class="slide slide-1">
+            </div>
+            <div class="slide slide-2">
+            </div>
+            <div class="slide slide-3">
+            </div>
+            <div class="arrow r" onclick="next()">
+                <img src="/assets/images/r.png" alt="r">
+            </div>
+        </div>
     </section>
+
 
     <section id="about">
         <a id="about-section"></a>
@@ -380,15 +398,18 @@
                         <div class="row">
                             <div class="col-6">
                                 <label for="firstname" class="mb-0">First Name:</label>
-                                <input type="text" name="firstname" id="firstname" class="form-control" placeholder="First name" required />
+                                <input type="text" name="firstname" id="firstname" class="form-control"
+                                    placeholder="First name" required />
                             </div>
                             <div class="col-6">
                                 <label for="lastname" class="mb-0">Last Name:</label>
-                                <input type="text" name="firstname" id="lastname" class="form-control" placeholder="Last name" required />
+                                <input type="text" name="firstname" id="lastname" class="form-control"
+                                    placeholder="Last name" required />
                             </div>
                         </div>
                         <label for="emailaddress" class="mb-0">Email Address:</label>
-                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email" required />
+                        <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
+                            required />
                         <label for="message" class="mb-0">Any particular request? Let us know below:</label>
                         <textarea rows="5" name="request" id="request" class="form-control" placeholder="Your message"
                             required></textarea>
@@ -412,7 +433,7 @@
             </div>-->
             <div class="col-6">
                 <div class="copyright">
-                <p>Copyright © 2021 Hideo Nishimura.</p>
+                    <p>Copyright © 2021 Hideo Nishimura.</p>
                 </div>
             </div>
             <div class="col-6">
