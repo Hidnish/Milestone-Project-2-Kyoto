@@ -12,7 +12,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" type="text/css">
 
-    <!--Font-->
+    <!--Custom Font-->
     <link href="//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg"
         rel="stylesheet" type="text/css" />
 
@@ -37,43 +37,40 @@
 
 <body>
 
-    <div class="container-nav">
-        <nav class="navbar navbar-light backg-off-seet fixed-top">
+    <!--Navbar-->
+    <div class="container-fluid nav-container">
+        <nav class="navbar navbar-expand-md backg-off-seet fixed-top">
             <a href="index.html" class="navbar-brand brand-style">
                 Kyoto Day'n'Night</a>
 
-            <div>
+            <button class="navbar-toggler ml-auto navbar-light" type="button" data-toggle="collapse"
+                data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span></button>
+
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <div class="ml-auto">
                 <ul class="navbar-nav navbar-nav-style">
                     <li class="nav-item">
-                        <a href="index.html" class="nav-link">Home</a>
+                        <a class="nav-link" href="index.html" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#about-section" class="nav-link">About</a>
+                        <a class="nav-link" href="#about-section" class="nav-link">About</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#locations" class="nav-link">Locations</a>
+                        <a class="nav-link" href="#locations" class="nav-link">Locations</a>
                     </li>
                     <li class="nav-item">
-                        <a href="#contact" class="nav-link">Contact</a>
+                        <a class="nav-link" href="#contact" class="nav-link">Contact</a>
                     </li>
                 </ul>
+                </div>
             </div>
+
         </nav>
     </div>
 
-    <!--<section id="hero-gallery">
-        <div id="hero-slideshow">
-            <div class="image-container">
-                <img src="/assets/images/kyoto-hero-2.jpg">
-            </div>
-            <div class="image-container">
-                <img src="/assets/images/kyoto-hero-1.jpg">
-            </div>
-            <div class="image-container">
-                <img src="assets/images/kyoto-hero-3.jpg">
-            </div>
-        </div>
-    </section>-->
+
 
     <section id="home-gallery">
         <div class="container-pics">
@@ -454,9 +451,9 @@
                     </li>
                 </ul>
             </div>
-             <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6">
                 <div class="copyright">
-                    <p>Copyright © 2021 Hideo Nishimura.</p>
+                    <p>Copyright © 2021 Hideo Nishimura. All rights reserved.</p>
                 </div>
             </div>
         </div>
