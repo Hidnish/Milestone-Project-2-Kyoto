@@ -1,4 +1,4 @@
-// Code based on: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
+// Code taken from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
 $("#hero-slideshow > div:gt(0)").hide();
 
 setInterval(() => { 
@@ -9,4 +9,3 @@ setInterval(() => {
   .end()
   .appendTo('#hero-slideshow');
 }, 6000);
-
