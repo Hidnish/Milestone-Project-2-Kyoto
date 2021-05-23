@@ -153,17 +153,18 @@ p {
     transform: translateY(-50%);
     cursor: pointer;
     z-index: 100;
-    background: rgba(0, 0, 0, .1);
-    border-radius: 50%;
     transform: background 1000ms;
 }
 
-.arrow img {
-    width: 50px;
+.arrow i {
+    color: #fafafa;
+    font-size: 30px;
 }
-.arrow:hover {
-    background: rgba(0, 0, 0, .4);
+
+.arrow i:hover {
+    font-size: 33px;
 }
+
 .l {
     left: 2%;
 }
@@ -340,16 +341,12 @@ p {
 /* ----- CONTACT ----- */
 
 .contact-box {
-    position: relative;
     height: 100vh;
 }
 
 .form-box {
-    position: absolute;
-    top: 15%;
-    left:0;
-    right: 0;
-    padding: 0 15%;
+    margin-top: 10%;
+    padding: 0 15% 1%;
     
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
@@ -385,7 +382,7 @@ p {
 /* ----- FOOTER ----- */
 
 .footer {
-    border-top: 1px solid #768291 ;
+    border-top: 1px solid #434d5a ;
     background-color: #1c334d;
 }
 
@@ -399,7 +396,7 @@ p {
 
 .footer-items {
     padding: 40px 0 20px;
-    height: 50px;
+    height: 40px;
     text-align: right;
 }
 
@@ -457,15 +454,21 @@ p {
     }
 
     .form-box {
-        padding: 0 5%;
+        padding: 0 5% 1%;
     }
 
     /* footer */
-/*
+
     .copyright,
     .footer-items {
         text-align: center;
-        padding: 10px 0 0;
-    }*/
+        padding: 0;
+    }
+
+    .footer-items {
+        margin-top: 10px;
+        height: auto;
+        padding: 15px 0 0;
+    }
 
 }
