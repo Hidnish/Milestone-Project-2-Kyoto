@@ -92,6 +92,10 @@ p {
     margin: 0 10px;
 }
 
+.nav-link {
+    color: #1c334d!important;
+}
+
 .navbar-brand {
     font-family: "japanese";
     /*Add generic family*/
@@ -387,15 +391,15 @@ p {
 }
 
 .copyright {
-    padding: 40px 0 10px;
-    height: 50px;
+    padding: 50px 0 0;
+    height: 30px;
     text-align: left;
     color: #fafafa;
     font-size: 12px;
 }
 
 .footer-items {
-    padding: 40px 0 20px;
+    padding: 40px 0 30px;
     height: 40px;
     text-align: right;
 }
@@ -431,6 +435,14 @@ p {
 /* ----- MEDIA QUERIES ----- */
 
 @media (max-width: 767px) {
+
+    /* nav */
+    .contact-item .key, 
+    .contact-item .value {
+    display: block;              
+    }
+
+    /* about */
     .about-img img {
         border-radius: 50%;
         height: 60%;
