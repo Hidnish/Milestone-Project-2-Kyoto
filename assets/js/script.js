@@ -1,17 +1,18 @@
-// Code taken from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/
-/*$("#hero-slideshow > div:gt(0)").hide();
+// Make navbar appear and disappear on scroll
+// Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+let currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.top = "0";
+  } else {
+    document.getElementById("navbar").style.top = "-40%";
+  }
+  prevScrollpos = currentScrollPos;
+}
 
-setInterval(() => { 
-  $('#hero-slideshow > div:first')
-  .fadeOut(2000)
-  .next()
-  .fadeIn(2000)
-  .end()
-  .appendTo('#hero-slideshow');
-}, 6000);*/
-
-
-//Code taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS
+// Create pictures slideshow for the home page 
+// Code taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS
 let slide = document.querySelectorAll('.slide');
         var current = 0;
 
@@ -66,5 +67,5 @@ let slide = document.querySelectorAll('.slide');
             slide[current].style.display = 'block';
         }
         start();
-        
 // END of credit 
+
