@@ -345,11 +345,10 @@ p {
 /* ----- CONTACT ----- */
 
 .contact-box {
-    height: 100vh;
+    padding: 7% 5% 5%;
 }
 
 .form-box {
-    margin-top: 10%;
     padding: 0 15% 1%;
     
     background-color: rgba(255, 255, 255, 0.4);
