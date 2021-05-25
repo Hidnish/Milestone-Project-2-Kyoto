@@ -59,7 +59,7 @@
     <!--Hero image gallery-->
     <section id="home-gallery">
         <div class="container-pics">
-            <div class="arrow l" onclick="prev()">
+            <div id="left-arrow" class="arrow l" onclick="prev()">
                 <i class="fas fa-chevron-left"></i>
             </div>
             <div class="slide slide-1">
@@ -69,8 +69,7 @@
             <div class="slide slide-3">
             </div>
             <div class="arrow r" onclick="next()">
-                <i class="fas fa-chevron-right"></i>
-
+                <i id="right-arrow" class="fas fa-chevron-right"></i>
             </div>
         </div>
     </section>
@@ -207,7 +206,7 @@
                     </div>
                     <!--Night activities-->
                     <div id="pick-night" class="activity-choice hidden">
-                        <button class="btn btn-activity" onclick="pickActivity('pick-restaurants')">Restaurants</button>
+                        <button id="restaurants" class="btn btn-activity" onclick="pickActivity('pick-restaurants')">Restaurants</button>
                         <button class="btn btn-activity" onclick="pickActivity('pick-bars')">Bars & Clubs</button>
                     </div>
 
