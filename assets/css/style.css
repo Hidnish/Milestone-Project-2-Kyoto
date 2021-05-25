@@ -1,17 +1,15 @@
-/*@font-face {
-    font-family: japanese;
-    src: url(/assets/fonts/jap-brush.ttf) format('truetype');
-}*/
-
 @import url(//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg);
 
-@font-face {font-family: "Japanese"; src: url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot"); src: 
-    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot?#iefix") format("embedded-opentype"), 
-    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff2") format("woff2"), 
-    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff") format("woff"), 
-    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.ttf") format("truetype"), 
-    url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.svg#JapaneseBrushMasterW00-Rg") format("svg");
- }
+@font-face {
+    font-family: "Japanese";
+    src: url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot");
+    src:
+        url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot?#iefix") format("embedded-opentype"),
+        url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff2") format("woff2"),
+        url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff") format("woff"),
+        url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.ttf") format("truetype"),
+        url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.svg#JapaneseBrushMasterW00-Rg") format("svg");
+}
 
 
 html,
@@ -35,11 +33,6 @@ p {
     display: none;
 }
 
-.active {
-    box-sizing: border-box !important;
-    border: 3px solid !important;
-}
-
 /* ----- BACKGROUNDS -----*/
 
 .backg-off-seet {
@@ -50,7 +43,7 @@ p {
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Code based on: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
+/* Code taken and modified from: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
 .backg-about {
     background-color: #fafafa;
     background: linear-gradient(to bottom, transparent, #fafafa), url(../images/tip.jpeg);
@@ -61,6 +54,8 @@ p {
     -o-background-size: cover;
     background-size: cover;
 }
+
+/* END credit */
 
 .backg-contact {
     background: linear-gradient(to top, transparent, #fafafa), url(../images/contact.jpg) center no-repeat;
@@ -97,11 +92,11 @@ p {
 }
 
 .nav-link {
-    color: #1c334d!important;
+    color: #1c334d !important;
 }
 
 .nav-link:hover {
-    color: #6c809b!important;
+    color: #6c809b !important;
 }
 
 .navbar-brand {
@@ -111,6 +106,7 @@ p {
     margin-left: 1rem;
     color: #1c334d !important;
 }
+
 /*----- HERO IMAGE -----*/
 
 /*#hero-slideshow {
@@ -142,9 +138,11 @@ p {
 .slide-1 {
     background: url('../images/kyoto-hero-1.jpg');
 }
+
 .slide-2 {
     background: url('../images/kyoto-hero-2.jpg');
 }
+
 .slide-3 {
     background: url('../images/kyoto-hero-3.jpg');
 }
@@ -179,9 +177,11 @@ p {
 .l {
     left: 2%;
 }
+
 .r {
     right: 2%;
 }
+
 /* END of credit */
 
 
@@ -220,6 +220,10 @@ p {
     padding: 2% 8% 8%;
 }
 
+.about-body {
+    padding: 0 5%;
+}
+
 .about-info {
     text-align: center;
     padding: 10%;
@@ -235,16 +239,7 @@ p {
     height: 100%;
     width: 100%;
     object-fit: contain;
-}
-
-.bdr-left {
-    border-bottom-left-radius: 75px;
-    border-top-left-radius: 75px;
-}
-
-.bdr-right {
-    border-bottom-right-radius: 75px;
-    border-top-right-radius: 75px;
+    border-radius: 20px;
 }
 
 /* ----- LOCATIONS ----- */
@@ -305,19 +300,10 @@ p {
     margin: 20px 30px 20px;
     border: 1px solid #1c334d;
     border-radius: 25px;
-    /*height: 402px;*/
 }
 
 .locations-list li button {
     background-color: rgba(255, 255, 255, 0.3) !important;
-}
-
-.locations-box-inner {
-    text-align: center;
-    margin: 20px 30px 20px;
-    border: 1px solid #1c334d;
-    border-radius: 25px;
-    /*height: 402px;*/
 }
 
 .locations-list {
@@ -358,7 +344,7 @@ p {
 
 .form-box {
     padding: 0 15% 1%;
-    
+
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 20px;
 }
@@ -380,9 +366,9 @@ p {
 }
 
 .form-control {
-    border: none!important;
-    border-bottom: 1px solid #1c334d!important;
-    margin: 1% 0 3%!important;
+    border: none !important;
+    border-bottom: 1px solid #1c334d !important;
+    margin: 1% 0 3% !important;
 }
 
 .btn-submit {
@@ -393,7 +379,7 @@ p {
 /* ----- FOOTER ----- */
 
 .footer {
-    border-top: 1px solid #434d5a ;
+    border-top: 1px solid #434d5a;
     background-color: #1c334d;
 }
 
@@ -431,32 +417,42 @@ p {
     color: #fafafa;
 }
 
-.list-inline-item:not(:last-child) {  /* To override right-margin set by default in social media logos: they were causing one of the logos to switch row in mobile screen mode */
-    margin-right: 0; 
+.list-inline-item:not(:last-child) {
+    /* To override right-margin set by default in social media logos: they were causing one of the logos to switch row in mobile screen mode */
+    margin-right: 0;
 }
 
 .footer-items i:hover {
     color: #6c809b;
 }
 
+.active {
+    border: 3px solid #f8e856 !important;
+    font-weight: 700 !important
+}
+
 /* ----- MEDIA QUERIES ----- */
+
+@media (min-width: 1500px) {
+    .about-img img {
+        height: 90%;
+        width: 90%;
+    }
+
+    .about-body {
+        padding: 0 8%;
+    }
+}
 
 @media (max-width: 767px) {
 
     /* nav */
     .navbar-nav {
-    display: block;
-    text-align: center;
-    margin-top: 15px;
-}
-
-
-    /* about */
-    .about-img img {
-        border-radius: 50%;
-        height: 60%;
-        width: 60%;
+        display: block;
+        text-align: center;
+        margin-top: 15px;
     }
+
 
     /* locations */
     .locations-list {
@@ -468,7 +464,6 @@ p {
     }
 
     /* contact */
-
     .container {
         width: auto;
         margin: 0 5%;
@@ -479,7 +474,6 @@ p {
     }
 
     /* footer */
-
     .copyright,
     .footer-items {
         text-align: center;
@@ -491,10 +485,6 @@ p {
         height: auto;
         padding: 15px 0 0;
     }
-};
+}
 
-@media (min-width: 576px) {
-.container {
-    max-width: 100%!important;
-}
-}
+;
