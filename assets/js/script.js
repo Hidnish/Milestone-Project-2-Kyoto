@@ -1,5 +1,5 @@
 // Make navbar appear and disappear on scroll
-// Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+// CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
     let currentScrollPos = window.pageYOffset + 100;
@@ -13,7 +13,7 @@ window.onscroll = function () {
 // END of credit
 
 // Create pictures slideshow for the home page 
-// Code taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS
+// CREDIT, Code taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS
 let slide = document.querySelectorAll('.slide');
 var current = 0;
 
@@ -29,17 +29,17 @@ function next() {
     current++;
 
     slide[current].style.display = 'block';
-    slide[current].style.opacity = 0.4;
+    slide[current].style.opacity = 0.2;
 
-    let x = 0.4;
+    let x = 0.2;
     let intX = setInterval(function () {
         x += 0.1;
         slide[current].style.opacity = x;
         if (x >= 1) {
             clearInterval(intX);
-            x = 0.4;
+            x = 0.2;
         }
-    }, 50);
+    }, 90);
 
 }
 
@@ -49,17 +49,17 @@ function prev() {
     current--;
 
     slide[current].style.display = 'block';
-    slide[current].style.opacity = 0.4;
+    slide[current].style.opacity = 0.2;
 
-    let x = 0.4;
+    let x = 0.2;
     let intX = setInterval(function () {
         x += 0.1;
         slide[current].style.opacity = x;
         if (x >= 1) {
             clearInterval(intX);
-            x = 0.4;
+            x = 0.2;
         }
-    }, 50);
+    }, 90);
 }
 
 function start() {
@@ -69,12 +69,24 @@ function start() {
 start();
 // END of credit 
 
+//CREDIT, Code taken and modified from: https://stackoverflow.com/questions/43599695/add-autoplay-to-a-css-html-slideshow-is-it-possible
+let rightArrow = document.getElementById('right-arrow'),
+    seconds = 7;
+
+let interval = setInterval(function() {
+  rightArrow.click();
+}, (seconds * 1000));
+// END of credit 
+
 // Add class 'active' based on button selected (day or night)
 $('.btn-dn').click(function(){
-    $('.btn-dn').removeClass('active');
-    $('.btn-activity').removeClass('active');
-    $('.btn-specific').removeClass('active');
-    $(this).addClass('active')
+    $('.btn').removeClass('active');
+    $(this).addClass('active');
+        if (this.id === 'button-day') {
+           $('#historicalSites').trigger('click');
+        } else {
+           $('#restaurants').trigger('click');
+        };
 });
 
 // Add class 'active' based on button selected (activities --> ex. historical site, restaurants, etc)
