@@ -69,7 +69,7 @@ function start() {
 start();
 // END of credit 
 
-// Add class "active" based on button selected (day or night)
+// Add class 'active' based on button selected (day or night)
 $('.btn-dn').click(function(){
     $('.btn-dn').removeClass('active');
     $('.btn-activity').removeClass('active');
@@ -77,14 +77,14 @@ $('.btn-dn').click(function(){
     $(this).addClass('active')
 });
 
-// Add class "active" based on button selected (activities --> ex. historical site, restaurants, etc)
+// Add class 'active' based on button selected (activities --> ex. historical site, restaurants, etc)
 $('.btn-activity').click(function(){
     $('.btn-activity').removeClass('active');
     $('.btn-specific').removeClass('active');
     $(this).addClass('active')
 });
 
-// Add class "active" based on button selected (specific location)
+// Add class 'active' based on button selected (specific location)
 $('.btn-specific').click(function(){
     $('.btn-specific').removeClass('active');
     $(this).addClass('active')
