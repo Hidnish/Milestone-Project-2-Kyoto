@@ -188,12 +188,12 @@ const greyIcon = L.icon({
 //--------------------------------------------------------------------//
 
 
-/* Show "day-time" locations on map + list of historical sites: by default on page load
-Code based on: https://stackoverflow.com/questions/18646881/auto-click-button-element-on-page-load-using-jquery */
+// Show "day-time" locations on map + list of historical sites: by default on page load
+// Code based on: https://stackoverflow.com/questions/18646881/auto-click-button-element-on-page-load-using-jquery 
 $(document).ready(function () {
     $("#button-day").trigger('click');
-    $("#historicalSites").trigger('click');
 });
+// END of Credit
 
 
 // Show activities available based on DAY-time or NIGHT-time
