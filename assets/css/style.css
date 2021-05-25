@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Newsreader:wght@300;400;500&display=swap');
 @import url(//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg);
 
 @font-face {
@@ -23,6 +24,7 @@ body {
 
 h2 {
     padding: 3% 5% 5%;
+    font-family: 'Crimson text', sans-serif;
 }
 
 p {
@@ -93,6 +95,8 @@ p {
 
 .nav-link {
     color: #1c334d !important;
+    font-family: 'Crimson text', sans-serif;
+    font-size: 1.3rem;
 }
 
 .nav-link:hover {
@@ -100,7 +104,7 @@ p {
 }
 
 .navbar-brand {
-    font-family: "japanese";
+    font-family: 'Japanese', sans-serif;
     /*Add generic family*/
     font-size: 35px;
     margin-left: 1rem;
@@ -212,8 +216,8 @@ p {
 
 .about-heading h2 {
     padding-top: 100px;
-    font-family: "japanese";
-    font-size: 80px;
+    font-family: 'Japanese', sans-serif;
+    font-size: 70px;
 }
 
 .about-heading p {
@@ -251,7 +255,7 @@ p {
 
 .menu h2 {
     padding-bottom: 10px;
-    font-family: 'japanese';
+    font-family: 'Japanese', sans-serif;
     font-size: 50px;
     color: #1c334d;
 }
@@ -357,7 +361,7 @@ p {
 
 .contact-heading h2 {
     padding-top: 40px;
-    font-family: "japanese";
+    font-family: "Japanese", sans-serif;
     font-size: 50px;
 }
 
@@ -401,12 +405,6 @@ p {
     padding: 23px 0 37px;
     height: 50px;
     text-align: center;
-    color: #fafafa;
-}
-
-.footer-logo h2 {
-    padding: 0;
-    font-family: japanese;
     color: #fafafa;
 }
 
