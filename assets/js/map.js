@@ -30,35 +30,35 @@ const LocationsVar = [
         name: "Nijo Castle",
         center: [35.014168, 135.7474],
         zoom: 14,
-        group: 'historical',
+        group: 'day',
         id: 'site1',
     },
     {
         name: "Fushimi Inari Taisha",
         center: [34.9671, 135.7727],
         zoom: 14,
-        group: 'historical',
+        group: 'day',
         id: 'site2',
     },
     {
         name: "Kyoto Imperial Palace",
         center: [35.0254, 135.7621],
         zoom: 14,
-        group: 'historical',
+        group: 'day',
         id: 'site3',
     },
     {
         name: "Kinkaku-ji Temple",
         center: [35.0394, 135.7292],
         zoom: 14,
-        group: 'historical',
+        group: 'day',
         id: 'site4',
     },
     {
         name: "To-ji Temple",
         center: [34.9806, 135.7478],
         zoom: 14,
-        group: 'historical',
+        group: 'day',
         id: 'site5',
     },
 
@@ -68,28 +68,28 @@ const LocationsVar = [
         name: "Sogenchi Pond Garden",
         center: [35.0156, 135.6734],
         zoom: 14,
-        group: 'garden',
+        group: 'day',
         id: 'park1',
     },
     {
         name: "Haradani Garden",
         center: [35.0441, 135.7141],
         zoom: 14,
-        group: 'garden',
+        group: 'day',
         id: 'park2',
     },
     {
         name: "Ryōan-ji",
         center: [35.0345, 135.7183],
         zoom: 14,
-        group: 'garden',
+        group: 'day',
         id: 'park3',
     },
     {
         name: "Maruyama Park",
         center: [35.0036, 135.7805],
         zoom: 14,
-        group: 'garden',
+        group: 'day',
         id: 'park4',
     },
 
@@ -99,28 +99,28 @@ const LocationsVar = [
         name: "Saishuan Shiraki",
         center: [35.0165, 135.7661],
         zoom: 14,
-        group: 'restaurants',
+        group: 'night',
         id: 'rest1',
     },
     {
         name: "Okonomiyaki Katsu",
         center: [35.0303, 135.7206],
         zoom: 14,
-        group: 'restaurants',
+        group: 'night',
         id: 'rest2',
     },
     {
         name: "Sugarhill Kyoto",
         center: [34.9982, 135.7671],
         zoom: 14,
-        group: 'restaurants',
+        group: 'night',
         id: 'rest3',
     },
     {
         name: "Kyoto Gion Mikaku",
         center: [35.0051, 135.7726],
         zoom: 14,
-        group: 'restaurants',
+        group: 'night',
         id: 'rest4',
     },
 
@@ -130,28 +130,28 @@ const LocationsVar = [
         name: "L'Escamoteur",
         center: [35.0018, 135.7699],
         zoom: 14,
-        group: 'bars',
+        group: 'night',
         id: 'bar1',
     },
     {
         name: "Ki Bar",
         center: [35.0082, 135.7710],
         zoom: 14,
-        group: 'bars',
+        group: 'night',
         id: 'bar2',
     },
     {
         name: "Kyoto Star Bar",
         center: [35.0073, 135.7709],
         zoom: 14,
-        group: 'bars',
+        group: 'night',
         id: 'bar3',
     },
     {
         name: "Butterfly",
         center: [35.0079, 135.7697],
         zoom: 14,
-        group: 'bars',
+        group: 'night',
         id: 'bar4',
     },
 ];
@@ -188,10 +188,11 @@ const greyIcon = L.icon({
 //--------------------------------------------------------------------//
 
 
-/* Show "day-time" locations on map by default on page load
+/* Show "day-time" locations on map + list of historical sites: by default on page load
 Code based on: https://stackoverflow.com/questions/18646881/auto-click-button-element-on-page-load-using-jquery */
 $(document).ready(function () {
     $("#button-day").trigger('click');
+    $("#historicalSites").trigger('click');
 });
 
 
@@ -226,7 +227,7 @@ function pickActivity(selection) {
     document.getElementById(selection).classList.remove('hidden');
 }
 
-function pickPlace(selection) {
+/*function pickPlace(selection) {
     let activities = document.getElementsByClassName('locations-box');
     let places = document.getElementsByClassName('locarions-box-inner');
 
@@ -238,7 +239,7 @@ function pickPlace(selection) {
     }
 
     document.getElementById(selection).classList.remove('hidden');
-}
+}*/
 
 // Add description
 let buttonDayNite = document.getElementsByClassName('btn-dn');
@@ -247,62 +248,39 @@ for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
         // ADD description
         // Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
-
         for (let i = 0; i < LocationsVar.length; i++) {
-            if (button.id === 'button-day') {
-                if (LocationsVar[i].group === 'historical') {
-                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        /*icon: greyIcon,*/
-                    });
-                } else if (LocationsVar[i].group === 'garden') {
-                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        /*icon: goldIcon,*/
-                    });
-                }
+            let locationType = LocationsVar[i].group;
+
+            if (button.id === 'button-day' && locationType === 'day') {
+                marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]]);
                 marker.bindPopup(LocationsVar[i].name);
-                // End Credit   
-                switcher(this);
-                // ibid    
-            } else if (button.id === 'button-night') {
-                if (LocationsVar[i].group === 'restaurants') {
-                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        /*icon: greyIcon,*/
-                    });
-                } else if (LocationsVar[i].group === 'bars') {
-                    marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]], {
-                        //icon: goldIcon,
-                    });
-                }
+                // End of Credit   
+                switcher(mapDark, mapLight, layerNight, layerDay);
+                locationBox.classList.remove('night-mode');
+                contactBox.classList.remove('backg-contact-night');
+
+            } else if (button.id === 'button-night' && locationType === 'night') {
+                marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]]);
                 marker.bindPopup(LocationsVar[i].name);
-                // End Credit
-                switcher(this);
+                
+                switcher(mapLight, mapDark, layerDay, layerNight);
+                locationBox.classList.add('night-mode');
+                contactBox.classList.add('backg-contact-night');
             };
         };
     });
 };
 
 // Switch map to day/night mode and change the markers(locations) accordingly 
-function switcher(button) {
-    map.removeLayer(singleMarker).setView([35.0116, 135.7381], 12);;
-    
-    if (button.id === "button-day") {
-        mapDark.remove();
-        mapLight.addTo(map);
-        map.removeLayer(layerNight);
-        layerDay.addLayer(marker);
-        layerDay.addTo(map);
-        locationBox.classList.remove('night-mode');
-        contactBox.classList.remove('backg-contact-night');
-    } else {
-        mapLight.remove();
-        mapDark.addTo(map);
-        map.removeLayer(layerDay);
-        layerNight.addLayer(marker);
-        layerNight.addTo(map);
-        locationBox.classList.add('night-mode');
-        contactBox.classList.add('backg-contact-night');
-    };
-};
+function switcher (mapNo, mapYes, layerNo, layerYes) {
+    map.removeLayer(singleMarker).setView([35.0116, 135.7381], 12);
+
+    mapNo.remove();
+    mapYes.addTo(map);
+    map.removeLayer(layerNo);
+    layerYes.addLayer(marker);
+    layerYes.addTo(map);
+}
 
 // ------
 
@@ -328,3 +306,4 @@ for (let i = 0; i < locationButtons.length; i++) {
         };
     });
 };
+
