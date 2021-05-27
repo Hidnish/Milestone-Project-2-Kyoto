@@ -105,31 +105,12 @@ p {
 
 .navbar-brand {
     font-family: 'Japanese', sans-serif;
-    /*Add generic family*/
     font-size: 35px;
     margin-left: 1rem;
     color: #1c334d !important;
 }
 
 /*----- HERO IMAGE -----*/
-
-/*#hero-slideshow {
-    position: relative;
-    height: 100vh;
-}
-
-.image-container {
-    position: absolute;
-    overflow: hidden;
-    width: 100vw;
-    height: 100vh;
-}
-
-.image-container img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}*/
 
 /*----*/
 
