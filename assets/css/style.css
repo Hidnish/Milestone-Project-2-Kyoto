@@ -15,9 +15,6 @@
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    overflow: auto;
     overflow-x: hidden;
 }
 
@@ -115,63 +112,35 @@ p {
 
 /*----- HERO IMAGE -----*/
 
-/*----*/
+/* CREDIT, CSS based on:  https://github.com/JimLynx/CI-MS2-Safari-Africa/blob/master/assets/css/style.css & 
+                          https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/ */
 
-/* Credit CSS taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS */
-.container-pics {
+#home {
+    width: 100vw;
+    height: 100vh;
+}
+
+.home-gallery {
     position: relative;
     height: 100vh;
 }
 
-.slide-1 {
-    background: url('../images/kyoto-hero-1.jpg');
-}
-
-.slide-2 {
-    background: url('../images/kyoto-hero-2.jpg');
-}
-
-.slide-3 {
-    background: url('../images/kyoto-hero-3.jpg');
-}
-
-.slide {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow-x: hidden;
-}
-
-.arrow {
+.img-frame {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    z-index: 100;
-    transform: background 1000ms;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
 }
 
-.arrow i {
-    color: #fafafa;
-    font-size: 30px;
+.img-frame img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
 }
-
-.arrow i:hover {
-    font-size: 33px;
-}
-
-.l {
-    left: 2%;
-}
-
-.r {
-    right: 2%;
-}
-
 /* END of credit */
-
 
 /* ----- ABOUT SECTION ----- */
 
@@ -286,7 +255,8 @@ p {
 .locations-box {
     text-align: center;
     margin: 20px 30px 20px;
-    border: 1px solid #1c334d;
+    border-top: 1px solid #1c334d;
+    border-bottom: 1px solid #1c334d;
     border-radius: 25px;
 }
 

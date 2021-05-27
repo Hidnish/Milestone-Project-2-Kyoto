@@ -23,7 +23,7 @@ let contactBox = document.getElementById('switch2');
 
 // --------------- Locations grouped into objects -----------------
 
-const LocationsVar = [
+const locationsArray = [
 
     // Historical sites
     {
@@ -207,35 +207,6 @@ const LocationsVar = [
     },
 ];
 
-// Import Custom markers 
-const greenIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-});
-
-const goldIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-gold.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-});
-
-const redIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-});
-
-const greyIcon = L.icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-grey.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-});
-
 //--------------------------------------------------------------------//
 
 
@@ -285,21 +256,23 @@ for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
         // ADD description
         // Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
-        for (let i = 0; i < LocationsVar.length; i++) {
-            let locationType = LocationsVar[i].group;
+        for (let i = 0; i < locationsArray.length; i++) {
+            let locationType = locationsArray[i].group;
 
             if (button.id === 'button-day' && locationType === 'day') {
-                marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]]);
-                marker.bindPopup(LocationsVar[i].name);
+                marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
+                marker.bindPopup(`<h6>${locationsArray[i].name}</h6>
+                Click on the specific location's button from the menu (on the left) for more details`);
                 // End of Credit   
                 switcher(mapDark, mapLight, layerNight, layerDay);
                 locationBox.classList.remove('night-mode');
                 contactBox.classList.remove('backg-contact-night');
 
             } else if (button.id === 'button-night' && locationType === 'night') {
-                marker = new L.marker([LocationsVar[i].center[0], LocationsVar[i].center[1]]);
-                marker.bindPopup(LocationsVar[i].name);
-                
+                marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
+                marker.bindPopup(`<h6>${locationsArray[i].name}</h6>
+                Click on the specific location's button from the menu (on the left) for more details`);
+
                 switcher(mapLight, mapDark, layerDay, layerNight);
                 locationBox.classList.add('night-mode');
                 contactBox.classList.add('backg-contact-night');
@@ -309,7 +282,7 @@ for (let button of buttonDayNite) {
 };
 
 // Switch map to day/night mode and change the markers(locations) accordingly 
-function switcher (mapNo, mapYes, layerNo, layerYes) {
+function switcher(mapNo, mapYes, layerNo, layerYes) {
     map.removeLayer(singleMarker).setView([35.0116, 135.7381], 12);
 
     mapNo.remove();
@@ -331,22 +304,30 @@ for (let i = 0; i < locationButtons.length; i++) {
         let buttonData = locationButtons[i].dataset.location;
 
         // Inspired by ....
-        const findMapLocation = LocationsVar.find(
+        const findMapLocation = locationsArray.find(
             (name) => name.id === buttonData);
 
         map.flyTo(findMapLocation.center, findMapLocation.zoom);
         if (findMapLocation.center) {
             map.removeLayer(singleMarker);
             singleMarker = L.marker(findMapLocation.center)
-            .bindPopup(`</div><h6>${LocationsVar[i].name}</h6>
-            <strong>Address:</strong> ${LocationsVar[i].address}<br>
-            <strong>Website:</strong><a href='${LocationsVar[i].website}' target='_blank'> Click here</a><br> 
-            <br>
-            <img src=${LocationsVar[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
-            .addTo(map).openPopup();
+                .bindPopup(`</div><h6>${locationsArray[i].name}</h6>
+                            <strong>Address:</strong> ${locationsArray[i].address}<br>
+                            <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br> 
+                            <br>
+                            <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
+                .addTo(map).openPopup();
+
+            //Center map on popup rather than marker: prevents the popup to overflow outside the map
+            //CREDIT Code taken from: https://stackoverflow.com/questions/22538473/leaflet-center-popup-and-marker-to-the-map    
+            map.on('popupopen', function (e) {
+                var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
+                px.y -= e.target._popup._container.clientHeight / 2; // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
+                map.panTo(map.unproject(px), {animate: true}); // pan to new center
+            });
+            //END of Credit
         } else {
             map.removeLayer(singleMarker);
         };
     });
 };
-
