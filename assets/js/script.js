@@ -1,12 +1,12 @@
 // Make navbar appear and disappear on scroll
 // CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-let prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset + 100;
+let prevScrollpos = document.pageYOffset;
+document.onscroll = function () {
+    let currentScrollPos = document.pageYOffset + 100;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0";
     } else {
-        document.getElementById("navbar").style.top = "-40%";
+        document.getElementById("navbar").style.top = "-50%";
     }
     prevScrollpos = currentScrollPos;
 };
@@ -29,17 +29,17 @@ function next() {
     current++;
 
     slide[current].style.display = 'block';
-    slide[current].style.opacity = 0.2;
+    slide[current].style.opacity = 0.4;
 
-    let x = 0.2;
+    let x = 0.4;
     let intX = setInterval(function () {
-        x += 0.1;
+        x += 0.02;
         slide[current].style.opacity = x;
         if (x >= 1) {
             clearInterval(intX);
-            x = 0.2;
+            x = 0.4;
         }
-    }, 90);
+    }, 60);
 
 }
 
@@ -49,17 +49,17 @@ function prev() {
     current--;
 
     slide[current].style.display = 'block';
-    slide[current].style.opacity = 0.2;
+    slide[current].style.opacity = 0.4;
 
-    let x = 0.2;
+    let x = 0.4;
     let intX = setInterval(function () {
-        x += 0.1;
+        x += 0.02;
         slide[current].style.opacity = x;
         if (x >= 1) {
             clearInterval(intX);
-            x = 0.2;
+            x = 0.4;
         }
-    }, 90);
+    }, 60);
 }
 
 function start() {
@@ -68,6 +68,7 @@ function start() {
 }
 start();
 // END of credit 
+
 
 //CREDIT, Code taken and modified from: https://stackoverflow.com/questions/43599695/add-autoplay-to-a-css-html-slideshow-is-it-possible
 let rightArrow = document.getElementById('right-arrow'),
