@@ -1,8 +1,13 @@
+function isMobile() {
+return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+}
+
+if (!isMobile()) {
 // Make navbar appear and disappear on scroll
 // CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-let prevScrollpos = document.pageYOffset;
-document.onscroll = function () {
-    let currentScrollPos = document.pageYOffset + 100;
+let prevScrollpos = window.pageYOffset;
+window.onscroll = function () {
+    let currentScrollPos = window.pageYOffset + 100;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0";
     } else {
@@ -11,6 +16,7 @@ document.onscroll = function () {
     prevScrollpos = currentScrollPos;
 };
 // END of credit
+}
 
 // Create pictures slideshow for the home page 
 // CREDIT, Code taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS
