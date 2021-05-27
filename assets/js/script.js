@@ -1,26 +1,22 @@
-// Trigger function only after scolling past 'about' section
-// CREDIT, Code taken and adapted from: https://stackoverflow.com/questions/41217941/      trigger-function-if-scroll-reaches-a-certain-point-only-once-not-every-time
-$(document).on('scroll', function () {
-    if ($(this).scrollTop() >= $('#about').position().top) {
-        navbarToggle('-50%');
-    } else if (($(this).scrollTop() <= $('#about').position().top)) {
-        navbarToggle('0');
-    }
-})
+window.onload = function() {
+document.getElementById("navbar").style.top = 0;
+}
 
-function navbarToggle(top) {
-    // Make navbar appear and disappear on scroll
-    // CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+if (!isMobile()) {
     let prevScrollpos = window.pageYOffset;
-        window.onscroll = function () {
-            let currentScrollPos = window.pageYOffset;
-            if (prevScrollpos > currentScrollPos) {
-                document.getElementById("navbar").style.top = "0";
-            } else {
-                document.getElementById("navbar").style.top = top;
-            }
-            prevScrollpos = currentScrollPos;
-        };
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbar").style.top = 0;
+        } else {
+            document.getElementById("navbar").style.top = '-50%';
+        }
+        prevScrollpos = currentScrollPos;
+    };
+}
+
+function isMobile() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 
