@@ -1,21 +1,28 @@
-function isMobile() {
-return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
-if (!isMobile()) {
-// Make navbar appear and disappear on scroll
-// CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
-let prevScrollpos = window.pageYOffset;
-window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-        document.getElementById("navbar").style.top = "0";
-    } else {
-        document.getElementById("navbar").style.top = "-50%";
+// Trigger function only after scolling past 'about' section
+// CREDIT, Code taken and adapted from: https://stackoverflow.com/questions/41217941/      trigger-function-if-scroll-reaches-a-certain-point-only-once-not-every-time
+$(document).on('scroll', function () {
+    if ($(this).scrollTop() >= $('#about').position().top) {
+        navbarToggle('-50%');
+    } else if (($(this).scrollTop() <= $('#about').position().top)) {
+        navbarToggle('0');
     }
-    prevScrollpos = currentScrollPos;
-};
-// END of credit
+})
+
+function navbarToggle(top) {
+    // Make navbar appear and disappear on scroll
+    // CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
+    let prevScrollpos = window.pageYOffset;
+        window.onscroll = function () {
+            let currentScrollPos = window.pageYOffset;
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = "0";
+            } else {
+                document.getElementById("navbar").style.top = top;
+            }
+            prevScrollpos = currentScrollPos;
+        };
 }
+
 
 // Smooth scrolling to the desired section of the page when the respective achor link is clicked 
 // CREDIT, Code taken from: https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
@@ -29,25 +36,25 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 //END of credit 
 
 // Add class 'active' based on button selected (day or night)
-$('.btn-dn').click(function(){
+$('.btn-dn').click(function () {
     $('.btn').removeClass('active');
     $(this).addClass('active');
-        if (this.id === 'button-day') {
-           $('#historicalSites').trigger('click');
-        } else {
-           $('#restaurants').trigger('click');
-        };
+    if (this.id === 'button-day') {
+        $('#historicalSites').trigger('click');
+    } else {
+        $('#restaurants').trigger('click');
+    };
 });
 
 // Add class 'active' based on button selected (activities --> ex. historical site, restaurants, etc)
-$('.btn-activity').click(function(){
+$('.btn-activity').click(function () {
     $('.btn-activity').removeClass('active');
     $('.btn-specific').removeClass('active');
     $(this).addClass('active')
 });
 
 // Add class 'active' based on button selected (specific location)
-$('.btn-specific').click(function(){
+$('.btn-specific').click(function () {
     $('.btn-specific').removeClass('active');
     $(this).addClass('active')
 });
@@ -68,18 +75,26 @@ let timeLine2 = gsap.timeline({
     }
 });
 
-timeLine.from('.about-heading-content', {y:100, opacity:0, duration: 1.5}, "-=1");
-timeLine2.from('.about-info', {y:100, opacity:0, duration: 1.5}, "-=1");
+timeLine.from('.about-heading-content', {
+    y: 100,
+    opacity: 0,
+    duration: 1.5
+}, "-=1");
+timeLine2.from('.about-info', {
+    y: 100,
+    opacity: 0,
+    duration: 1.5
+}, "-=1");
 // END of credit
 
 // Auto-play home gallery
 // CREDIT, Code taken and modified from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/   
 $(".img-frame:gt(0)").hide();
-  setInterval(function () {
+setInterval(function () {
     $(".img-frame:first")
-      .fadeOut(3000)
-      .next()
-      .fadeIn(3000)
-      .end()
-      .appendTo("#home");
-  }, 6000);
+        .fadeOut(3000)
+        .next()
+        .fadeIn(3000)
+        .end()
+        .appendTo("#home");
+}, 6000);
