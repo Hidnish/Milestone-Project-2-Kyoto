@@ -38,7 +38,7 @@
                 <div class="ml-auto">
                     <ul class="navbar-nav navbar-nav-style">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html" class="nav-link">Home</a>
+                            <a class="nav-link" href="#home-gallery" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#about-section" class="nav-link">About</a>
@@ -57,21 +57,16 @@
     </div>
 
     <!--Hero image gallery-->
-    <section id="home-gallery">
-
-
-        <div class="container-pics">
-            <div id="left-arrow" class="arrow l" onclick="prev()">
-                <i class="fas fa-chevron-left"></i>
+    <section id='home'>
+        <div id="home-gallery">
+            <div class="img-frame">
+                <img src="/assets/images/kyoto-hero-1.jpg">
             </div>
-            <div class="slide slide-1">
+            <div class="img-frame">
+                <img src="/assets/images/kyoto-hero-2.jpg">
             </div>
-            <div class="slide slide-2">
-            </div>
-            <div class="slide slide-3">
-            </div>
-            <div class="arrow r" onclick="next()">
-                <i id="right-arrow" class="fas fa-chevron-right"></i>
+            <div class="img-frame">
+                <img src="/assets/images/kyoto-hero-3.jpg">
             </div>
         </div>
     </section>
@@ -81,10 +76,11 @@
         <a id="about-section"></a>
         <div class="about-heading backg-about">
             <heading>
-                <h2>Welcome to Kyoto Day'n'Night</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in tempor nisi
-                    commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero. Nunc sit amet
-                    odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula tincidunt. Mauris dolor
+                <h2 class="about-heading-content">Welcome to Kyoto Day'n'Night</h2>
+                <p class="about-heading-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare
+                    nulla mauris, in tempor nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet
+                    libero. Nunc sit amet odio ac sem dictum maximus eget non ex. Nulla finibus odio id vehicula
+                    tincidunt. Mauris dolor
                     ex, luctus vel pharetra in, tristique vitae nibh. Pellentesque efficitur neque nec libero
                     pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id
                     neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et
@@ -368,6 +364,9 @@
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!--Email.js-->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <!--GSAP-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
     <script src="assets/js/script.js"></script>
     <script src="assets/js/map.js"></script>
