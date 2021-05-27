@@ -1,13 +1,12 @@
 function isMobile() {
 return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
-
 if (!isMobile()) {
 // Make navbar appear and disappear on scroll
 // CREDIT, Code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
 let prevScrollpos = window.pageYOffset;
 window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset + 100;
+    let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
         document.getElementById("navbar").style.top = "0";
     } else {
@@ -18,72 +17,16 @@ window.onscroll = function () {
 // END of credit
 }
 
-// Create pictures slideshow for the home page 
-// CREDIT, Code taken from: https://github.com/codingWithElias/Full-Screen-Image-Slider-With-HTML-CSS-JS
-let slide = document.querySelectorAll('.slide');
-var current = 0;
+// Smooth scrolling to the desired section of the page when the respective achor link is clicked 
+// CREDIT, Code taken from: https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
 
-function clearSlide() {
-    for (let i = 0; i < slide.length; i++) {
-        slide[i].style.display = 'none';
-    }
-}
-
-function next() {
-    clearSlide();
-    if (current === slide.length - 1) current = -1;
-    current++;
-
-    slide[current].style.display = 'block';
-    slide[current].style.opacity = 0.4;
-
-    let x = 0.4;
-    let intX = setInterval(function () {
-        x += 0.02;
-        slide[current].style.opacity = x;
-        if (x >= 1) {
-            clearInterval(intX);
-            x = 0.4;
-        }
-    }, 60);
-
-}
-
-function prev() {
-    clearSlide();
-    if (current === 0) current = slide.length;
-    current--;
-
-    slide[current].style.display = 'block';
-    slide[current].style.opacity = 0.4;
-
-    let x = 0.4;
-    let intX = setInterval(function () {
-        x += 0.02;
-        slide[current].style.opacity = x;
-        if (x >= 1) {
-            clearInterval(intX);
-            x = 0.4;
-        }
-    }, 60);
-}
-
-function start() {
-    clearSlide();
-    slide[current].style.display = 'block';
-}
-start();
-// END of credit 
-
-
-//CREDIT, Code taken and modified from: https://stackoverflow.com/questions/43599695/add-autoplay-to-a-css-html-slideshow-is-it-possible
-let rightArrow = document.getElementById('right-arrow'),
-    seconds = 7;
-
-let interval = setInterval(function() {
-  rightArrow.click();
-}, (seconds * 1000));
-// END of credit 
+    $('html, body').animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 600);
+});
+//END of credit 
 
 // Add class 'active' based on button selected (day or night)
 $('.btn-dn').click(function(){
@@ -108,3 +51,35 @@ $('.btn-specific').click(function(){
     $('.btn-specific').removeClass('active');
     $(this).addClass('active')
 });
+
+// Fade-in animation for 'about-section' content(text)
+// CREDIT, Code taken and modified: https://www.youtube.com/watch?v=ygcEKd0RIGg&ab_channel=DesignCourse
+let timeLine = gsap.timeline({
+    scrollTrigger: {
+        trigger: '#home',
+        start: 'center top'
+    }
+});
+
+let timeLine2 = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.about-heading',
+        start: 'center top'
+    }
+});
+
+timeLine.from('.about-heading-content', {y:100, opacity:0, duration: 1.5}, "-=1");
+timeLine2.from('.about-info', {y:100, opacity:0, duration: 1.5}, "-=1");
+// END of credit
+
+// Auto-play home gallery
+// CREDIT, Code taken and modified from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/   
+$(".img-frame:gt(0)").hide();
+  setInterval(function () {
+    $(".img-frame:first")
+      .fadeOut(3000)
+      .next()
+      .fadeIn(3000)
+      .end()
+      .appendTo("#home");
+  }, 6000);
