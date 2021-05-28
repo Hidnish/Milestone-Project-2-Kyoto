@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en us">
+<html lang="en-US">
 
 <head>
     <meta charset="UTF-8">
@@ -11,8 +11,7 @@
     <!--Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" type="text/css">
     <!--Custom Font-->
-    <link href="//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg"
-        rel="stylesheet" type="text/css" />
+    <link href="//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg" rel="stylesheet" type="text/css"/>
     <!-- Leaflet.js-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <!-- CSS -->
@@ -38,16 +37,16 @@
                 <div class="ml-auto">
                     <ul class="navbar-nav navbar-nav-style">
                         <li class="nav-item">
-                            <a class="nav-link" href="#home-gallery" class="nav-link">Home</a>
+                            <a class="nav-link" href="#home-gallery">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about-section" class="nav-link">About</a>
+                            <a class="nav-link" href="#about">About</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#locations" class="nav-link">Locations</a>
+                            <a class="nav-link" href="#locations">Locations</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact" class="nav-link">Contact</a>
+                            <a class="nav-link" href="#contact">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -58,6 +57,7 @@
 
     <!--Hero image gallery-->
     <section id='home'>
+        <h4>Home</h4>
         <div id="home-gallery">
             <div class="img-frame">
                 <img src="assets/images/ladies.jpeg" alt="">
@@ -73,9 +73,7 @@
 
     <!--About info section-->
     <section id="about">
-        <a id="about-section"></a>
         <div class="about-heading backg-about">
-            <heading>
                 <h2 class="about-heading-content">Welcome to Kyoto Day'n'Night</h2>
                 <p class="about-heading-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare
                     nulla mauris, in tempor nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet
@@ -85,13 +83,12 @@
                     pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis eget. Pellentesque id
                     neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio posuere ligula, et
                     porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
-            </heading>
         </div>
         <div class="about-body backg-about-info">
             <div class="row about-row">
                 <div class="col-12 col-md-6">
                     <div class="about-info">
-                        <h2>Historical Sites</h1>
+                        <h2>Historical Sites</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in
                                 tempor
                                 nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero.
@@ -103,7 +100,8 @@
                                 nec libero pretium ultrices. Nulla ultrices urna nisi, non condimentum sapien iaculis
                                 eget.
                                 Pellentesque id neque dolor. Praesent congue, dui in sollicitudin malesuada, lectus odio
-                                posuere ligula, et porta turpis lorem quis leo. Phasellus eu aliquam turpis.</p>
+                                posuere ligula, et porta turpis lorem quis leo. Phasellus eu aliquam turpis.
+                            </p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
@@ -115,7 +113,7 @@
             <div class="row about-row">
                 <div class="col-12 col-md-6 order-md-6">
                     <div class="about-info">
-                        <h2>Gardens & Parks</h1>
+                        <h2>Gardens & Parks</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in
                                 tempor
                                 nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero.
@@ -139,7 +137,7 @@
             <div class="row about-row-night">
                 <div class="col-12 col-md-6">
                     <div class="about-info">
-                        <h2>Restaurants</h1>
+                        <h2>Restaurants</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in
                                 tempor
                                 nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero.
@@ -163,7 +161,7 @@
             <div class="row about-row-night pb-5">
                 <div class="col-12 col-md-6 order-md-6">
                     <div class="about-info">
-                        <h2>Bars & Clubs</h1>
+                        <h2>Bars & Clubs</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ornare nulla mauris, in
                                 tempor
                                 nisi commodo sed. Nam at mauris in tellus mattis convallis sit amet sit amet libero.
@@ -191,8 +189,8 @@
         <div id="switch" class="locations-section">
             <div class="menu">
                 <h2>Locations</h2>
-                <button id="button-day" class="btn btn-light btn-dn" onclick="pickSet('pick-day')">Day</a>
-                    <button id="button-night" class="btn btn-dark btn-dn" onclick="pickSet('pick-night')">Night</a>
+                <button id="button-day" class="btn btn-light btn-dn" onclick="pickSet('pick-day')">Day</button>
+                    <button id="button-night" class="btn btn-dark btn-dn" onclick="pickSet('pick-night')">Night</button>
             </div>
             <div class="row">
                 <div class="col-12 col-md-6">
@@ -303,7 +301,7 @@
                         <label for="emailaddress" class="mb-0">Email Address:</label>
                         <input type="email" name="email" id="emailaddress" class="form-control" placeholder="Email"
                             required />
-                        <label for="message" class="mb-0">Any particular request? Let us know below:</label>
+                        <label for="request" class="mb-0">Any particular request? Let us know below:</label>
                         <textarea rows="5" name="request" id="request" class="form-control" placeholder="Your message"
                             required></textarea>
                         <div class="text-center">
@@ -363,7 +361,7 @@
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!--Email.js-->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <!--GSAP-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>

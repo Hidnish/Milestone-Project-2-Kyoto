@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Newsreader:wght@300;400;500&display=swap');
-@import url(//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg);
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600');
+/*@import url('//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg');*/
 
 @font-face {
     font-family: "Japanese";
@@ -11,7 +11,6 @@
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.ttf") format("truetype"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.svg#JapaneseBrushMasterW00-Rg") format("svg");
 }
-
 
 html,
 body {
@@ -219,14 +218,12 @@ p {
 
 .btn-light {
     color: #1c334d;
-    background-color: #fff;
-    border-color: #fff;
+    background-color: #fafafa;
 }
 
 .btn-dark {
     color: #fafafa;
     background-color: #1c334d;
-    border-color: #1c334d;
 }
 
 .activity-choice {
@@ -439,4 +436,3 @@ p {
     }
 }
 
-;

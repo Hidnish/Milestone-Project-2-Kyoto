@@ -1,3 +1,4 @@
+// Create Layers to make markers appear and disappear on command from the map
 let layerDay = new L.LayerGroup();
 let layerNight = new L.LayerGroup();
 
@@ -8,13 +9,11 @@ let map = L.map('map', {
     layers: [layerDay, layerNight]
 });
 
-// Create Layers to make markers appear and disappear on command from the map
-
-let mapLight = L.tileLayer(`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=ROK2DASDw4SDlqEDm9v4`, {
+let mapLight = L.tileLayer(`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=hrCIQZjIaCYMPLCxXgBt`, {
     attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`,
 }).addTo(map);
 
-let mapDark = L.tileLayer(`https://api.maptiler.com/maps/jp-mierune-dark/{z}/{x}/{y}.png?key=ROK2DASDw4SDlqEDm9v4`, {
+let mapDark = L.tileLayer(`https://api.maptiler.com/maps/jp-mierune-dark/{z}/{x}/{y}.png?key=hrCIQZjIaCYMPLCxXgBt`, {
     attribution: `<a href="https://maptiler.jp/" target="_blank">&copy; MIERUNE</a> <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`
 });
 
@@ -209,7 +208,6 @@ const locationsArray = [
 
 //--------------------------------------------------------------------//
 
-
 // Show "day-time" locations on map + list of historical sites: by default on page load
 // Code based on: https://stackoverflow.com/questions/18646881/auto-click-button-element-on-page-load-using-jquery 
 $(document).ready(function () {
@@ -217,7 +215,6 @@ $(document).ready(function () {
 });
 // END of Credit
 
-""
 // Show activities available based on DAY-time or NIGHT-time
 function pickSet(selection) {
     let set = document.getElementsByClassName('activity-choice');
@@ -232,9 +229,10 @@ function pickSet(selection) {
         pickActivity("pick-historical");
     } else if (selection === "pick-night") {
         pickActivity("pick-restaurants");
-    };
+    }
 }
 
+// Show locations available for the kind of activity selected 
 function pickActivity(selection) {
     let activities = document.getElementsByClassName('locations-box');
     let places = document.getElementsByClassName('locations-box-inner');
@@ -254,34 +252,41 @@ let buttonDayNite = document.getElementsByClassName('btn-dn');
 
 for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
+
         // ADD description
-        // Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
+        // CREDIT, Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
         for (let i = 0; i < locationsArray.length; i++) {
             let locationType = locationsArray[i].group;
+            
+            // Create a marker with infos for the array of locations selected 
+            function markerMaker() {
+                marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
+                marker.bindPopup(`</div><h6>${locationsArray[i].name}</h6>
+                <strong>Address:</strong> ${locationsArray[i].address}<br>
+                <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br><br>
+                <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`);
+            }
+        //END of credit    
 
             if (button.id === 'button-day' && locationType === 'day') {
-                marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
-                marker.bindPopup(`<h6>${locationsArray[i].name}</h6>
-                Click on the specific location's button from the menu (on the left) for more details`);
-                // End of Credit   
+                markerMaker();
                 switcher(mapDark, mapLight, layerNight, layerDay);
                 locationBox.classList.remove('night-mode');
                 contactBox.classList.remove('backg-contact-night');
 
             } else if (button.id === 'button-night' && locationType === 'night') {
-                marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
-                marker.bindPopup(`<h6>${locationsArray[i].name}</h6>
-                Click on the specific location's button from the menu (on the left) for more details`);
-
+                markerMaker();
                 switcher(mapLight, mapDark, layerDay, layerNight);
                 locationBox.classList.add('night-mode');
                 contactBox.classList.add('backg-contact-night');
-            };
-        };
+            }
+        }
     });
-};
+}
 
-// Switch map to day/night mode and change the markers(locations) accordingly 
+
+
+// Switch map to day/night mode and change the markers on the map accordingly 
 function switcher(mapNo, mapYes, layerNo, layerYes) {
     map.removeLayer(singleMarker).setView([35.0116, 135.7381], 12);
 
@@ -305,17 +310,16 @@ for (let i = 0; i < locationButtons.length; i++) {
 
         // Inspired by ....
         const findMapLocation = locationsArray.find(
-            (name) => name.id === buttonData);
+            (place) => place.id === buttonData);
 
         map.flyTo(findMapLocation.center, findMapLocation.zoom);
         if (findMapLocation.center) {
             map.removeLayer(singleMarker);
             singleMarker = L.marker(findMapLocation.center)
                 .bindPopup(`</div><h6>${locationsArray[i].name}</h6>
-                            <strong>Address:</strong> ${locationsArray[i].address}<br>
-                            <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br> 
-                            <br>
-                            <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
+                <strong>Address:</strong> ${locationsArray[i].address}<br>
+                <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br><br>
+                <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
                 .addTo(map).openPopup();
 
             //Center map on popup rather than marker: prevents the popup to overflow outside the map
@@ -323,11 +327,13 @@ for (let i = 0; i < locationButtons.length; i++) {
             map.on('popupopen', function (e) {
                 var px = map.project(e.target._popup._latlng); // find the pixel location on the map where the popup anchor is
                 px.y -= e.target._popup._container.clientHeight / 2; // find the height of the popup container, divide by 2, subtract from the Y axis of marker location
-                map.panTo(map.unproject(px), {animate: true}); // pan to new center
+                map.panTo(map.unproject(px), {
+                    animate: true
+                }); // pan to new center
             });
             //END of Credit
         } else {
             map.removeLayer(singleMarker);
-        };
+        }
     });
-};
+}

@@ -1,8 +1,11 @@
+// Prevents navbar from disappearing on page load
 window.onload = function() {
 document.getElementById("navbar").style.top = 0;
-}
-
+};
+// add credit
 if (!isMobile()) {
+    // Make navbar disappear/appear on scroll 
+    // CREDIT, code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
         let currentScrollPos = window.pageYOffset;
@@ -13,6 +16,7 @@ if (!isMobile()) {
         }
         prevScrollpos = currentScrollPos;
     };
+    //END of credit 
 }
 
 function isMobile() {
@@ -29,7 +33,7 @@ $(document).on('click', 'a[href^="#"]', function (event) {
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 600);
 });
-//END of credit 
+// END of credit 
 
 // Add class 'active' based on button selected (day or night)
 $('.btn-dn').click(function () {
@@ -39,20 +43,20 @@ $('.btn-dn').click(function () {
         $('#historicalSites').trigger('click');
     } else {
         $('#restaurants').trigger('click');
-    };
+    }
 });
 
 // Add class 'active' based on button selected (activities --> ex. historical site, restaurants, etc)
 $('.btn-activity').click(function () {
     $('.btn-activity').removeClass('active');
     $('.btn-specific').removeClass('active');
-    $(this).addClass('active')
+    $(this).addClass('active');
 });
 
 // Add class 'active' based on button selected (specific location)
 $('.btn-specific').click(function () {
     $('.btn-specific').removeClass('active');
-    $(this).addClass('active')
+    $(this).addClass('active');
 });
 
 // Fade-in animation for 'about-section' content(text)
@@ -76,6 +80,7 @@ timeLine.from('.about-heading-content', {
     opacity: 0,
     duration: 1.5
 }, "-=1");
+
 timeLine2.from('.about-info', {
     y: 100,
     opacity: 0,
@@ -88,9 +93,9 @@ timeLine2.from('.about-info', {
 $(".img-frame:gt(0)").hide();
 setInterval(function () {
     $(".img-frame:first")
-        .fadeOut(3000)
+        .fadeOut(4000)
         .next()
-        .fadeIn(3000)
+        .fadeIn(4000)
         .end()
         .appendTo("#home");
-}, 6000);
+}, 8000);

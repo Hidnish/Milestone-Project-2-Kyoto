@@ -20,7 +20,7 @@ function sendMail(contactForm) {
             function (error) {
                 alert("Sorry, something went wrong. Please fill out the form and click submit again", error);
                 console.log("FAILED", error);
-            })
+            });
 
     document.getElementById('fillForm').reset();
     return false; //This is to prevent the page from refreshing when you submit your form    
