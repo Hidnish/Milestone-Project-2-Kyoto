@@ -1,6 +1,7 @@
 #### Overview
 
-> This is "Kyoto Day'n'Night", a project developed with the aim of promoting Kyoto as a destination for people traveling through Japan or simply interested in visiting the country in the future. The major theme of the website is the division between day (historical sites and parks) and night (restaurants and bars) activities to facilitate the website navigation.
+This is "Kyoto Day'n'Night", a project developed with the aim of promoting Kyoto as a destination for people traveling through Japan or simply interested in visiting the country in the future. The major theme of the website is the division between day activities(historical sites and parks) and night activities (restaurants and bars) to facilitate the website navigation.
+
 ---
 
 #### User Stories 
@@ -33,7 +34,7 @@ The target audience is comprised by english-speaking individuals and families, i
 
 - Provides a clean UX for users with intuitive navigation.
 - Structures the content with clear division and focus on introduction, maps and contact form. 
-- Animations (made with JavaScript) are included to improve the overall user experience and increase the thrustworthiness of the website. 
+- Animations (made with JavaScript) included to improve the overall user experience and increase the thrustworthiness of the website. 
 
 #### 3. Structure 
 
@@ -68,5 +69,57 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 
 ##### images
 
-- Images were carefully selected to create a sense of 'authenticity' in the website 
+- Images were carefully selected to match with the background colors and create a sense of 'authenticity' in the website.
+
+--- 
+
+### Features 
+
+- Designed with HTML5, CSS3, JavaScript + libraries (Bootstrap, jQuery, GSAP).
+- Responsive navigation bar (fixed on mobile) present thoughout the page to move from one section to the other with ease. 
+- Home/landing section with auto-playing picture gallery.
+- About section providing information about the website and the different activities available.
+- Location section with menu to select specific locations to see info and their position on the map.
+- Contact Form.
+- Footer with links to social media.
+
+#### Features for future prospects 
+
+- A section to book a trip directly from the website.
+- A review section with comment from previous customers/users.
+
+---
+
+### Technologies Used 
+
+#### Languages 
+
+1. [HTML5](https://en.wikipedia.org/wiki/HTML5)
+2. [CSS3](https://en.wikipedia.org/wiki/Cascading_Style_Sheets)
+3. [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+
+#### Integration
+
+1. [Bootstrap](https://getbootstrap.com/)
+   - Used to assist with styling and responsivness of the website
+2. [FontAwesome](https://fontawesome.com/)
+   - Used to create social media icons in the footer 
+3. [Google Fonts](https://fonts.google.com/) 
+   - User to import 'Crimson Text' font
+4. [GSAP](https://greensock.com/gsap/)
+   - Used to add animation to the About section
+5. [jQuery](https://jquery.com/)
+   - Included with Bootstrap to create responsive navbar and used to simplify code in .js files.
+6. [Email.js](https://www.emailjs.com)
+   - API for sending emails through contact form   
+7. [LeafletJS](https://leafletjs.com/)
+   - API for interactive maps 
+
+#### Workspace, version control and Repository storage
+
+1. [Gitpod](https://www.gitpod.io/) - Used as workspace IDE (Integrated Development Environment).
+2. [GitHub](https://github.com/) - Hosting platform for version control, used to manage my repositories.
+3. [Git](https://git-scm.com/) - Version control software to record file changes and updates.
+
+
 
