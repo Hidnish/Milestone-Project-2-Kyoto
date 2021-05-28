@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600');
 /*@import url('//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg');*/
 
@@ -47,44 +54,48 @@ p {
 /* Code taken and modified from: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
 .backg-about {
     background-color: #fafafa;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fafafa)), url(../images/tip.jpeg);
+    background: -o-linear-gradient(top, transparent, #fafafa), url(../images/tip.jpeg);
     background: linear-gradient(to bottom, transparent, #fafafa), url(../images/tip.jpeg);
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
 }
 
 /* END credit */
 
 .backg-contact {
+    background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#fafafa)), url(../images/contact.jpg) center no-repeat;
+    background: -o-linear-gradient(bottom, transparent, #fafafa), url(../images/contact.jpg) center no-repeat;
     background: linear-gradient(to top, transparent, #fafafa), url(../images/contact.jpg) center no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover
 }
 
 .backg-contact-night {
+    background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#768291)), url(../images/contact.jpg) center no-repeat;
+    background: -o-linear-gradient(bottom, transparent, #768291), url(../images/contact.jpg) center no-repeat;
     background: linear-gradient(to top, transparent, #768291), url(../images/contact.jpg) center no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover
 }
 
 .backg-about-info {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#1c334d));
+    background-image: -o-linear-gradient(#fafafa, #1c334d);
     background-image: linear-gradient(#fafafa, #1c334d);
 }
 
 /* ----- NAVBAR ------ */
 
 .navbar {
+    -webkit-transition: top 0.5s;
+    -o-transition: top 0.5s;
     transition: top 0.5s;
 }
 
 .navbar-nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
     flex-direction: row;
 }
 
@@ -139,22 +150,33 @@ p {
     -o-object-fit: cover;
     object-fit: cover;
 }
+
 /* END of credit */
 
 /* ----- ABOUT SECTION ----- */
 
 .about-row {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #1c334d;
 }
 
 .about-row-night {
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     height: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
     align-items: center;
     color: #fafafa;
 }
@@ -194,6 +216,7 @@ p {
 .about-img img {
     height: 100%;
     width: 100%;
+    -o-object-fit: contain;
     object-fit: contain;
     border-radius: 20px;
 }
@@ -404,8 +427,30 @@ p {
 
 
     /* locations */
+    .menu>.btn {
+        margin: 0 50px 20px !important;
+    }
+
+    .activity-choice {
+        border-radius: 10px;
+        padding: 4px
+    }
+
     .locations-list {
         min-height: 0;
+    }
+
+    .locations-list li {
+        padding: 3px 16px 3px;
+    }
+
+    .activity-choice {
+        border-radius: 10px;
+        padding: 4px
+    }
+
+    .activity-choice>.btn {
+        margin: 2px;
     }
 
     #map {
@@ -413,16 +458,13 @@ p {
     }
 
     /* contact */
-    .container {
-        width: auto;
-        margin: 0 5%;
-    }
 
     .form-box {
         padding: 0 5% 1%;
     }
 
     /* footer */
+
     .copyright,
     .footer-items {
         text-align: center;
@@ -436,3 +478,10 @@ p {
     }
 }
 
+@media (max-width: 576px) {
+
+    .container {
+        width: auto;
+        margin: 0 5%;
+    }
+}
