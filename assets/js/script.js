@@ -2,7 +2,7 @@
 window.onload = function() {
 document.getElementById("navbar").style.top = 0;
 };
-// add credit
+
 if (!isMobile()) {
     // Make navbar disappear/appear on scroll 
     // CREDIT, code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
@@ -12,17 +12,31 @@ if (!isMobile()) {
         if (prevScrollpos > currentScrollPos) {
             document.getElementById("navbar").style.top = 0;
         } else {
-            document.getElementById("navbar").style.top = '-50%';
+            document.getElementById("navbar").style.top = '-60%';
         }
         prevScrollpos = currentScrollPos;
     };
     //END of credit 
 }
 
+// Prevent navbar from appeating/disappearing on scroll on mobile browsers
+// CREDIT, code taken from: https://stackoverflow.com/questions/12259701/how-do-i-prevent-a-script-from-running-on-mobile-devices
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
+// Auto-play home gallery
+// CREDIT, Code taken and modified from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/   
+$(".img-frame:gt(0)").hide();
+setInterval(function () {
+    $(".img-frame:first")
+        .fadeOut(4000)
+        .next()
+        .fadeIn(4000)
+        .end()
+        .appendTo("#home");
+}, 6000);
+// END of credit
 
 // Smooth scrolling to the desired section of the page when the respective achor link is clicked 
 // CREDIT, Code taken from: https://stackoverflow.com/questions/7717527/smooth-scrolling-when-clicking-an-anchor-link
@@ -33,7 +47,25 @@ $(document).on('click', 'a[href^="#"]', function (event) {
         scrollTop: $($.attr(this, 'href')).offset().top
     }, 600);
 });
-// END of credit 
+// END of credit
+
+// Connect About-section's buttons to their specific list of places in the Location-section
+$(window).click(function(button) {
+  if ($(button.target).hasClass('historical')) {
+    typeSelection('#button-day','#historicalSites');
+  } else if ($(button.target).hasClass('parks')) {
+    typeSelection('#button-day','#parksGardens');
+  } else if ($(button.target).hasClass('restaurants')){
+    typeSelection('#button-night','#restaurants');
+  } else if ($(button.target).hasClass('bars')) {
+    typeSelection('#button-night','#barsClubs');
+  }
+});
+
+function typeSelection(time, activity) {
+    $(time).trigger('click');
+    $(activity).trigger('click');
+}
 
 // Add class 'active' based on button selected (day or night)
 $('.btn-dn').click(function () {
@@ -60,7 +92,7 @@ $('.btn-specific').click(function () {
 });
 
 // Fade-in animation for 'about-section' content(text)
-// CREDIT, Code taken and modified: https://www.youtube.com/watch?v=ygcEKd0RIGg&ab_channel=DesignCourse
+// CREDIT, Code taken and modified from: https://www.youtube.com/watch?v=ygcEKd0RIGg&ab_channel=DesignCourse
 let timeLine = gsap.timeline({
     scrollTrigger: {
         trigger: '#home',
@@ -87,15 +119,3 @@ timeLine2.from('.about-info', {
     duration: 1.5
 }, "-=1");
 // END of credit
-
-// Auto-play home gallery
-// CREDIT, Code taken and modified from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/   
-$(".img-frame:gt(0)").hide();
-setInterval(function () {
-    $(".img-frame:first")
-        .fadeOut(4000)
-        .next()
-        .fadeIn(4000)
-        .end()
-        .appendTo("#home");
-}, 8000);
