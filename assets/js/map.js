@@ -9,19 +9,17 @@ let map = L.map('map', {
     layers: [layerDay, layerNight]
 });
 
+//Tile Layer for DAY locations
 let mapLight = L.tileLayer(`https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=hrCIQZjIaCYMPLCxXgBt`, {
     attribution: `<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`,
 }).addTo(map);
 
+//Tile layer for NIGHT locations 
 let mapDark = L.tileLayer(`https://api.maptiler.com/maps/jp-mierune-dark/{z}/{x}/{y}.png?key=hrCIQZjIaCYMPLCxXgBt`, {
     attribution: `<a href="https://maptiler.jp/" target="_blank">&copy; MIERUNE</a> <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`
 });
 
-let locationBox = document.getElementById('switch');
-let contactBox = document.getElementById('switch2');
-
 // --------------- Locations grouped into objects -----------------
-
 const locationsArray = [
 
     // Historical sites
@@ -215,6 +213,9 @@ $(document).ready(function () {
 });
 // END of Credit
 
+let locationBox = document.getElementById('switch');
+let contactBox = document.getElementById('switch2');
+
 // Show activities available based on DAY-time or NIGHT-time
 function pickSet(selection) {
     let set = document.getElementsByClassName('activity-choice');
@@ -247,18 +248,18 @@ function pickActivity(selection) {
     document.getElementById(selection).classList.remove('hidden');
 }
 
-// Add description
+
 let buttonDayNite = document.getElementsByClassName('btn-dn');
 
 for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
 
-        // ADD description
+        // Populate the map with specific markers based on whether the user clicks "DAY" or "NIGHT"
         // CREDIT, Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
         for (let i = 0; i < locationsArray.length; i++) {
             let locationType = locationsArray[i].group;
             
-            // Create a marker with infos for the array of locations selected 
+            // Function to Create a marker + info popups for the array of locations selected 
             function markerMaker() {
                 marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
                 marker.bindPopup(`</div><h6>${locationsArray[i].name}</h6>
@@ -284,8 +285,6 @@ for (let button of buttonDayNite) {
     });
 }
 
-
-
 // Switch map to day/night mode and change the markers on the map accordingly 
 function switcher(mapNo, mapYes, layerNo, layerYes) {
     map.removeLayer(singleMarker).setView([35.0116, 135.7381], 12);
@@ -302,13 +301,15 @@ function switcher(mapNo, mapYes, layerNo, layerYes) {
 let locationButtons = $('.locations-list li').children();
 let singleMarker = {};
 
+// Function to clear the map and generate one single marker based on which location button the user has clicked
 for (let i = 0; i < locationButtons.length; i++) {
     locationButtons[i].addEventListener('click', function () {
         map.removeLayer(layerDay);
         map.removeLayer(layerNight);
         let buttonData = locationButtons[i].dataset.location;
 
-        // Inspired by ....
+        /* Code taken and modified from: https://github.com/JimLynx/CI-MS2-Safari-Africa/blob/master/assets/js/map.js &
+                                         https://stackoverflow.com/a/35398031/13484385*/
         const findMapLocation = locationsArray.find(
             (place) => place.id === buttonData);
 
@@ -321,6 +322,7 @@ for (let i = 0; i < locationButtons.length; i++) {
                 <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br><br>
                 <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
                 .addTo(map).openPopup();
+        //END of credit
 
             //Center map on popup rather than marker: prevents the popup to overflow outside the map
             //CREDIT Code taken from: https://stackoverflow.com/questions/22538473/leaflet-center-popup-and-marker-to-the-map    
