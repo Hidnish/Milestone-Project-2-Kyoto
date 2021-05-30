@@ -75,12 +75,38 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 ### Features 
 
 - Designed with HTML5, CSS3, JavaScript + libraries (Bootstrap, jQuery, GSAP).
-- Responsive navigation bar (fixed on mobile) present thoughout the page to move from one section to the other with ease. 
-- Home/landing section with auto-playing picture gallery.
-- About section providing information about the website and the different activities available.
-- Location section with menu to select specific locations to see info and their position on the map.
-- Contact Form.
-- Footer with links to social media.
+- Responsive **navigation bar** (fixed on mobile) present thoughout the page to move from one section to the other with ease. 
+- **Home/landing section** with auto-playing picture gallery.
+
+    <img src="assets/images/readme-img/homepage.png" alt="homepage" width="70%"/>
+- **About section** with:
+    - Information about the website and the different activities/locations available.
+    - Links to the specific locations from the 'Location section'.
+    <br><br>
+    
+    <img src="assets/images/readme-img/about.png" alt="about section" width="70%"/>
+
+- **Location section** with:
+    - First menu to select day-time or night-time locations (based on the choice the section background and map color will change).
+    - Second menu to select one of the two groups of locations available based on the first selection (i.e. Restaurants and Bars & Clubs).
+    - Third menu to select a specific location (that will show on the map).
+    - Map with markers and popup information for each location.
+    <br><br>
+
+    <img src="assets/images/readme-img/locationsd.png" alt="location section 1" width="70%"/>
+    <img src="assets/images/readme-img/locationsn.png" alt="location section 2" width="70%"/>
+
+- **Contact section** with contact form
+
+    <img src="assets/images/readme-img/contact.png" alt="contact section" width="70%"/>
+
+- **Footer** with links to social media and copyright message.
+
+    <img src="assets/images/readme-img/footer.png" alt="footer" width="70%"/>
+
+- **404 page** with link to the homepage  
+
+    <img src="assets/images/readme-img/404.png" alt="404 page" width="70%"/>
 
 #### Features for future prospects 
 
@@ -136,6 +162,7 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 #### Other resources 
 - [Balsamiq](https://balsamiq.com/wireframes/) - For designing wireframes.
 - [TinyPNG](https://tinypng.com/) - For compression of images.
+- [Toolur](https://compressimage.toolur.com) - For re-sizing images.
 - [Autoprefixer](https://autoprefixer.github.io/) - Used to parse CSS and add vendor prefixes.
 - [Google Mobile-Friendly Test](https://search.google.com/test/mobile-friendly) - To check whether the website is Mobile-friendly.
 
@@ -144,7 +171,7 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 
 ### Testing
 
-Testing documentation is stored on a separate file: ..here.. 
+Testing documentation is stored on a separate file: [here](assets/docs/Testing.md) 
 
 #### Solved bugs
 
@@ -154,9 +181,11 @@ Testing documentation is stored on a separate file: ..here..
 
 #### Unsolved bugs
 
-1. Sometimes, the home gallery becomes blank instead of showing the next picture.
+1. Sometimes, the home slideshow becomes shows the white background instead of displaying the next picture.
+2. When clicking on a location button for the first time, the map does not center the marker's popup. This causes the popup to partly overflow out of the map in small screen sizes. However, the problem does not reoccur after the first click. 
+3. On certain mobile browsers (i.e. Safari), it is sometimes necessary to hold pressed on a marker (on the map) in order to open the popup attached, instead of just tapping on it.
 
-
+---
 
 
 
