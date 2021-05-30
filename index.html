@@ -4,18 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         type="text/css">
-    <!--Font Awesome-->
+    <!-- Font Awesome-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" type="text/css">
-    <!--Custom Font-->
-    <link href="//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg"
-        rel="stylesheet" type="text/css" />
     <!-- Leaflet.js-->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
-    <!-- CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+    <!--CSS -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
     <title>Kyoto Day'n'Night</title>
@@ -61,13 +61,13 @@
         <h4 class="hidden">Home</h4>
         <div id="home-gallery">
             <div class="img-frame">
-                <img src="assets/images/ladies.jpeg" alt="">
+                <img src="assets/images/ladies.jpeg" alt="Japanese ladies in front of temple">
             </div>
             <div class="img-frame">
-                <img src="assets/images/kinkaku.jpeg" alt="">
+                <img src="assets/images/kinkaku.jpeg" loading="lazy" alt="Golden temple: Kinkaku-ji">
             </div>
             <div class="img-frame">
-                <img src="assets/images/night.jpeg" alt="">
+                <img src="assets/images/night.jpeg" loading="lazy" alt="Kyoto street by night">
             </div>
         </div>
     </section>
@@ -95,13 +95,13 @@
                             Buddhist temple to Fushimi Inari Taisha, the popular shrine (displayed in the picture)
                             dedicated to the Shinto god of rice.<br>
                             Click <a class="historical" href="#locations">here</a> to see all the historical sites we
-                            have picked for you.
+                            have selected for you.
                         </p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="about-img">
-                        <img class="bdr-left" src="assets/images/gates.jpeg" alt="">
+                        <img class="bdr-left" src="assets/images/gates.jpeg" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -109,17 +109,17 @@
                 <div class="col-12 col-md-6 order-md-6">
                     <div class="about-info">
                         <h2>Gardens & Parks</h2>
-                        <p>This city is not famous around the world only due to the preserved cultural relics, but also
+                        <p>This city is famous around the world not only for the preserved cultural relics, but also
                             because of its beautiful nature.
-                            Prepare yourself to be astonished by the cherry blossoms and to admire Shakkei, the art of
+                            You will be astonished by the cherry blossoms and to admire Shakkei, the art of
                             ‘borrowing scenery’ from the natural landscape into the view of a cultivated garden.<br>
                             Click <a class="parks" href="#locations">here</a> to see all the gardens and parks we have
-                            picked for you.</p>
+                            selected for you.</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-pull-6 col-md-6">
                     <div class="about-img">
-                        <img class="bdr-right" src="assets/images/stairs.jpeg" alt="">
+                        <img class="bdr-right" src="assets/images/stairs.jpeg" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -128,15 +128,15 @@
                     <div class="about-info">
                         <h2>Restaurants</h2>
                         <p>When it comes to good food, Kyoto is the right place for you to visit. The city can offer you
-                            an unforgettable culinary experience if you know where to go, from delicious Soba ramen to
+                            an unforgettable culinary experience if you know where to go, from delicious Soba noodles to
                             the tipical Obanzai.<br>
                             Click <a class="restaurants" href="#locations">here</a> to see all the restaurants we have
-                            picked for you.</p>
+                            selected for you.</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-6">
                     <div class="about-img">
-                        <img class="bdr-left" src="assets/images/food.jpeg" alt="">
+                        <img class="bdr-left" src="assets/images/food.jpeg" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -147,12 +147,12 @@
                         <p>Last but not least comes the late night fun. Kyoto can provide great options for everyone,
                             from the most sophisticated sake tasters to the party animals.<br>
                             Click <a class="bars" href="#locations">here</a> to see all the bars and clubs we have
-                            picked for you.</p>
+                            selected for you.</p>
                     </div>
                 </div>
                 <div class="col-12 col-md-pull-6 col-md-6">
                     <div class="about-img">
-                        <img class="bdr-right" src="assets/images/bars.jpeg" alt="">
+                        <img class="bdr-right" src="assets/images/bars.jpeg" alt="" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -293,11 +293,6 @@
 
     <footer class="footer container-fluid">
         <div class="row">
-            <!--<div class="d-xs-none d-sm-none d-md-none col-lg-4 d-lg-block">
-                <div class="footer-logo">
-                <a href="#hero-gallery"><h2>Kyoto Day'n'Nite</h2></a>
-                </div>
-            </div>-->
             <div class="col-12 col-md-6 order-md-6">
                 <ul class="footer-items">
                     <li class="list-inline-item">
@@ -329,7 +324,7 @@
     </footer>
 
     <!-- Leaflet.js-->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!--Bootstrap-->
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -337,14 +332,15 @@
     <!--jQuery-->
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <!--Email.js-->
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <!--GSAP-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/map.js"></script>
-    <script src="assets/js/email.js"></script>
+    <script defer src="assets/js/map.js"></script>
+    <script defer src="assets/js/email.js"></script>
+
 </body>
 
 </html>
