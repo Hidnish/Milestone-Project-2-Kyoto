@@ -6,7 +6,6 @@
 */
 
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600');
-/*@import url('//db.onlinewebfonts.com/c/fc87c87c07938e0484418e4c0a773b02?family=JapaneseBrushMasterW00-Rg');*/
 
 @font-face {
     font-family: "Japanese";
@@ -17,6 +16,7 @@
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff") format("woff"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.ttf") format("truetype"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.svg#JapaneseBrushMasterW00-Rg") format("svg");
+        font-display: swap
 }
 
 html,
@@ -84,6 +84,9 @@ p {
     background-image: linear-gradient(#fafafa, #1c334d);
 }
 
+.backg-404 {
+    background-color: #1c334d;
+}
 /* ----- NAVBAR ------ */
 
 .navbar {
@@ -114,7 +117,7 @@ p {
 }
 
 .navbar-brand {
-    font-family: 'Japanese', sans-serif;
+    font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 35px;
     margin-left: 1rem;
     color: #1c334d !important;
@@ -190,7 +193,7 @@ p {
 
 .about-heading h2 {
     padding-top: 100px;
-    font-family: 'Japanese', sans-serif;
+    font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 70px;
 }
 
@@ -230,7 +233,7 @@ p {
 
 .menu h2 {
     padding-bottom: 10px;
-    font-family: 'Japanese', sans-serif;
+    font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 50px;
     color: #1c334d;
 }
@@ -335,7 +338,7 @@ p {
 
 .contact-heading h2 {
     padding-top: 40px;
-    font-family: "Japanese", sans-serif;
+    font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 50px;
 }
 
@@ -403,6 +406,16 @@ p {
     font-weight: 700 !important
 }
 
+/* ----- 404 ----- */
+
+.error-text {
+    color: #fafafa;
+    font-family: 'Crimson text', sans-serif;
+}
+
+.error-text h1 {
+    font-family: 'Japanese', 'Crimson text', sans-serif;
+}
 /* ----- MEDIA QUERIES ----- */
 
 @media (min-width: 1500px) {
