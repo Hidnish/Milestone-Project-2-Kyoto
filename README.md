@@ -2,20 +2,19 @@
 
 This is "Kyoto Day'n'Night", a project developed with the aim of promoting Kyoto as a destination for people traveling through Japan or simply interested in visiting the country in the future. The major theme of the website is the division between day activities(historical sites and parks) and night activities (restaurants and bars) to facilitate the website navigation.
 
----
-
-#### User Stories 
-
-- "I want to easily navigate the website on any device I am currently using (phone, tablet or laptop)"
-- "I am interested in visiting Kyoto, but first, I would like to know what the city has to offer"
-- "I want to get in touch with questions about the locations listed on the website or other locations I believe should be mentioned"
-- "I want to be able to follow the page on social medias to check for any update/reviews"  
-
 --- 
 
 ### UX
 
 The target audience is comprised by english-speaking individuals and families, interested in the history and culture of the city, as well as eating well and having fun.
+
+#### User Stories 
+
+- "I want to navigate the website easily and intuitively, on any device (phone, tablet or laptop)"
+- "I want to understand the main purpose of the site"
+- "I am interested in visiting Kyoto, but first, I would like to know what the city has to offer"
+- "I want to get in touch with questions about the locations listed on the website or other locations I believe should be mentioned"
+- "I want to be able to follow the page on social medias to check for any update/reviews"  
 
 #### 1. Strategy
 
