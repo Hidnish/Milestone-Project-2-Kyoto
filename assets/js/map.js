@@ -49,7 +49,7 @@ const locationsArray = [
         zoom: 14,
         website: 'https://sankan.kunaicho.go.jp/guide/kyoto.html',
         address: '3 Kyotogyoen, Kamigyo Ward',
-        imgUrl: 'https://www.japanvisitor.com/images/content_images/kyotogosho20189.jpg',
+        imgUrl: 'https://live.staticflickr.com/560/32590403282_cd96e115d8_b.jpg',
         group: 'day',
         id: 'site3',
     },
@@ -258,26 +258,19 @@ for (let button of buttonDayNite) {
         // CREDIT, Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
         for (let i = 0; i < locationsArray.length; i++) {
             let locationType = locationsArray[i].group;
-            
-            // Function to Create a marker + info popups for the array of locations selected 
-            function markerMaker() {
-                marker = new L.marker([locationsArray[i].center[0], locationsArray[i].center[1]]);
-                marker.bindPopup(`</div><h6>${locationsArray[i].name}</h6>
-                <strong>Address:</strong> ${locationsArray[i].address}<br>
-                <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br><br>
-                <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`);
-            }
-        //END of credit    
+
+
+            //END of credit    
 
             if (button.id === 'button-day' && locationType === 'day') {
-                markerMaker();
-                switcher(mapDark, mapLight, layerNight, layerDay);
+                markerCreator(i);
+                switcher(false);
                 locationBox.classList.remove('night-mode');
                 contactBox.classList.remove('backg-contact-night');
 
             } else if (button.id === 'button-night' && locationType === 'night') {
-                markerMaker();
-                switcher(mapLight, mapDark, layerDay, layerNight);
+                markerCreator(i);
+                switcher(true);
                 locationBox.classList.add('night-mode');
                 contactBox.classList.add('backg-contact-night');
             }
@@ -285,15 +278,32 @@ for (let button of buttonDayNite) {
     });
 }
 
+// Function to Create a marker + info popups for the array of locations selected 
+function markerCreator(index) {
+    marker = new L.marker([locationsArray[index].center[0], locationsArray[index].center[1]]);
+    marker.bindPopup(`</div><h6>${locationsArray[index].name}</h6>
+                <strong>Address:</strong> ${locationsArray[index].address}<br>
+                <strong>Website:</strong><a href='${locationsArray[index].website}' target='_blank'> Click here</a><br><br>
+                <img src=${locationsArray[index].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`);
+}
+
 // Switch map to day/night mode and change the markers on the map accordingly 
-function switcher(mapNo, mapYes, layerNo, layerYes) {
+function switcher(isDark) {
     map.removeLayer(singleMarker).setView([35.0116, 135.7381], 12);
 
-    mapNo.remove();
-    mapYes.addTo(map);
-    map.removeLayer(layerNo);
-    layerYes.addLayer(marker);
-    layerYes.addTo(map);
+    if (isDark) {
+        mapLight.remove();
+        mapDark.addTo(map);
+        map.removeLayer(layerDay);
+        layerNight.addLayer(marker);
+        layerNight.addTo(map);
+    } else {
+        mapDark.remove();
+        mapLight.addTo(map);
+        map.removeLayer(layerNight);
+        layerDay.addLayer(marker);
+        layerDay.addTo(map);
+    }
 }
 
 // ------
@@ -322,7 +332,7 @@ for (let i = 0; i < locationButtons.length; i++) {
                 <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br><br>
                 <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
                 .addTo(map).openPopup();
-        //END of credit
+            //END of credit
 
             //Center map on popup rather than marker: prevents the popup to overflow outside the map
             //CREDIT Code taken from: https://stackoverflow.com/questions/22538473/leaflet-center-popup-and-marker-to-the-map    
