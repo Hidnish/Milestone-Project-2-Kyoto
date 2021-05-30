@@ -194,7 +194,7 @@ p {
 .about-heading h2 {
     padding-top: 100px;
     font-family: 'Japanese', 'Crimson text', sans-serif;
-    font-size: 70px;
+    font-size: 5em;
 }
 
 .about-heading p {
@@ -438,6 +438,15 @@ p {
         margin-top: 15px;
     }
 
+    .navbar-brand {
+        font-size: 25px;
+    }
+
+    /* about */
+
+    .about-heading h2 {
+        font-size: 3em;
+    }
 
     /* locations */
     .menu>.btn {
@@ -496,5 +505,12 @@ p {
     .container {
         width: auto;
         margin: 0 5%;
+    }
+}
+
+@media (max-width: 300px) {
+
+    .navbar-brand {
+        font-size: 20px;
     }
 }
