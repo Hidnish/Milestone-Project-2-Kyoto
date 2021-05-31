@@ -19,7 +19,7 @@ let mapDark = L.tileLayer(`https://api.maptiler.com/maps/jp-mierune-dark/{z}/{x}
     attribution: `<a href="https://maptiler.jp/" target="_blank">&copy; MIERUNE</a> <a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>`
 });
 
-// --------------- Locations grouped into objects -----------------
+// --------------- Locations grouped into array -----------------
 const locationsArray = [
 
     // Historical sites
@@ -255,21 +255,21 @@ for (let button of buttonDayNite) {
     button.addEventListener('click', function () {
 
         // Populate the map with specific markers based on whether the user clicks "DAY" or "NIGHT"
-        // CREDIT, Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js
+        // CREDIT (Including function: markerGenerator(), below) Code taken and modified from: https://stackoverflow.com/questions/42968243/how-to-add-multiple-markers-in-leaflet-js 
         for (let i = 0; i < locationsArray.length; i++) {
             let locationType = locationsArray[i].group;
 
 
-            //END of credit    
+            //END of credit
 
             if (button.id === 'button-day' && locationType === 'day') {
-                markerCreator(i);
+                markerGenerator(i);
                 switcher(false);
                 locationBox.classList.remove('night-mode');
                 contactBox.classList.remove('backg-contact-night');
 
             } else if (button.id === 'button-night' && locationType === 'night') {
-                markerCreator(i);
+                markerGenerator(i);
                 switcher(true);
                 locationBox.classList.add('night-mode');
                 contactBox.classList.add('backg-contact-night');
@@ -278,14 +278,15 @@ for (let button of buttonDayNite) {
     });
 }
 
-// Function to Create a marker + info popups for the array of locations selected 
-function markerCreator(index) {
+// Function to Create a marker + info popups for the array of locations selected (Credit above)
+function markerGenerator(index) {
     marker = new L.marker([locationsArray[index].center[0], locationsArray[index].center[1]]);
     marker.bindPopup(`</div><h6>${locationsArray[index].name}</h6>
                 <strong>Address:</strong> ${locationsArray[index].address}<br>
                 <strong>Website:</strong><a href='${locationsArray[index].website}' target='_blank'> Click here</a><br><br>
                 <img src=${locationsArray[index].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`);
-}
+} 
+//End of credit
 
 // Switch map to day/night mode and change the markers on the map accordingly 
 function switcher(isDark) {
@@ -311,15 +312,15 @@ function switcher(isDark) {
 let locationButtons = $('.locations-list li').children();
 let singleMarker = {};
 
-// Function to clear the map and generate one single marker based on which location button the user has clicked
+// Function to clear the map and generate one single marker based on which location button has been clicked by the user
 for (let i = 0; i < locationButtons.length; i++) {
     locationButtons[i].addEventListener('click', function () {
         map.removeLayer(layerDay);
         map.removeLayer(layerNight);
+        
+        /* Code taken and modified from: https://stackoverflow.com/a/35398031/13484385 &
+                                         https://github.com/JimLynx/CI-MS2-Safari-Africa/blob/master/assets/js/map.js */
         let buttonData = locationButtons[i].dataset.location;
-
-        /* Code taken and modified from: https://github.com/JimLynx/CI-MS2-Safari-Africa/blob/master/assets/js/map.js &
-                                         https://stackoverflow.com/a/35398031/13484385*/
         const findMapLocation = locationsArray.find(
             (place) => place.id === buttonData);
 
@@ -332,7 +333,7 @@ for (let i = 0; i < locationButtons.length; i++) {
                 <strong>Website:</strong><a href='${locationsArray[i].website}' target='_blank'> Click here</a><br><br>
                 <img src=${locationsArray[i].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`)
                 .addTo(map).openPopup();
-            //END of credit
+        //END of credit
 
             //Center map on popup rather than marker: prevents the popup to overflow outside the map
             //CREDIT Code taken from: https://stackoverflow.com/questions/22538473/leaflet-center-popup-and-marker-to-the-map    
