@@ -1,10 +1,49 @@
+# Kyoto Day'n'Night
+
+<img src="assets/images/readme-img/responsive.png" alt="about section" width="70%"/>
+
+[Link to the live site on GitHub pages](https://hidnish.github.io/Milestone-Project-2-Kyoto/)
+
 #### Overview
 
-This is "Kyoto Day'n'Night", a project developed with the aim of promoting Kyoto as a destination for people traveling through Japan or simply interested in visiting the country in the future. The major theme of the website is the division between day activities(historical sites and parks) and night activities (restaurants and bars) to facilitate the website navigation.
+This is "Kyoto Day'n'Night", a project developed with the aim of promoting Kyoto as a destination for people traveling through Japan or simply interested in visiting the country in the future. The major theme of the website is the division between day activities (historical sites and parks) and night activities (restaurants and bars), to facilitate the website navigation and add a unique touch to the page.
+
+---
+
+### Table of Contents
+
+- [UX](#ux)
+    - [User Stories](#user-stories)
+    - [Strategy](#1.-strategy)
+    - [Scope](#2.-scope)
+    - [Structure](#3.-structure)
+    - [Skeleton](#4.-skeleton)
+    - [Surface](#5.-surface)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+    - [Languages](#languages)
+    - [Integration](#integration)
+    - [Workspace, version control and Repository storage](#workspace-version-control-and-repository-storage)
+- [Resources](#resources)
+    - [Sources of knowledge](#sources-of-knowledge)
+    - [Other resources](#other-resources)
+- [Code Validation](#code-validation)
+    - [Testing](#testing)
+    - [Solved bugs](#solved-bugs)
+    - [Unsolved bugs](#unsolved-bugs)
+- [GitHub Pages](#github-pages)
+    - [Deployment](#deploying-the-project-on-github-pages)
+    - [Forking](#forking-the-github-repository)
+    - [Cloning](#making-a-local-clone-of-the-github-repository)
+- [Credits](#credits)
+    - [Media](#media)
+    - [Content](#content)
+    - [Code](#code)
+    - [Acknowledgement](#acknowledgement)
 
 --- 
 
-### UX
+## UX
 
 The target audience is comprised by english-speaking individuals and families, interested in the history and culture of the city, as well as eating well and having fun.
 
@@ -45,7 +84,7 @@ The target audience is comprised by english-speaking individuals and families, i
 
 #### 4. Skeleton
 
-- Wireframes (AAAAADDDDDD)
+- [Wireframes](assets/docs/wireframes.pdf)
 - Interactive navbar (fixed on mobile browsers) with 4 links + logo.
 - Home, About, Locations (map) and Contact sections.
 - Footer with social media links and copyright message.
@@ -54,7 +93,7 @@ The target audience is comprised by english-speaking individuals and families, i
 
 ##### Colors 
 
-Colors throughout the page fall in the spectrum between #fafafa (off white) & #1c334d (dark blue) to fit with the 'Day and Night' theme of the website. 
+Colours throughout the page fall in the spectrum between #fafafa (off white) & #1c334d (dark blue) to fit with the 'Day and Night' theme of the website. 
 
 ![image](https://www.colorhexa.com/fafafa.png) ![Image](https://www.colorhexa.com/1c334d.png) 
 
@@ -68,17 +107,18 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 
 ##### images
 
-- Images were carefully selected to match with the background colors and create a sense of 'authenticity' in the website.
+- Images were carefully selected to match with the background colours and create a sense of 'authenticity' in the website.
 
 --- 
 
-### Features 
+## Features 
 
 - Designed with HTML5, CSS3, JavaScript + libraries (Bootstrap, jQuery, GSAP).
-- Responsive **navigation bar** (fixed on mobile) present thoughout the page to move from one section to the other with ease. 
-- **Home/landing section** with auto-playing picture gallery.
+- Responsive **navigation bar** (fixed on mobile) present throughout the page to move from one section to the other with ease. 
+- **Home/landing section** with auto-playing slideshow.
 
     <img src="assets/images/readme-img/homepage.png" alt="homepage" width="70%"/>
+
 - **About section** with:
     - Information about the website and the different activities/locations available.
     - Links to the specific locations from the 'Location section'.
@@ -87,7 +127,7 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
     <img src="assets/images/readme-img/about.png" alt="about section" width="70%"/>
 
 - **Location section** with:
-    - First menu to select day-time or night-time locations (based on the choice the section background and map color will change).
+    - First menu to select day-time or night-time locations (based on the choice the section background and map colour will change).
     - Second menu to select one of the two groups of locations available based on the first selection (i.e. Restaurants and Bars & Clubs).
     - Third menu to select a specific location (that will show on the map).
     - Map with markers and popup information for each location.
@@ -108,14 +148,14 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 
     <img src="assets/images/readme-img/404.png" alt="404 page" width="70%"/>
 
-#### Features for future prospects 
+#### Future prospects
 
 - A section to book a trip directly from the website.
 - A review section with comment from previous customers/users.
 
 ---
 
-### Technologies Used 
+## Technologies Used 
 
 #### Languages 
 
@@ -142,7 +182,7 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 8. [LeafletJS](https://leafletjs.com/)
    - API for interactive maps 
 
-#### Workspace, version control and Repository storage
+#### Workspace Version control and Repository storage
 
 1. [Gitpod](https://www.gitpod.io/) - Used as workspace IDE (Integrated Development Environment).
 2. [GitHub](https://github.com/) - Hosting platform for version control, used to manage my repositories.
@@ -171,7 +211,7 @@ Colors throughout the page fall in the spectrum between #fafafa (off white) & #1
 
 ### Testing
 
-Testing documentation is stored on a separate file: [here](assets/docs/Testing.md) 
+Testing documentation, including User Stories, can be found here: [Testing](assets/docs/Testing.md) 
 
 #### Solved bugs
 
@@ -187,7 +227,65 @@ Testing documentation is stored on a separate file: [here](assets/docs/Testing.m
 
 ---
 
+## GitHub Pages
 
+#### Deploying the project on GitHub Pages
 
+  1. Log in to GitHub and locate the GitHub Repository
+  2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu ("gear" icon).
+  3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+  4. You will find the current message: "Pages settings now has its own dedicated tab! Check it out here!". Click the link.
+  5. Under "Source", click the dropdown called "None" and select "Master Branch".
+  6. The page will automatically refresh.
+  7. Go back to step 4, once you have clicked the link, you will find the published site link.
 
-https://theculturetrip.com/asia/japan/articles/the-most-beautiful-parks-in-kyoto/
+#### Forking the GitHub Repository
+
+  By forking the GitHub Repository you make a copy of the original repository on your GitHub account to view and/or make changes without affecting the original repository. Forking requires the following steps:
+
+  1. Log in to GitHub and locate the GitHub Repository
+  2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+  3. You should now have a copy of the original repository in your GitHub account.
+
+#### Making a local clone of the GitHub Repository
+
+  1. On GitHub, navigate to the main page of the repository.
+  2. Above the list of files, click the green 'Code' button.
+  3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+  4. Open Terminal
+  5. Change the current working directory to the location where you want the cloned directory to be made.
+  6. Type 'git clone', and then paste the URL you copied in Step 3: (https://github.com/Hidnish/Milestone-Project-2-Kyoto.git).
+  7. Press Enter. Your local clone will be created.
+
+---
+
+## Credits
+
+#### Media 
+
+- All the pictures uploaded were retrived from: [Unsplash](https://unsplash.com/s/photos/kyoto) 
+- Favicon taken from: [123RF](https://www.123rf.com/photo_65360684_stock-vector-japanese-temple-icon-illustration-isolated-sign-symbol.html)
+- Custom font "Japanese Brush Master" taken from: [Online Web Fonts](https://www.onlinewebfonts.com/download/fc87c87c07938e0484418e4c0a773b02)
+
+#### Content 
+
+- About section content was partly based on: 
+    - [Culture Trip: 10 Historical Landmarks to see in Kyoto](https://theculturetrip.com/asia/japan/articles/10-historical-landmarks-to-see-in-kyoto/)
+    - [Culture Trip: The most beautiful parks in Kyoto](https://theculturetrip.com/asia/japan/articles/the-most-beautiful-parks-in-kyoto/)
+- Information about specific locations was based on:
+    - [Google](https://www.google.com/)
+    
+#### Code 
+
+- Main sources (Specific credits are provided in the respective files, above each piece of code):
+    - [W3Scgools](https://www.w3schools.com/)
+    - [Stack Overflow](https://stackoverflow.com/)
+    - [YouTube](https://www.youtube.com/)
+    - [CSS-Tricks](https://css-tricks.com/)
+    - [CI-MS2-Safari-Africa](https://github.com/JimLynx/CI-MS2-Safari-Africa)
+    - Code Institute tutorial: Rosie - Resume Project.
+
+#### Acknowledgement
+
+- Thanks to my mentor : Oluwafemi Medale, for his support and feedback.
+- Thanks to the Slack community for providing essential knowledge.
