@@ -24,6 +24,7 @@ Javascript code was passed through [JSHINT](https://jshint.com/)
 
 - Navbar links were clicked to ensure that smooth scrolling was consistent from top to bottom and vice versa, to each section of the page.
 - Hamburger menu (with navbar links) was tested on mobile devices to ensure it would open and close.
+- Navbar tested to see if it appears and disappears on scroll (function disabled on mobile and Safari browser)
 
 **Home: Images slideshow**
 
