@@ -22,7 +22,7 @@ if (!isMobile()) {
 // Prevent navbar from appeating/disappearing on scroll on mobile browsers
 // CREDIT, code taken from: https://stackoverflow.com/questions/12259701/how-do-i-prevent-a-script-from-running-on-mobile-devices
 function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Safari/i.test(navigator.userAgent);
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|safari/i.test(navigator.userAgent);
 }
 
 // Auto-play home gallery
