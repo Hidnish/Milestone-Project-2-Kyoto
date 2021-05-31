@@ -114,7 +114,7 @@ Colours throughout the page fall in the spectrum between #fafafa (off white) & #
 ## Features 
 
 - Designed with HTML5, CSS3, JavaScript + libraries (Bootstrap, jQuery, GSAP).
-- Responsive **navigation bar** (fixed on mobile) present throughout the page to move from one section to the other with ease. 
+- Responsive **navigation bar** (fixed on mobile and Safari browser) present throughout the page to move from one section to the other with ease. 
 - **Home/landing section** with auto-playing slideshow.
 
     <img src="assets/images/readme-img/homepage.png" alt="homepage" width="70%"/>
