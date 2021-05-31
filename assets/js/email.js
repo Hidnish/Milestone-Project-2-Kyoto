@@ -2,7 +2,7 @@
     emailjs.init("user_HFAbZtQk3xr0kgOSlVrJi");
 })();
 
-// Functions based on the Code Institute tutorial: Rosie - Resume Project
+// Method based on the Code Institute tutorial: Rosie - Resume Project
 function sendMail(contactForm) {
     emailjs.send("service_lso3e7r", "kyoto_daynight", {
             "from_firstname": contactForm.firstname.value,
