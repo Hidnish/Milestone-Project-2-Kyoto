@@ -84,7 +84,7 @@ Javascript code was passed through [JSHINT](https://jshint.com/)
 
 ### Responsiveness 
 
-- The Website was tested on Google Chrome, Safari, Opera, Firefox and Internet Explorer browsers.
+- The Website was tested on Google Chrome, Safari, Opera, Firefox and Microsoft Edge browsers.
 - The Website was tested on a variety of screen sizes using Google Developer Tools: iPhone X, iPhone 8, Samsung Galaxy S III, iPad, Laptop, Desktop, Large screen desktop (1920px).
 - The Website was tested on physical devices: iPhone 8, MacBook Air. 
 - [Google mobile-friendly test](https://search.google.com/test/mobile-friendly?id=5Pz7BqGGcZdRd5o9rkxA9A): The page passed the test as mobile friendly
