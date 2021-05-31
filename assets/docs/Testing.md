@@ -20,21 +20,21 @@ Javascript code was passed through [JSHINT](https://jshint.com/)
 
 #### Page sections: 
 
-Navigation
+**Navigation**
 
 - Navbar links were clicked to ensure that smooth scrolling was consistent from top to bottom and vice versa, to each section of the page.
-- Hamburger menu (with navbar lnkis) was tested on mobile devices to ensure it would open and close.
+- Hamburger menu (with navbar links) was tested on mobile devices to ensure it would open and close.
 
-Home: images slideshow
+**Home: Images slideshow**
 
 - Images in the home gallery slideshow fade in and out as desider.
 
-About section 
+**About section**
 
 - Content animation on scroll (for section header and content) works as expected, only once after the page has loaded.
-- All links connected to the Location section were clicked to ensire they would trigger the desired effect: automatic scroll to Location section displaying the right content (i.e. clicking the link for 'historical sites' would show the list of historical sites in the specific Location sections' menu/list).
+- All links connected to the Location section were clicked to ensure they would trigger the desired effect: automatic scroll to Location section displaying the right content (i.e. clicking the link for 'historical sites' would show the list of historical sites in the specific Location sections' menu/list).
 
-Location section 
+**Location section**
 
 - 'DAY' and 'NIGHT' buttons were clicked to ensure: 
     1. The Location and Contact section background color  change accordingly
@@ -45,11 +45,11 @@ Location section
 - Links attached to the popups were clicked to ensure they          open a new tab with the specific location's website.
 - Markers on the map were clicked to ensure that the popup          attached they would open and close as expected.
 
-Contact section 
+**Contact section** 
 
 - Contact form was tested to ensure:
     1. The message is sent and delivered to the desired email address.
-    2. An alert popup appears once the message is sent (or alternatively when an error occurs) and the "send" button chages color and content in case of success.
+    2. An alert popup appears once the message is sent (or alternatively when an error occurs) and the "send" button chages colour and content in case of success.
     3. The form resets once the message is sent.
 
 ---
@@ -59,7 +59,7 @@ Contact section
 1. "I want to navigate the website easily and intuitively, on any device (phone, tablet or laptop)"
 
     - Upon entering the site, the user can easily find the navigation bar on top of the page to move to the desired section with a simple click. 
-    - Check the "responsivness" section for information about testing of the website on different devices.
+    - Check the "responsiveness" section for information about testing of the website on different devices.
 
 2. "I want to understand the main purpose of the site"
 
@@ -67,7 +67,7 @@ Contact section
 
 3. "I am interested in visiting Kyoto, but first, I would like to know what the city has to offer"
 
-    - Also in the About section, the user can find a bried description of the locations selected for him/her which have been divided into four groups (historical sites, parks & gardens, restaurants, bars & clubs) with links connected to the Location section. 
+    - Also in the About section, the user can find a brief description of the locations selected for him/her which have been divided into four groups (historical sites, parks & gardens, restaurants, bars & clubs) with links connected to the Location section. 
     - The Location section, locations are divided into 'Day' locations (historical sites, parks & gardens) and 'Night' locations (restaurants, bars & clubs) to facilitate the navigation.
     - Each location button is connected to a marker on the map, which provides the user with specific information about the place selected.
 
@@ -84,8 +84,9 @@ Contact section
 ### Responsiveness 
 
 - The Website was tested on Google Chrome, Safari, Opera, Firefox and Internet Explorer browsers.
-- The Website was tested on a variety of screen sizes using Google Developer Tools: iPhone X, iPhone 8, Samsung Galaxy S III, iPad, Laptop, Deskrop, Large screen desktop (1920px).
+- The Website was tested on a variety of screen sizes using Google Developer Tools: iPhone X, iPhone 8, Samsung Galaxy S III, iPad, Laptop, Desktop, Large screen desktop (1920px).
 - The Website was tested on physical devices: iPhone 8, MacBook Air. 
+- [Google mobile-friendly test](https://search.google.com/test/mobile-friendly?id=5Pz7BqGGcZdRd5o9rkxA9A): The page passed the test as mobile friendly
 
 ---
 
@@ -94,3 +95,4 @@ Contact section
 - All links to the website sections (website logo, navbar links,About section links), were clicked to ensure they worked correctly
 - All links to external pages (location websites and social media links) were clicked to ensure they would open on a new tab.
 - The contact form has been tested to ensure a 'required' message would appear in case the user would attempt to send a message leaving empty fields.
+
