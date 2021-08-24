@@ -249,7 +249,7 @@ p {
 
 .activity-choice {
     text-align: center;
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #1c334d;
     margin: 0 30px;
 }
@@ -275,7 +275,7 @@ p {
     margin: 20px 30px 20px;
     border-top: 1px solid #1c334d;
     border-bottom: 1px solid #1c334d;
-    border-radius: 25px;
+    border-radius: 10px;
 }
 
 .locations-list li button {
@@ -304,7 +304,7 @@ p {
 
 #map {
     min-height: 500px;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .night-mode {
@@ -322,7 +322,7 @@ p {
     padding: 0 15% 1%;
 
     background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 20px;
+    border-radius: 15px;
 }
 
 .contact-heading {
