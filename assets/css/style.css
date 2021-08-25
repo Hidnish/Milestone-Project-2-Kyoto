@@ -25,7 +25,7 @@ body {
 }
 
 body {
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
 }
 
 h2 {
@@ -44,7 +44,7 @@ p {
 /* ----- BACKGROUNDS -----*/
 
 .backg-off-seet {
-    background-color: rgba(255, 255, 242, 0.8);
+    background-color: rgba(241, 241, 241, 0.8);
 }
 
 .backg-seet {
@@ -53,10 +53,10 @@ p {
 
 /* Code taken and modified from: https://stackoverflow.com/questions/15814346/is-it-possible-to-use-css-to-make-a-background-image-fade-or-gradient-the-bott */
 .backg-about {
-    background-color: #fafafa;
-    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fafafa)), url(../images/tip.jpeg);
-    background: -o-linear-gradient(top, transparent, #fafafa), url(../images/tip.jpeg);
-    background: linear-gradient(to bottom, transparent, #fafafa), url(../images/tip.jpeg);
+    background-color: #f0f0f0;
+    background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#f0f0f0)), url(../images/tip.jpeg);
+    background: -o-linear-gradient(top, transparent, #f0f0f0), url(../images/tip.jpeg);
+    background: linear-gradient(to bottom, transparent, #f0f0f0), url(../images/tip.jpeg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -64,9 +64,9 @@ p {
 /* END credit */
 
 .backg-contact {
-    background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#fafafa)), url(../images/contact.jpg) center no-repeat;
-    background: -o-linear-gradient(bottom, transparent, #fafafa), url(../images/contact.jpg) center no-repeat;
-    background: linear-gradient(to top, transparent, #fafafa), url(../images/contact.jpg) center no-repeat;
+    background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#f0f0f0)), url(../images/contact.jpg) center no-repeat;
+    background: -o-linear-gradient(bottom, transparent, #f0f0f0), url(../images/contact.jpg) center no-repeat;
+    background: linear-gradient(to top, transparent, #f0f0f0), url(../images/contact.jpg) center no-repeat;
     background-size: cover
 }
 
@@ -78,13 +78,13 @@ p {
 }
 
 .backg-about-info {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#fafafa), to(#1c334d));
-    background-image: -o-linear-gradient(#fafafa, #1c334d);
-    background-image: linear-gradient(#fafafa, #1c334d);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#142133));
+    background-image: -o-linear-gradient(#f0f0f0, #142133);
+    background-image: linear-gradient(#f0f0f0, #142133);
 }
 
 .backg-404 {
-    background-color: #1c334d;
+    background-color: #142133;
 }
 /* ----- NAVBAR ------ */
 
@@ -106,7 +106,7 @@ p {
 }
 
 .nav-link {
-    color: #1c334d !important;
+    color: #142133 !important;
     font-family: 'Crimson text', sans-serif;
     font-size: 1.3rem;
 }
@@ -119,7 +119,7 @@ p {
     font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 35px;
     margin-left: 1rem;
-    color: #1c334d !important;
+    color: #142133 !important;
 }
 
 /*----- HERO IMAGE -----*/
@@ -162,7 +162,7 @@ p {
     height: 50%;
     display: flex;
     align-items: center;
-    color: #1c334d;
+    color: #142133;
 }
 
 .about-row-night {
@@ -170,14 +170,14 @@ p {
     height: 50%;
     display: flex;
     align-items: center;
-    color: #fafafa;
+    color: #f0f0f0;
 }
 
 .about-heading {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    color: #1c334d;
+    color: #142133;
 }
 
 .about-heading h2 {
@@ -230,7 +230,7 @@ p {
     padding-bottom: 10px;
     font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 50px;
-    color: #1c334d;
+    color: #142133;
 }
 
 .menu>.btn {
@@ -238,32 +238,32 @@ p {
 }
 
 .btn-light {
-    color: #1c334d;
-    background-color: #fafafa;
+    color: #142133;
+    background-color: #f0f0f0;
 }
 
 .btn-dark {
-    color: #fafafa;
-    background-color: #1c334d;
+    color: #f0f0f0;
+    background-color: #142133;
 }
 
 .activity-choice {
     text-align: center;
     border-radius: 10px;
-    background-color: #1c334d;
+    background-color: #142133;
     margin: 0 30px;
 }
 
 .activity-choice>.btn {
     margin: 20px;
-    color: #fafafa;
-    background-color: #1c334d;
-    border: 1px solid #fafafa;
+    color: #f0f0f0;
+    background-color: #142133;
+    border: 1px solid #f0f0f0;
 }
 
 .activity-choice>.btn:hover {
-    background-color: #fafafa;
-    color: #1c334d;
+    background-color: #f0f0f0;
+    color: #142133;
 }
 
 .locations-section {
@@ -273,8 +273,8 @@ p {
 .locations-box {
     text-align: center;
     margin: 20px 30px 20px;
-    border-top: 1px solid #1c334d;
-    border-bottom: 1px solid #1c334d;
+    border-top: 1px solid #142133;
+    border-bottom: 1px solid #142133;
     border-radius: 10px;
 }
 
@@ -294,8 +294,8 @@ p {
 
 .locations-list button {
     border: none;
-    border-bottom: 1px solid #1c334d;
-    color: #1c334d;
+    border-bottom: 1px solid #142133;
+    color: #142133;
 }
 
 .map-box {
@@ -328,7 +328,7 @@ p {
 .contact-heading {
     text-align: center;
     vertical-align: middle;
-    color: #1c334d;
+    color: #142133;
 }
 
 .contact-heading h2 {
@@ -343,27 +343,27 @@ p {
 
 .form-control {
     border: none !important;
-    border-bottom: 1px solid #1c334d !important;
+    border-bottom: 1px solid #142133 !important;
     margin: 1% 0 3% !important;
 }
 
 .btn-submit {
     background-color: rgba(28, 51, 77, 0.95);
-    color: #fafafa;
+    color: #f0f0f0;
 }
 
 /* ----- FOOTER ----- */
 
 .footer {
     border-top: 1px solid #252a31;
-    background-color: #132031;
+    background-color: #142133;
 }
 
 .copyright {
     padding: 50px 0 0;
     height: 30px;
     text-align: left;
-    color: #fafafa;
+    color: #f0f0f0;
     font-size: 12px;
 }
 
@@ -377,14 +377,14 @@ p {
     padding: 23px 0 37px;
     height: 50px;
     text-align: center;
-    color: #fafafa;
+    color: #f0f0f0;
 }
 
 .footer-items i {
     padding: 0 3vw;
     font-size: 20px;
     line-height: 7px;
-    color: #fafafa;
+    color: #f0f0f0;
 }
 
 .list-inline-item:not(:last-child) {
@@ -404,7 +404,7 @@ p {
 /* ----- 404 ----- */
 
 .error-text {
-    color: #fafafa;
+    color: #f0f0f0;
     font-family: 'Crimson text', sans-serif;
     font-size: 20px
 }
