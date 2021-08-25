@@ -355,8 +355,8 @@ p {
 /* ----- FOOTER ----- */
 
 .footer {
-    border-top: 1px solid #434d5a;
-    background-color: #1c334d;
+    border-top: 1px solid #252a31;
+    background-color: #132031;
 }
 
 .copyright {
@@ -447,7 +447,7 @@ p {
 
     /* locations */
     .menu>.btn {
-        margin: 0 50px 20px !important;
+        margin: 0 2.5px 20px !important;
     }
 
     .activity-choice {

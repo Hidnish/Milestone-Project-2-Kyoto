@@ -1,28 +1,30 @@
 // Prevents navbar from disappearing on page load
-window.onload = function() {
-document.getElementById("navbar").style.top = 0;
+window.onload = function () {
+    document.getElementById("navbar").style.top = 0;
 };
 
-if (!isMobile()) {
+//if (!isMobile()) {
     // Make navbar disappear/appear on scroll 
     // CREDIT, code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
         let currentScrollPos = window.pageYOffset;
-        if (prevScrollpos > currentScrollPos) {
-            document.getElementById("navbar").style.top = 0;
-        } else {
-            document.getElementById("navbar").style.top = '-60%';
+        if (window.pageYOffset > 680) {
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("navbar").style.top = 0;
+            } else {
+                document.getElementById("navbar").style.top = '-60%';
+            }
+            prevScrollpos = currentScrollPos;
         }
-        prevScrollpos = currentScrollPos;
     };
     //END of credit 
-}
+//}
 
 // Prevent navbar from appeating/disappearing on scroll on mobile browsers
 // CREDIT, code taken from: https://stackoverflow.com/questions/12259701/how-do-i-prevent-a-script-from-running-on-mobile-devices
 function isMobile() {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|safari/i.test(navigator.userAgent);
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 // Auto-play home gallery
@@ -50,16 +52,16 @@ $(document).on('click', 'a[href^="#"]', function (event) {
 // END of credit
 
 // Connect About-section's buttons to their specific list of places in the Location-section
-$(window).click(function(button) {
-  if ($(button.target).hasClass('historical')) {
-    typeSelection('#button-day','#historicalSites');
-  } else if ($(button.target).hasClass('parks')) {
-    typeSelection('#button-day','#parksGardens');
-  } else if ($(button.target).hasClass('restaurants')){
-    typeSelection('#button-night','#restaurants');
-  } else if ($(button.target).hasClass('bars')) {
-    typeSelection('#button-night','#barsClubs');
-  }
+$(window).click(function (button) {
+    if ($(button.target).hasClass('historical')) {
+        typeSelection('#button-day', '#historicalSites');
+    } else if ($(button.target).hasClass('parks')) {
+        typeSelection('#button-day', '#parksGardens');
+    } else if ($(button.target).hasClass('restaurants')) {
+        typeSelection('#button-night', '#restaurants');
+    } else if ($(button.target).hasClass('bars')) {
+        typeSelection('#button-night', '#barsClubs');
+    }
 });
 
 function typeSelection(time, activity) {
