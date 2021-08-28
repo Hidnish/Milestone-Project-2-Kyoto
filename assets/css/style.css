@@ -348,7 +348,7 @@ p {
 }
 
 .btn-submit {
-    background-color: rgba(28, 51, 77, 0.95);
+    background-color: #142133;
     color: #f0f0f0;
 }
 
@@ -447,7 +447,7 @@ p {
 
     /* locations */
     .menu>.btn {
-        margin: 0 2.5px 20px !important;
+        margin: 0 10px 20px 15px !important;
     }
 
     .activity-choice {

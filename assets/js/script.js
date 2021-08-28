@@ -102,12 +102,12 @@ let timeLine = gsap.timeline({
     }
 });
 
-let timeLine2 = gsap.timeline({
+/*let timeLine2 = gsap.timeline({
     scrollTrigger: {
         trigger: '.about-heading',
         start: 'center top'
     }
-});
+});*/
 
 timeLine.from('.about-heading-content', {
     y: 100,
@@ -115,7 +115,7 @@ timeLine.from('.about-heading-content', {
     duration: 1.5
 }, "-=1");
 
-timeLine2.from('.about-info', {
+timeLine.from('.about-info', {
     y: 100,
     opacity: 0,
     duration: 1.5
