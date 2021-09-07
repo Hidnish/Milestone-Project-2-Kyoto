@@ -44,8 +44,9 @@ p {
 /* ----- BACKGROUNDS -----*/
 
 .backg-off-seet {
-    background-color: rgba(245, 245, 245, 0.349);
+    background-color: rgba(245, 245, 245, 0.541);
     backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px)
 }
 
 .backg-seet {
