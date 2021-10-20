@@ -3,7 +3,7 @@ window.onload = function () {
     document.getElementById("navbar").style.top = 0;
 };
 
-//if (!isMobile()) {
+if (!isMobile()) {
     // Make navbar disappear/appear on scroll 
     // CREDIT, code taken from: https://www.w3schools.com/howto/howto_js_navbar_hide_scroll.asp
     let prevScrollpos = window.pageYOffset;
@@ -13,19 +13,19 @@ window.onload = function () {
             if (prevScrollpos > currentScrollPos) {
                 document.getElementById("navbar").style.top = 0;
             } else {
-                document.getElementById("navbar").style.top = '-60%';
+                document.getElementById("navbar").style.top = '-10%';
             }
             prevScrollpos = currentScrollPos;
         }
     };
     //END of credit 
-//}
+}
 
 // Prevent navbar from appeating/disappearing on scroll on mobile browsers
 // CREDIT, code taken from: https://stackoverflow.com/questions/12259701/how-do-i-prevent-a-script-from-running-on-mobile-devices
 function isMobile() {
     return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-}
+    }
 
 // Auto-play home gallery
 // CREDIT, Code taken and modified from: https://css-tricks.com/snippets/jquery/simple-auto-playing-slideshow/   
@@ -101,13 +101,6 @@ let timeLine = gsap.timeline({
         start: 'center top'
     }
 });
-
-/*let timeLine2 = gsap.timeline({
-    scrollTrigger: {
-        trigger: '.about-heading',
-        start: 'center top'
-    }
-});*/
 
 timeLine.from('.about-heading-content', {
     y: 100,
