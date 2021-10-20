@@ -80,13 +80,13 @@ p {
 }
 
 .backg-about-info {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#142133));
-    background-image: -o-linear-gradient(#f0f0f0, #142133);
-    background-image: linear-gradient(#f0f0f0, #142133);
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f0f0f0), to(#0f1927));
+    background-image: -o-linear-gradient(#f0f0f0, #0f1927);
+    background-image: linear-gradient(#f0f0f0, #0f1927);
 }
 
 .backg-404 {
-    background-color: #142133;
+    background-color: #0f1927;
 }
 /* ----- NAVBAR ------ */
 
@@ -94,6 +94,7 @@ p {
     -webkit-transition: top 0.5s;
     -o-transition: top 0.5s;
     transition: top 0.5s;
+    padding: 3px 5px
 }
 
 .navbar-nav {
@@ -108,7 +109,7 @@ p {
 }
 
 .nav-link {
-    color: #142133 !important;
+    color: #0f1927 !important;
     font-family: 'Crimson text', sans-serif;
     font-size: 1.3rem;
 }
@@ -121,7 +122,7 @@ p {
     font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 35px;
     margin-left: 1rem;
-    color: #142133 !important;
+    color: #0f1927 !important;
 }
 
 /*----- HERO IMAGE -----*/
@@ -164,7 +165,7 @@ p {
     height: 50%;
     display: flex;
     align-items: center;
-    color: #142133;
+    color: #0f1927;
 }
 
 .about-row-night {
@@ -179,7 +180,7 @@ p {
     text-align: center;
     display: table-cell;
     vertical-align: middle;
-    color: #142133;
+    color: #0f1927;
 }
 
 .about-heading h2 {
@@ -232,7 +233,7 @@ p {
     padding-bottom: 10px;
     font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 50px;
-    color: #142133;
+    color: #0f1927;
 }
 
 .menu>.btn {
@@ -240,32 +241,32 @@ p {
 }
 
 .btn-light {
-    color: #142133;
+    color: #0f1927;
     background-color: #f0f0f0;
 }
 
 .btn-dark {
     color: #f0f0f0;
-    background-color: #142133;
+    background-color: #0f1927;
 }
 
 .activity-choice {
     text-align: center;
     border-radius: 10px;
-    background-color: #142133;
+    background-color: #0f1927;
     margin: 0 30px;
 }
 
 .activity-choice>.btn {
     margin: 20px;
     color: #f0f0f0;
-    background-color: #142133;
+    background-color: #0f1927;
     border: 1px solid #f0f0f0;
 }
 
 .activity-choice>.btn:hover {
     background-color: #f0f0f0;
-    color: #142133;
+    color: #0f1927;
 }
 
 .locations-section {
@@ -275,8 +276,8 @@ p {
 .locations-box {
     text-align: center;
     margin: 20px 30px 20px;
-    border-top: 1px solid #142133;
-    border-bottom: 1px solid #142133;
+    border-top: 1px solid #0f1927;
+    border-bottom: 1px solid #0f1927;
     border-radius: 10px;
 }
 
@@ -296,8 +297,8 @@ p {
 
 .locations-list button {
     border: none;
-    border-bottom: 1px solid #142133;
-    color: #142133;
+    border-bottom: 1px solid #0f1927;
+    color: #0f1927;
 }
 
 .map-box {
@@ -330,7 +331,7 @@ p {
 .contact-heading {
     text-align: center;
     vertical-align: middle;
-    color: #142133;
+    color: #0f1927;
 }
 
 .contact-heading h2 {
@@ -345,12 +346,12 @@ p {
 
 .form-control {
     border: none !important;
-    border-bottom: 1px solid #142133 !important;
+    border-bottom: 1px solid #0f1927 !important;
     margin: 1% 0 3% !important;
 }
 
 .btn-submit {
-    background-color: #142133;
+    background-color: #0f1927;
     color: #f0f0f0;
 }
 
@@ -358,7 +359,7 @@ p {
 
 .footer {
     border-top: 1px solid #252a31;
-    background-color: #142133;
+    background-color: #0f1927;
 }
 
 .copyright {
