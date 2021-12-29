@@ -263,11 +263,15 @@ p {
     border: 1px solid #f0f0f0;
 }
 
-.activity-choice>.btn:hover {
+.btn:hover {
+    transform: scale(1.04);
+}
+
+/* .activity-choice>.btn:hover {
     background-color: transparent;
     color: #0f1927;
     border-color: #0f1927;
-}
+} */
 
 .locations-section {
     padding: 35px 0;
