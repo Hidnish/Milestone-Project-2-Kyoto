@@ -254,6 +254,7 @@ p {
     text-align: center;
     border-radius: 10px;
     margin: 0 30px;
+    box-shadow: 0 0 8px rgba(60, 60, 60, 0.5);
 }
 
 .activity-choice>.btn {
@@ -267,12 +268,6 @@ p {
     transform: scale(1.04);
 }
 
-/* .activity-choice>.btn:hover {
-    background-color: transparent;
-    color: #0f1927;
-    border-color: #0f1927;
-} */
-
 .locations-section {
     padding: 35px 0;
 }
@@ -280,7 +275,7 @@ p {
 .locations-box {
     text-align: center;
     margin: 20px 30px 20px;
-    box-shadow: 0.3px 0.5px 6px #090e16;
+    box-shadow: 0 0 8px rgba(60, 60, 60, 0.5);
     padding-bottom: 10px;
     border-radius: 10px;
 }
@@ -312,6 +307,7 @@ p {
 #map {
     min-height: 500px;
     border-radius: 10px;
+    box-shadow: 0 0 8px rgba(60, 60, 60, 0.5);
 }
 
 .night-mode {
@@ -459,7 +455,7 @@ p {
 
     .activity-choice {
         border-radius: 10px;
-        padding: 4px
+        padding: 8px 0;
     }
 
     .locations-list {
@@ -472,7 +468,7 @@ p {
 
     .activity-choice {
         border-radius: 10px;
-        padding: 4px
+        padding: 8px 0;
     }
 
     .activity-choice>.btn {
