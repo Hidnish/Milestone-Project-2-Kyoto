@@ -93,24 +93,25 @@ $('.btn-specific').click(function () {
     $(this).addClass('active');
 });
 
-// Fade-in animation for 'about-section' content(text)
-// CREDIT, Code taken and modified from: https://www.youtube.com/watch?v=ygcEKd0RIGg&ab_channel=DesignCourse
-let timeLine = gsap.timeline({
-    scrollTrigger: {
-        trigger: '#home',
-        start: 'center top'
+
+// Fade-in animation
+const boxes = gsap.utils.toArray('.fade-in');
+
+boxes.forEach((box, i) => {
+    let anim;
+
+    if (i === 0) {
+        anim = gsap.fromTo(box, {autoAlpha: 0, y: 75}, {duration: 1, autoAlpha: 1, y: 0});
+    } else if (i % 2 != 0) {
+        anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
+    } else {
+        anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0});
     }
+
+    ScrollTrigger.create({
+        trigger: box,
+        animation: anim,
+        toggleActions: 'play none none none',
+        once: true,
+    });
 });
-
-timeLine.from('.about-heading-content', {
-    y: 100,
-    opacity: 0,
-    duration: 1.5
-}, "-=1");
-
-timeLine.from('.about-info', {
-    y: 100,
-    opacity: 0,
-    duration: 1.5
-}, "-=1");
-// END of credit
