@@ -458,7 +458,7 @@ p {
     }
 
     .backg-about {
-        background-position: right; 
+        background: #f0f0f0;
     }
 
     /* locations */
