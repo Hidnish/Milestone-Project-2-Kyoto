@@ -9,14 +9,13 @@
 
 @font-face {
     font-family: "Japanese";
-    src: url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot");
-    src:
+    src: url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.eot?#iefix") format("embedded-opentype"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff2") format("woff2"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.woff") format("woff"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.ttf") format("truetype"),
         url("//db.onlinewebfonts.com/t/fc87c87c07938e0484418e4c0a773b02.svg#JapaneseBrushMasterW00-Rg") format("svg");
-        font-display: swap
+    font-display: swap
 }
 
 html,
@@ -63,6 +62,7 @@ p {
     background-position: center;
     background-size: cover;
 }
+
 /* END credit */
 
 .backg-contact {
@@ -88,6 +88,7 @@ p {
 .backg-404 {
     background-color: #0f1927;
 }
+
 /* ----- NAVBAR ------ */
 
 .navbar {
@@ -190,7 +191,7 @@ p {
 }
 
 .about-heading p {
-    padding: 2% 8% 8%;
+    padding: 2% 8% 6%;
 }
 
 .about-body {
@@ -220,6 +221,13 @@ p {
     -o-object-fit: contain;
     object-fit: contain;
     border-radius: 20px;
+}
+
+.separator {
+    box-shadow: 0 0 8px rgba(60, 60, 60, 0.5);
+    border-radius: 1px;
+    padding-bottom: 3px;
+    margin-bottom: 5%;
 }
 
 /* ----- LOCATIONS ----- */
@@ -416,6 +424,7 @@ p {
     font-family: 'Japanese', 'Crimson text', sans-serif;
     font-size: 60px
 }
+
 /* ----- MEDIA QUERIES ----- */
 
 @media (min-width: 1500px) {
@@ -446,6 +455,10 @@ p {
 
     .about-heading h2 {
         font-size: 3em;
+    }
+
+    .backg-about {
+        background-position: right; 
     }
 
     /* locations */

@@ -284,7 +284,8 @@ function markerGenerator(index) {
     marker.bindPopup(`</div><h6>${locationsArray[index].name}</h6>
                 <strong>Address:</strong> ${locationsArray[index].address}<br>
                 <strong>Website:</strong><a href='${locationsArray[index].website}' target='_blank'> Click here</a><br><br>
-                <img src=${locationsArray[index].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`);
+                <img src=${locationsArray[index].imgUrl} height='95px' width='170px' style='border-radius:5px; display: block; margin:0 auto'>`
+    );
 } 
 //End of credit
 
