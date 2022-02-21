@@ -101,11 +101,11 @@ boxes.forEach((box, i) => {
     let anim;
 
     if (i === 0) {
-        anim = gsap.fromTo(box, {autoAlpha: 0, y: 75}, {duration: 1, autoAlpha: 1, y: 0});
+        anim = gsap.fromTo(box, {autoAlpha: 0, y: 75}, {duration: 2, autoAlpha: 1, y: 0});
     } else if (i % 2 != 0) {
-        anim = gsap.fromTo(box, {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0});
+        anim = gsap.fromTo(box, {autoAlpha: 0, x: 100}, {duration: 2, autoAlpha: 1, x: 0});
     } else {
-        anim = gsap.fromTo(box, {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0});
+        anim = gsap.fromTo(box, {autoAlpha: 0, x: -100}, {duration: 2, autoAlpha: 1, x: 0});
     }
 
     ScrollTrigger.create({
